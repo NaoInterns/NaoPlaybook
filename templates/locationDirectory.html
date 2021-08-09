@@ -1,0 +1,637 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Company Location Directory</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="394e4c1c-326b-4b8b-b415-bc9190eb8a1d" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_06.png" style="object-position:center 78.01%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">☎️</span></div><h1 class="page-title">Company Location Directory</h1></header><div class="page-body"><h2 id="4f284c2e-1497-4df0-90d8-d5dcaf381ebc" class="">Patient Centers</h2><ul id="968d023a-071d-44a2-af1d-1ed49b03528e" class="toggle"><li><details open=""><summary><strong>Astoria, Queens</strong></summary><h3 id="c8e70398-0e9c-445c-9044-3f6420274ed0" class="">Address: </h3><ul id="13146e0f-ada3-485d-8c6e-ee93b8e2a8fe" class="bulleted-list"><li>37-15 23rd Avenue Astoria, NY 11105</li></ul><h3 id="b7f0e9cf-0517-4e12-a1cf-471f6cc303af" class="">Hours:</h3><ul id="63f99374-21b0-4275-b5b1-456965bc3dbd" class="bulleted-list"><li>Mon to Fri: 8:00 am to 8:00 pm EST</li></ul><ul id="87cac4b5-0597-4271-a973-6cec460ca9dd" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="5abc31cf-effe-4506-9233-3c4c59d01235" class="">Contact:</h3><ul id="a46de5ca-1c5b-4e6a-bb7b-38e6b0ba8640" class="bulleted-list"><li>Ext(Ring central): 201 - 202</li></ul><ul id="fc9a6820-b396-49b6-8009-a84ab6e023f1" class="bulleted-list"><li>Provider: 210</li></ul><ul id="76572dd1-9787-454b-bbf0-7f0a58c8490a" class="bulleted-list"><li>Vici Dial: 72008</li></ul><ul id="989684c8-725d-406e-a1a6-90d533d110b3" class="bulleted-list"><li>Provider: 72016</li></ul><ul id="3f26f1c5-092a-47ce-a9c5-fe5c94c79f60" class="bulleted-list"><li>Fax: 347-808-8873</li></ul><ul id="2f1eb35c-3f80-4563-99c9-a6db5fc829c3" class="bulleted-list"><li>Red Phone: 347-396-5291</li></ul><h3 id="3ab30cc4-9a8f-4eb2-8fec-fd83e3c42857" class="">Directions:</h3><ul id="513206b3-f4a7-4865-a5dc-e1dd1819fc37" class="bulleted-list"><li><strong>By Car: </strong>Take Grand Central Parkway and Exit for 31st street (last exit before Triboro Bridge) and we are one block southwest of 7the intersection of Steinway Street and Ditmars Blvd.</li></ul><ul id="6b7e0b4e-acc7-4093-871f-71c464b37664" class="bulleted-list"><li><strong>By Bus:</strong> From Queens, from Hillside Ave and Springfield Blvd, take the Eastbound N22 going Jamaica-Mineola-Roosevelt Field-Hicksville Bus towards Hicksville LIRR Station. Nao Medical is 8 blocks south of Old Country Road.</li></ul><ul id="f7ff5316-19f4-4b55-bdb2-867cf11cb990" class="bulleted-list"><li><strong>By Bus:</strong> Take the 69 bus or 101 bus and we are 1 block southwest of the intersection of Steinway Street and Ditmars Boulevard or Take the 19 bus or M60 to Steinway St. and we are 1 block west of Steinway St. intersection with 23rd Ave.</li></ul><ul id="bbb7cbb3-efbd-418c-b5ef-0d10bb2de529" class="bulleted-list"><li><strong>By Subway:</strong> From Manhattan, take the N or W train to the last stop Ditmars Boulevard and we are 2 blocks southeast of the train station at the intersection of 38th Street and 23rd Avenue</li></ul><ul id="57e8eb4a-8683-4a40-ae24-c8344cfaa9b8" class="bulleted-list"><li><strong>Landmarks:</strong> Located in the corner of 23rd ave and 38th street in front of the Deli</li></ul><h3 id="df41aa3e-2b9e-4af3-b424-5319f84a504c" class=""><strong>Parking:</strong> Street Parking Only</h3></details></li></ul><ul id="961390c1-a3fb-44a4-9355-8b80b3443df2" class="toggle"><li><details open=""><summary><strong>Brooklyn, Crown Heights</strong></summary><h3 id="191733b4-3288-4c60-89a3-f279f6182d50" class="">Address: </h3><ul id="556737fa-0ca0-4f70-9feb-60c4e95816b2" class="bulleted-list"><li>341 Eastern Parkway Brooklyn, NY 11216</li></ul><h3 id="1bc8ee07-9db6-4e8f-b961-e280b6c819f2" class="">Hours:</h3><ul id="dc758f34-a219-40b0-a938-2fee4ff71c7c" class="bulleted-list"><li>Mon to Fri: 8:00 am to 9:00 pm EST</li></ul><ul id="08e80926-521a-4712-82cd-27679cc8d870" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="2c84f0ac-3871-49b8-a697-d5b5ea5540ae" class="">Contact: </h3><ul id="2ee18f24-87a4-4f8c-9ce0-20eba6eb61c6" class="bulleted-list"><li>Ext(Ring central): 301 - 302</li></ul><ul id="6116116e-9bae-429f-a882-384e14f571e5" class="bulleted-list"><li>Provider: 310</li></ul><ul id="b91c3717-7865-487e-a08d-ae7d1dcf4ada" class="bulleted-list"><li>Vici Dial: 72012</li></ul><ul id="a994d2d3-ef20-42f4-9e5b-524c5cc2c77c" class="bulleted-list"><li>Provider: 72020</li></ul><ul id="c56ef6fa-f9bb-45db-9c83-d52bb02c4bd7" class="bulleted-list"><li>Red Phone: 718-774-0894</li></ul><ul id="1dc40d91-abcc-4404-af86-052ddf3b0c79" class="bulleted-list"><li>Fax: 718-735-0407</li></ul><h3 id="866f2d15-b9b4-4b29-b7ed-27975e6891cf" class="">Directions: </h3><ul id="26d26b5f-b954-43b4-adfc-3d9f749dfc2e" class="bulleted-list"><li>Statcare is located right above the Franklin Avenue Subway Station on the corner of Franklin Avenue and Eastern Parkway. The number 1,2,3,4, and 5 subway trains come to the Franklin Avenue Subway Station.</li></ul><ul id="228e1752-f464-4928-88dd-e10ad31b0a4b" class="bulleted-list"><li><strong>Landmarks: </strong>Located between Bedford ave and Franklin ave. Almost corner of Franklin ave, next to Capital One Bank</li></ul><h3 id="e9a4ae21-1b30-4928-90d3-4416ec6a7144" class="">Parking: Street Parking Only</h3></details></li></ul><ul id="9e919ee2-1105-4f19-8dc4-79e9af6a5722" class="toggle"><li><details open=""><summary><strong>Brooklyn, Williamsburg</strong></summary><h3 id="90442a37-55c3-4fa8-b534-67cf6890bc20" class="">Address: </h3><p id="a0618cff-91f0-4473-a4f8-0a7ecd7073be" class="">308 Graham Avenue Brooklyn NY 11211</p><h3 id="915b48e2-e6d6-4082-97ec-98bd58c51a97" class="">Hours: </h3><p id="f1fe30c6-d050-4b5b-a47c-b0d2124c5e06" class="">Mon to Fri: 8:00 am to 8:00 pm EST</p><p id="7648f60d-484f-4233-8683-8ee605c00d69" class="">Saturday and Sunday: 9:00 am to 5:00 pm EST</p><h3 id="7d3f7453-d2a1-474d-96c3-e90af3b55385" class="">Contact: </h3><p id="fdd29445-eea0-470b-ad04-58052a959436" class="">Red Phone: 718-963-2031</p></details></li></ul><ul id="fed59cdf-96e0-48c7-811d-8e74651ec2df" class="toggle"><li><details open=""><summary><strong>Bronx, Bartow Mall</strong></summary><h3 id="daffd589-0f7f-49c0-9c06-ea0663b78bce" class="">Address: </h3><ul id="b42550a9-0abb-48f4-a986-63ad34079596" class="bulleted-list"><li>2063A Bartow Avenue Bronx, NY 10475</li></ul><h3 id="6fe839a8-dab2-488d-aced-34d0b4e479a4" class="">Hours: </h3><ul id="9c48ea31-b8ef-4017-b77c-ed831e2a2f68" class="bulleted-list"><li>Mon to Fri: 9:00 am to 8:00 pm EST</li></ul><ul id="b3b3df56-9d6a-4c22-96cc-27a5ee624974" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="6da56c31-68d3-4d9f-8fae-6ab48a0072ca" class=""><strong>Contact: </strong></h3><ul id="d92602bd-bcd4-44d1-a933-c67519ceba33" class="bulleted-list"><li>Ext(Ring central): 401 - 402</li></ul><ul id="f27d894f-f689-4795-9b0f-34ad0795d3f2" class="bulleted-list"><li>Provider: 410</li></ul><ul id="2e512b19-edbd-4d12-97c7-f9611571020f" class="bulleted-list"><li>Vici Dial: 72011</li></ul><ul id="33e7c871-30f4-4cb8-89f6-bdbd17a56959" class="bulleted-list"><li>Provider: 72019</li></ul><ul id="1284e617-d3c4-4945-b76b-4dae64e25b0e" class="bulleted-list"><li>Fax: 718-379-8801</li></ul><ul id="2c5d48a8-7c52-4947-88e9-5cf4be07c91a" class="bulleted-list"><li>Red Phone: 347-427-6366</li></ul><h3 id="376f00f0-b7f6-41e2-b832-68562daa075c" class=""><strong>Directions: </strong></h3><ul id="560c63fc-5261-4ac4-9f7e-c5019deee1ba" class="bulleted-list"><li><strong>By Bus:</strong> Bx23, 26, 28, 29, 30, 38, Bx12 SBS, Bx12 local (late night only), Bx5 (weekends only). Also Q50 and BxM7</li></ul><ul id="de788caf-c580-4982-b21f-0af6af596b91" class="bulleted-list"><li><strong>By Subway:</strong> Take the #5 subway to Gun Hill Road and then take the #28 or #30 or #38 bus to Bartow Mall.</li></ul><ul id="bbeee360-19ba-4c9d-9060-201e696be636" class="bulleted-list"><li>You can also take the #6 subway to Pelham Bay Parkway and then take the #12 or #23 bus to Bartow Mall</li></ul><ul id="bd9ecd21-3ad0-451b-b39b-5ab9119a92a8" class="bulleted-list"><li><strong>Landmarks: </strong>Located at Bartow mall. It’s a plaza that also has Dollar Tree and Arby’s. Between Ashloop and Bartow ave.</li></ul><h3 id="710cbc9d-ca2c-467a-b579-77e3eb6a8149" class="">Parking: YES</h3></details></li></ul><ul id="24f4ba39-50f5-47b3-afe4-7ef3ad516bef" class="toggle"><li><details open=""><summary><strong>Bronx, 174th Street</strong></summary><h3 id="8a713f94-860e-4838-9106-d1f5f18e67de" class="">Address: </h3><ul id="081420ab-e23d-4942-bf19-a30638cceba8" class="bulleted-list"><li>932 East 174th Street Bronx, NY 10460</li></ul><h3 id="d03414fb-778f-4520-9e27-f68743f0badf" class="">Hours: </h3><ul id="b506ed92-cd76-462c-8b64-cc2f721c4a6d" class="bulleted-list"><li>Mon to Fri: 8:00 am to 8:00 pm EST</li></ul><ul id="8cc6010b-b6f7-45a1-aa8f-aaf61ccd2a85" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 3:00 pm EST</li></ul><h3 id="71b9cef7-0a3f-47cd-af7c-4de3fef48d66" class="">Contact: </h3><ul id="f0afd78f-7474-44ed-9df4-fc5f36874f32" class="bulleted-list"><li>Ext(Ring central): 501 - 502</li></ul><ul id="c7722db4-3fff-4995-a9d9-8455d47e9ac3" class="bulleted-list"><li>Provider: 510</li></ul><ul id="a5712769-3296-486a-95e3-640245e07370" class="bulleted-list"><li>Vici Dial: 72010</li></ul><ul id="cb87f5a7-1009-4dbd-b305-004fc2ea6113" class="bulleted-list"><li>Provider: 72018</li></ul><ul id="626bd181-da2c-4a13-803c-7f7bf1a92ea3" class="bulleted-list"><li>Fax: 917-801-2324</li></ul><ul id="a747ee0a-280f-44f0-ba73-53e6e588ecb7" class="bulleted-list"><li>Red Phone: 347-271-3751</li></ul><h3 id="fa3ffd6d-f72b-4340-a79d-a563fee9fe19" class="">Directions: </h3><ul id="25b12a4e-2250-4c0e-8bcb-c8eab9c80753" class="bulleted-list"><li>From Manhattan take the #2 or #5 subway line to 174 Street train station and we are the 4th storefront right off the staircase coming off the subway.</li></ul><ul id="49573d99-6fa6-4359-a819-da060298da44" class="bulleted-list"><li>Landmarks: Between Easy 174th street pharmacy and Metro PCS; it is also across the street from Western Union. It’s between Southern blvd and Hoe Avenue</li></ul><h3 id="94b811e3-c3ac-4411-a28e-4d88ed5b29f0" class="">Parking: Street Parking Only</h3></details></li></ul><ul id="88ef80ce-0c75-4a59-b965-a1e727c00227" class="toggle"><li><details open=""><summary><strong>Hicksville, Long Island</strong></summary><h3 id="3a841ace-2731-435f-b228-7cdfab963eb1" class=""><strong>Address: </strong></h3><ul id="812dd014-a0a5-4cf7-b4d0-9eb95870ab68" class="bulleted-list"><li>232 W. Old Country Road Hicksville, NY 11801</li></ul><h3 id="179d5a06-1214-4bbc-b89f-e2f0b27f0286" class=""><strong>Hours: </strong></h3><ul id="6250a78c-4a33-4501-bc6d-1693627ee650" class="bulleted-list"><li>Mon to Fri: 8:00 am to 8:00 pm EST</li></ul><ul id="4af0280f-4009-48ef-964d-e071332c63cb" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="851e5320-9951-4e15-b7c0-09b1de6fc75b" class="">Contact:</h3><ul id="301aef1e-f29e-493d-80b3-795eadc20e47" class="bulleted-list"><li>Ext(Ring central): 101 - 102</li></ul><ul id="51fd4d3f-1dd6-45ee-acda-3317abd1dd58" class="bulleted-list"><li>Provider: 110</li></ul><ul id="d768625c-e7cf-434f-9a1a-33725ed3000c" class="bulleted-list"><li>Vici Dial: 72013</li></ul><ul id="93a7fb44-80a7-48aa-828c-fafbdcbc7c09" class="bulleted-list"><li>Provider: 72021</li></ul><ul id="b34e8e89-0552-4733-8025-05d94d6dcb77" class="bulleted-list"><li>Fax: 516-938-1554</li></ul><ul id="949d84ce-f98d-445c-b454-051ddaddd004" class="bulleted-list"><li>Red Phone: 516-396-0649</li></ul><h3 id="e939bc8f-6788-45c6-81ec-934021506f32" class="">Directions:</h3><ul id="43ed261d-063e-4358-97fd-762d6fa5c10f" class="bulleted-list"><li><strong>By Train:</strong> From Penn Station, take the LIRR going to Ronkonkoma and get off at the Hicksville station. Once at the Hicksville station, walk 4 blocks south on Newbridge Road towards Old Country Road and we are at the intersection next to the CVS Pharmacy.</li></ul><ul id="12bad6ae-f70f-4064-824e-0b0724da6ffc" class="bulleted-list"><li>Also, taxi cabs are also available at the Hicksville LIRR station and it is a 2 minute ride</li></ul><ul id="bda074ca-17f8-4e63-bac8-01657ccaf535" class="bulleted-list"><li><strong>Landmarks:</strong> Located in between Newbridge Road and Old country road. We are the same shopping center as the CVS pharmacy.</li></ul><h3 id="11f91a21-d33f-4a93-bcda-1577bbfcb2e5" class="">Parking: yes </h3><p id="3fc1a33b-1f82-460c-80ba-7a93e84c325d" class="">
+</p></details></li></ul><ul id="05b3275d-b04c-4544-bf96-0ce369033df3" class="toggle"><li><details open=""><summary><strong>Jackson Heights, New York</strong></summary><h3 id="fabf0474-d57b-49a1-b4e2-b2b4aa6be532" class="">Address: </h3><ul id="934c0e4b-ad26-4d77-8d08-beefc2bc93d3" class="bulleted-list"><li>80-10 Northern Boulevard Jackson Heights, NY 11372</li></ul><h3 id="f310d3aa-fa27-4801-8268-2f3ede96071d" class="">Hours: </h3><ul id="42139393-6f58-4cc7-9ac6-d3a2b252c706" class="bulleted-list"><li>Mon to Fri: 9:00 am to 8:00 pm EST</li></ul><ul id="6f256d1d-85b7-45ed-98a8-da165791964c" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="55bf5753-92c4-4721-81d8-709ef5dac312" class="">Contact: </h3><ul id="2614ab4c-c434-4940-b154-f1b9c376cf04" class="bulleted-list"><li>Ext(Ring central): 601</li></ul><ul id="d02f2e78-0f1d-4d90-88ba-3525f4276104" class="bulleted-list"><li>Provider: 610</li></ul><ul id="fea7eaac-e487-4195-8398-95c259cafe11" class="bulleted-list"><li>Vici Dial: 72014</li></ul><ul id="440ad6c6-0142-4cdd-8ccb-339136d026bb" class="bulleted-list"><li>Provider: 72022</li></ul><ul id="033f522f-dbeb-4510-8648-31d6cbbc67e8" class="bulleted-list"><li>Fax: 718-429-5029</li></ul><ul id="43483f2f-d1c8-4f06-9a32-c981b0ab710a" class="bulleted-list"><li>Red Phone: 347-396-5398</li></ul></details></li></ul><ul id="3a25c243-e6a8-45b6-bb2f-90f03bc83212" class="toggle"><li><details open=""><summary><strong>Jamaica, New York </strong></summary><h3 id="85dd7f62-0c5c-4369-b283-b48c177b9a86" class="">Address: </h3><ul id="b8d9aaf3-4a73-4206-a191-19e0dfc91052" class="bulleted-list"><li>90-18 Sutphin Blvd, Jamaica, NY 11435</li></ul><h3 id="9425c278-198d-4a5a-8ff0-cb17e325a80a" class="">Hours: </h3><ul id="c9f7b3dc-e2fa-493b-9dbe-cbe9ddae240b" class="bulleted-list"><li>Mon to Fri: 9:00 am to 7:00 pm EST</li></ul><ul id="a1ae134e-8cd7-4c6d-98a4-0d57e8f54660" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 3:00 pm EST</li></ul><h3 id="cb22ba35-ffe2-4b45-ae0a-59cb9473d30e" class="">Contact: </h3><ul id="8d79c005-a87e-4b2d-8d3c-36d81b4023da" class="bulleted-list"><li>Ext(Ring central): 801</li></ul><ul id="503375e6-24f3-4c86-8dd8-1386d29df853" class="bulleted-list"><li>Provider: 810</li></ul><ul id="daf92acf-fa0b-4d8a-8b3a-c5cee776b771" class="bulleted-list"><li>Vici Dial: 72015</li></ul><ul id="a41f17da-22f3-41f3-9bf4-a802c6015805" class="bulleted-list"><li>Provider: 72023</li></ul><ul id="c077f999-3ca4-4205-a47c-25433e412eae" class="bulleted-list"><li>Fax: 917-473-9722</li></ul><ul id="48f88ec1-489e-4f40-8198-6e341049f216" class="bulleted-list"><li>Red Phone: 718-262-0289</li></ul></details></li></ul><ul id="32fcc478-643f-4261-a669-58458e175e9c" class="toggle"><li><details open=""><summary><strong>Midtown Manhattan </strong></summary><h3 id="9cc88a9f-f6a9-481b-9584-7ad2e4c43594" class="">Address: </h3><ul id="d2078575-ae00-4638-a1b6-faafbed046ad" class="bulleted-list"><li>715 9th Avenue Suite 1 New York, NY 10019</li></ul><h3 id="8252af06-7f3a-460b-ab3a-f47fa4908b29" class="">Hours: </h3><ul id="ea5501fd-177a-4cf5-88ca-f461aaf13844" class="bulleted-list"><li>Mon to Fri: 8:00 am to 8:00 pm EST</li></ul><ul id="9fc2dc7d-04a9-4c7e-88aa-ac4a61e33b79" class="bulleted-list"><li>Saturday and Sunday: 9:00 am to 5:00 pm EST</li></ul><h3 id="d7e46052-d166-431d-bd60-a5dfb949609a" class="">Contact: </h3><ul id="0f061ff0-8963-435e-8391-13bdde0cdb2c" class="bulleted-list"><li>Ext(Ring central): 701 - 702 - 7000</li></ul><ul id="dda458bd-99ce-483d-b4df-375d162a167a" class="bulleted-list"><li>Provider: 710</li></ul><ul id="fb229ab1-e0ad-41ab-8dc1-f4f6452ebc16" class="bulleted-list"><li>Vici Dial: 72009</li></ul><ul id="c26c7328-3c29-4f1a-91a6-37a5d4ff1a5e" class="bulleted-list"><li>Provider: 72017</li></ul><ul id="83229d5a-bf3b-46ea-9d23-32163da56a19" class="bulleted-list"><li>Fax: 212-757-2815</li></ul></details></li></ul><h2 id="4b7c8f86-f1dc-4dae-8415-e8d7ae9d62c8" class="">Mobile Units</h2><ul id="fbfc7201-a107-4f04-8784-f2287614df6a" class="toggle"><li><details open=""><summary><strong>Bayshore</strong></summary><h3 id="418b2727-c720-4dd9-bd0e-c7b254bd6ae9" class="">Address </h3><p id="c6ce02d6-1e6f-43d1-ac19-079951e4d592" class="">Westfield South Shore Mall</p><p id="81ce42fb-0f37-435d-a6e9-c182da230724" class="">1701 Sunrise Highway</p><p id="12966160-a2ec-4b42-891d-dbf7517e96bf" class="">Bay Shore, NY 11706</p><p id="71bc303a-8417-4db1-af0d-52aeaf33baa8" class="">Opposite Olive Garden/Sunrise Highway</p><h3 id="981cab97-72ba-4534-baf2-819b7290ffeb" class="">Hours of Operation</h3><p id="d1bea7f6-c3a5-4474-af7a-3019fd75e529" class="">Mon-Fri: 10 AM – 6 PM</p><p id="8b500c09-d60d-4154-af09-2a15fb0d5ccc" class="">Sat-Sun: 10 AM – 5 PM</p></details></li></ul><ul id="ff742f66-5396-4847-b876-6906d8740e86" class="toggle"><li><details open=""><summary><strong>Elmhurst</strong></summary><h3 id="35bd941f-0904-456e-9a5c-c3c4519d6191" class="">Address </h3><p id="4a84b160-e612-4ada-8314-bbea853ae07b" class="">77-02 Roosevelt Avenue </p><p id="d02cc1c6-2526-4ccf-a2cd-489720a0cec3" class="">Jackson Heights, NY </p><p id="f707a37b-fca1-48fc-8b77-85ff962c783a" class="">11372</p><h3 id="a78745eb-d6ca-4de0-b8c6-8a3b984948a4" class=""><strong>Testing Hours</strong></h3><p id="6b78a628-986e-4ccb-957e-094c97266d04" class="">Mon-Fri: 9 AM – 7 PM</p><p id="78f64f56-255a-4201-800e-1206d874ae69" class="">Sat-Sun: 9 AM – 5 PM</p></details></li></ul><p id="8e450844-d23d-4235-9078-b33babe25abe" class="">
+</p></div></article></body></html>

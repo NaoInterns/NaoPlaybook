@@ -1,0 +1,635 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Part Nine: Insurance</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9ad0c414-482d-460f-9298-8ff4063ba63a" class="page sans"><header><h1 class="page-title">Part Nine: Insurance</h1></header><div class="page-body"><p id="7fc7e8fd-7be3-41fe-b80f-6245dbf9fdb6" class=""><strong>FRONT DESK: PART IX</strong></p><p id="8d15456e-d37b-4c71-99ff-d8e152ac29f4" class=""><strong>INSURANCE</strong></p><ol type="1" id="4019cc1d-8feb-41c3-910d-cde1e81891f7" class="numbered-list" start="1"><li><strong>INSURANCES WE DO NOT ACCEPT:</strong><strong> The following is the list of insurances that we </strong><em><strong>DO NOT</strong></em><strong> accept at our facility.</strong></li></ol><ol type="1" id="550a4e20-9466-43fb-96b2-41e340c7d088" class="numbered-list" start="2"><li><em><strong>AMERIGROUP:</strong></em><em><strong> Blue, white, &amp; green card that says </strong></em><em><strong>“Amerigroup Real Solutions In Healthcare.”</strong></em></li></ol><figure id="65f5cb8f-c83f-435e-b323-4feb6d8bd74a" class="image"><a href="https://lh3.googleusercontent.com/jMTCQNgVjXDpf4C6YkNp1MMXJzWCvoYH0xtoDn3HC903SaFeoEqDKDvp2oZFN2tpb8dZJzvTwNDQjX3NX0b6aK7-XlupDQ6-qRgJNrtkAc1ebSVOsciIh6KZLPfy1SgzxPp31HU"><img src="https://lh3.googleusercontent.com/jMTCQNgVjXDpf4C6YkNp1MMXJzWCvoYH0xtoDn3HC903SaFeoEqDKDvp2oZFN2tpb8dZJzvTwNDQjX3NX0b6aK7-XlupDQ6-qRgJNrtkAc1ebSVOsciIh6KZLPfy1SgzxPp31HU"/></a></figure><ol type="1" id="a4b089fc-8bc9-42b4-bbba-8b6fea5de0d2" class="numbered-list" start="1"><li><strong>HEALTH PLUS:</strong><strong> Blue, white, &amp; green card that says </strong><em><strong>“Health Plus.”</strong></em><strong>Health Plus is a part of Amerigroup.</strong></li></ol><figure id="f39142e7-682e-4323-9151-cc1f84b91f3a" class="image"><a href="https://lh6.googleusercontent.com/-EjJtvpb8J5syHzTBcOcQzPb7x2ujFI39pUXltDQMX01Fre74pXhKHABUYe6oor8F74P8TLrFm5-FRuu9lOv6SyjGyzmmwnw7lBlH-NvrWb0UE_f7exG0WKAtQAAwOvudruycXc"><img src="https://lh6.googleusercontent.com/-EjJtvpb8J5syHzTBcOcQzPb7x2ujFI39pUXltDQMX01Fre74pXhKHABUYe6oor8F74P8TLrFm5-FRuu9lOv6SyjGyzmmwnw7lBlH-NvrWb0UE_f7exG0WKAtQAAwOvudruycXc"/></a></figure><ol type="1" id="d7d06d07-0877-47b1-b98e-3dadb136188d" class="numbered-list" start="1"><li><strong>AFFINITY MEDICAID (EXCHANGE PLAN):</strong> Red, white, &amp; yellow card that says<em>“Affinity Health Plan.”</em> We <em><strong>do not</strong></em> accept this insurance <em><strong>IF</strong></em> the Member ID starts with the letter <strong>“H.”</strong><em>We </em><em><strong>CONTINUE TO ACCEPT </strong></em><em>other Affinity Medicaid plans once verified.</em></li></ol><figure id="07a4fd71-fb24-42fa-af12-583d7ecbaff0" class="image"><a href="https://lh5.googleusercontent.com/nqf6XIndIHW7JggpKifmUwFg2umEtNrhxeDlc87Ex6T-GWXR5H0Ud9OPAu9AD5jzk9mV9ABjjKiCPWZt6yYPRNLrLOe9n-AZgdtZvNC5hYH5Sd9kDw7_uFFd0Uv3TDZ1B46YyRo"><img src="https://lh5.googleusercontent.com/nqf6XIndIHW7JggpKifmUwFg2umEtNrhxeDlc87Ex6T-GWXR5H0Ud9OPAu9AD5jzk9mV9ABjjKiCPWZt6yYPRNLrLOe9n-AZgdtZvNC5hYH5Sd9kDw7_uFFd0Uv3TDZ1B46YyRo"/></a></figure><ol type="1" id="560de364-f8d5-41b2-a789-749bdfc01175" class="numbered-list" start="1"><li><strong>EMBLEM SELECT CARE (EXCHANGE PLAN): </strong>White card with the purple &amp; yellow Emblem Health logo. We <em><strong>do not</strong></em> accept this insurance <em><strong>IF</strong></em> it says <em>“Select Care.”</em></li></ol><figure id="f8aab0b3-aa5e-40c5-8f83-023d15e5e743" class="image"><a href="https://lh6.googleusercontent.com/_IEwsUMb8B0kIKYdADF2L0i3w_v1guDrHVIwzSTeVPuXgF-x7-MEERmNIv6QItH5HkI3kAz23Z740UoMW6rF-Mr7iMCOP7Whrmi4f08mC-m8U3QGEpEXb_NPSsmV-R5NpS0GmAA"><img src="https://lh6.googleusercontent.com/_IEwsUMb8B0kIKYdADF2L0i3w_v1guDrHVIwzSTeVPuXgF-x7-MEERmNIv6QItH5HkI3kAz23Z740UoMW6rF-Mr7iMCOP7Whrmi4f08mC-m8U3QGEpEXb_NPSsmV-R5NpS0GmAA"/></a></figure><ol type="1" id="27e24030-5018-4de4-bcf1-8dedee3336ad" class="numbered-list" start="1"><li><strong>HIP SILVER SELECT (EXCHANGE PLAN): </strong>White card with the purple &amp; yellow Emblem Health logo <strong>OR</strong> the card may state <em><strong>“HIP.”</strong></em></li></ol><figure id="2fe17591-a53a-463d-906d-714ce6c7c7cb" class="image"><a href="https://lh6.googleusercontent.com/_IEwsUMb8B0kIKYdADF2L0i3w_v1guDrHVIwzSTeVPuXgF-x7-MEERmNIv6QItH5HkI3kAz23Z740UoMW6rF-Mr7iMCOP7Whrmi4f08mC-m8U3QGEpEXb_NPSsmV-R5NpS0GmAA"><img src="https://lh6.googleusercontent.com/_IEwsUMb8B0kIKYdADF2L0i3w_v1guDrHVIwzSTeVPuXgF-x7-MEERmNIv6QItH5HkI3kAz23Z740UoMW6rF-Mr7iMCOP7Whrmi4f08mC-m8U3QGEpEXb_NPSsmV-R5NpS0GmAA"/></a></figure><ol type="1" id="a19144ff-487e-4582-b498-17238160820d" class="numbered-list" start="1"><li><strong>AFFINITY ACCESS (EXCHANGE PLAN):</strong> Red, white, &amp; yellow card that says <em>“Affinity Health Plan.”</em>We <em><strong>do not</strong></em> accept this insurance <em><strong>IF</strong></em> it says <em>“Affinity Access,”</em> usually on the <em>top right</em>.</li></ol><figure id="bfe89776-5f24-4e77-add8-6cf1580fbd4b" class="image"><a href="https://lh5.googleusercontent.com/nqf6XIndIHW7JggpKifmUwFg2umEtNrhxeDlc87Ex6T-GWXR5H0Ud9OPAu9AD5jzk9mV9ABjjKiCPWZt6yYPRNLrLOe9n-AZgdtZvNC5hYH5Sd9kDw7_uFFd0Uv3TDZ1B46YyRo"><img src="https://lh5.googleusercontent.com/nqf6XIndIHW7JggpKifmUwFg2umEtNrhxeDlc87Ex6T-GWXR5H0Ud9OPAu9AD5jzk9mV9ABjjKiCPWZt6yYPRNLrLOe9n-AZgdtZvNC5hYH5Sd9kDw7_uFFd0Uv3TDZ1B46YyRo"/></a></figure><ol type="1" id="fdc3c65a-7830-47a1-92a5-7bfd11b9dbe6" class="numbered-list" start="1"><li><em><strong>BLUE CROSS BLUE SHIELD BLUE PRIORITY &amp; PATHWAY (EXCHANGE PLANS): </strong></em><em>Blue &amp; white cards that say</em><em>“Blue Cross Blue Shield.” </em><em>We </em><em><strong>do not</strong></em><em> accept this insurance </em><em><strong>IF</strong></em><em> it says </em><em>“Blue Priority” or “Pathway.”</em></li></ol><p id="fcad42d8-706d-45eb-87fc-33571c47107c" class="">BLUE PRIORITY:</p><figure id="288f28d0-a5a8-4f0f-8a61-9cc29b1ec317" class="image"><a href="https://lh5.googleusercontent.com/5KhfUg3KB-Svh39KT35sWLAae0qW4BbwhWlb-1owRiRl0bw15EyAiIxKJxjv3qSkN5ysi6RcUKblc09CdYPG8MCtbfCPsDBwqGWGUflv8uf2OyeWvwJ-AXn_lh79orwAhb6Fy-U"><img src="https://lh5.googleusercontent.com/5KhfUg3KB-Svh39KT35sWLAae0qW4BbwhWlb-1owRiRl0bw15EyAiIxKJxjv3qSkN5ysi6RcUKblc09CdYPG8MCtbfCPsDBwqGWGUflv8uf2OyeWvwJ-AXn_lh79orwAhb6Fy-U"/></a></figure><p id="a2656b59-41f7-4233-943a-c51513019e8c" class="">PATHWAY:</p><figure id="a456c944-d034-40c2-b6c5-56df34913911" class="image"><a href="https://lh5.googleusercontent.com/sVk7KbrcTFDzBHvsLp5sV9N04-XATnUpmsCYj7UkNq1ALBDLweMwiPEsnoF08rBwMahXjH_lzdoykBXvhDJvtOIZTMM24K4B4kT9yHD7RHsmgf5yUPmzJ4uhOdvbGTw42CYIctU"><img src="https://lh5.googleusercontent.com/sVk7KbrcTFDzBHvsLp5sV9N04-XATnUpmsCYj7UkNq1ALBDLweMwiPEsnoF08rBwMahXjH_lzdoykBXvhDJvtOIZTMM24K4B4kT9yHD7RHsmgf5yUPmzJ4uhOdvbGTw42CYIctU"/></a></figure><ol type="1" id="a6b49103-f2fc-427b-b77d-e7f7c54c6141" class="numbered-list" start="1"><li><strong>NORTH SHORE LIJ/NSLIJ/NORTHWELL HEALTH CARECONNECT:</strong> Green, blue, &amp; white card that says <em>“CareConnect.”</em> This is an insurance that is <strong>ONLY</strong> contracted with the <strong>NSLIJ/Northwell Health system</strong>. Patients with this insurance can <em>only</em> go to a <strong>GoHealth or ProHealth</strong> urgent care center.</li></ol><figure id="04062178-4069-49a2-b349-14b08674e858" class="image"><a href="https://lh5.googleusercontent.com/Xtv8tZPHGPq6BKhUgrdKLpdr7fuYps16-QYX0stD6v641oeJeI_dQXfkH1SDFW9vRwBLR2fY3-TdFLhEHHLQaIwaVTzSKX2ci5JPkIisi5qQBIaV0ClwjSU6vQLUjZWekbv33LY"><img src="https://lh5.googleusercontent.com/Xtv8tZPHGPq6BKhUgrdKLpdr7fuYps16-QYX0stD6v641oeJeI_dQXfkH1SDFW9vRwBLR2fY3-TdFLhEHHLQaIwaVTzSKX2ci5JPkIisi5qQBIaV0ClwjSU6vQLUjZWekbv33LY"/></a></figure><ol type="1" id="d9fddd2d-ebe7-4357-917d-565445b59907" class="numbered-list" start="1"><li><strong>HUMANA:</strong> Green &amp; white card that says <em>“Humana.”</em> Humana plans <em><strong>MUST BE VERIFIED</strong></em> with patient’s individual plan <strong>FIRST</strong> to confirm coverage at our facility.</li></ol><figure id="42e0d5b7-a4a2-4b4f-88ba-54b31553afbe" class="image"><a href="https://lh6.googleusercontent.com/zDyNhAsOtJBMXmfcRdfSKMKLn3BmW8Jsr9JKUqGSiepYFEUBZQkfeHlEMZ0VyuddJ6SSSOQQ6srnzd0fnFYGeeG-KJcCGfIWEsZXH3Ae54ESoGxd76IysiOXZdrNnvgI8zuQno4"><img src="https://lh6.googleusercontent.com/zDyNhAsOtJBMXmfcRdfSKMKLn3BmW8Jsr9JKUqGSiepYFEUBZQkfeHlEMZ0VyuddJ6SSSOQQ6srnzd0fnFYGeeG-KJcCGfIWEsZXH3Ae54ESoGxd76IysiOXZdrNnvgI8zuQno4"/></a></figure><ol type="1" id="81e8057c-65fd-4dac-8fd4-a4f4cedaac1c" class="numbered-list" start="1"><li><strong>UNITED HEALTHCARE HMO:</strong><strong> </strong><strong>Blue &amp; white card that says </strong><em><strong>“United Healthcare.” </strong></em><strong>Usually has a PCP name on the card.</strong></li></ol><figure id="9e2537f1-72f8-4a07-86c4-f2e8197a4bca" class="image"><a href="https://lh4.googleusercontent.com/QVwlKOCIUic1FcUWlEa66_3fO-dDpC5rgwyNjiA7BqikhB_ROHir2nnmiStKO3b5m0AjWeGswqn_8umS37xRWBJm8E9WLou7DmbIeqjq-JZvIa6hDNPx9CDL5G3ie9OM6_1JYfY"><img src="https://lh4.googleusercontent.com/QVwlKOCIUic1FcUWlEa66_3fO-dDpC5rgwyNjiA7BqikhB_ROHir2nnmiStKO3b5m0AjWeGswqn_8umS37xRWBJm8E9WLou7DmbIeqjq-JZvIa6hDNPx9CDL5G3ie9OM6_1JYfY"/></a></figure><ol type="1" id="52f3beb5-0680-4d83-ab75-bd35429fc3ea" class="numbered-list" start="1"><li><em><strong>UNITED HEALTHCARE CHOICE PLUS:</strong></em><em><strong> Blue &amp; white card that says </strong></em><em><strong>“United Healthcare”</strong></em><em><strong>&amp; states </strong></em><em><strong>“Choice Plus”</strong></em><em><strong> somewhere on the card, usually on the bottom right. With this plan, we </strong></em><em><strong>need a prior authorization</strong></em><em><strong> from UHC for the patient to be seen at our facility.</strong></em></li></ol><figure id="3b7620c3-f78e-4668-8d11-24eafe1db066" class="image"><a href="https://lh6.googleusercontent.com/_oqNuUUo3xq6vRV153yghDkNlYFQ_BWPegisOewoapql6Eznxoc912OTTW879aN1B2n4wY5drhgFW0GBUzmBh8E99KxF3Mpo588IOAvizKlM8KcKBPHUMz0eNOE5HxDszt6zoV4"><img src="https://lh6.googleusercontent.com/_oqNuUUo3xq6vRV153yghDkNlYFQ_BWPegisOewoapql6Eznxoc912OTTW879aN1B2n4wY5drhgFW0GBUzmBh8E99KxF3Mpo588IOAvizKlM8KcKBPHUMz0eNOE5HxDszt6zoV4"/></a></figure><ol type="1" id="cd87aab9-0053-4e13-bed8-c629bff9d372" class="numbered-list" start="1"><li><em><strong>ADVOCATE GOOD SHEPHERD HMO:</strong></em><em><strong> Exact replica of card unavailable. Would have a logo like the one below or similar.</strong></em></li></ol><figure id="11ee5bdf-074c-4c50-a870-1e647e81b079" class="image"><a href="https://lh5.googleusercontent.com/82JYfA5v3wkfODk1bI_1T0D9DtnfC3-SwsYd9qoMQaoOEbcK-to7VXNbO8-pQuGLfmUIk5a94xYcOo7vlk8N3OvtSJm_W3gDr-QBm_MRMTIIq2UG7hpmACgxy4tefgu1JO28SuM"><img src="https://lh5.googleusercontent.com/82JYfA5v3wkfODk1bI_1T0D9DtnfC3-SwsYd9qoMQaoOEbcK-to7VXNbO8-pQuGLfmUIk5a94xYcOo7vlk8N3OvtSJm_W3gDr-QBm_MRMTIIq2UG7hpmACgxy4tefgu1JO28SuM"/></a></figure><ol type="1" id="441400f9-5a20-49d3-9807-17924f368f51" class="numbered-list" start="1"><li><em><strong>WELLCARE HMO:</strong></em><em><strong> Blue &amp; white care that says </strong></em><em><strong>“WellCare Health Plans.”</strong></em><em><strong> Usually has a PCP name on the card.</strong></em></li></ol><figure id="8f9c87b0-791f-40d2-890e-a499b62f0eb2" class="image"><a href="https://lh4.googleusercontent.com/q9rBiLAKgsY-RL3-axkGRzTy9x8-jDywPON3jyhxQ5eho6JSOz7-xTn6onvxj0pDLbkzaC5E8PfT4yLig-cZpDOeCLUx3OP_vXXaikizOBqQnCNtE5eE9lily-1OA68DZp_Pk1M"><img src="https://lh4.googleusercontent.com/q9rBiLAKgsY-RL3-axkGRzTy9x8-jDywPON3jyhxQ5eho6JSOz7-xTn6onvxj0pDLbkzaC5E8PfT4yLig-cZpDOeCLUx3OP_vXXaikizOBqQnCNtE5eE9lily-1OA68DZp_Pk1M"/></a></figure><ol type="1" id="2c0fd526-e58f-4826-aeaf-a6fc9d842131" class="numbered-list" start="1"><li><em><strong>TRAVELER’S INSURANCE:</strong></em><em><strong> We </strong></em><em><strong>do not accept</strong></em><em><strong> any form of traveler’s insurance. If a patient comes in with traveler’s insurance, inform them that we will bill them as a </strong></em><em><strong>Self-Pay</strong></em><em><strong> visit &amp; provide them with a </strong></em><em><strong>receipt that they can then submit to their insurance company.</strong></em></li></ol><ol type="1" id="5b84d491-7fe0-4f85-ad2f-2f0b33a1001e" class="numbered-list" start="2"><li><strong>*ANY PLANS WITH BRONZE, SILVER, GOLD, OR PLATINUM ON THE CARD ARE ALL EXCHANGE PLANS &amp; MUST BE VERIFIED WITH PATIENT’S INDIVIDUAL PLAN TO CONFIRM COVERAGE AT OUR FACILITY.**</strong></li></ol><ol type="1" id="233a1d78-4ca1-4a65-8b51-ae95cdb95cf1" class="numbered-list" start="3"><li><strong>SERVICES NOT COVERED BY INSURANCE:</strong><strong> The following services are </strong><strong>not</strong><strong> covered by insurance at our facility.</strong></li></ol><ul id="fdc4f809-fa13-42eb-ab8d-372e6ae00ea2" class="bulleted-list"><li><strong>*THE </strong><strong>ONLY</strong><strong> EXCEPTION TO THE FOLLOWING IS IF A PATIENT HAS MEDICARE AS THEIR PRIMARY INSURANCE. IN THOSE CASES, WE SUBMIT EVERYTHING TO MEDICARE (</strong><strong>EXCLUSIVE OF VACCINES</strong><strong>).**</strong></li></ul><ol type="1" id="81f0645a-4c43-4983-bc9f-ef0879412090" class="numbered-list" start="1"><li><strong>Vaccines:</strong><strong> We do not accept insurance for vaccines at our facility.</strong></li></ol><ol type="1" id="fa7268d6-26f8-4d0e-a976-34ac12322797" class="numbered-list" start="2"><li><strong>Supplies:</strong><strong> We do not accept insurance for supplies such as slings, crutches, air casts, knee immobilizers, etc. at our facility. Patients </strong><em><strong>may use their insurance for their provider visit</strong></em><strong>, but </strong><strong>must pay out of pocket</strong><strong> for any necessary supplies.</strong></li></ol><ol type="1" id="24ccd9b6-93e9-4f33-8e5c-c4f14b67f2a3" class="numbered-list" start="3"><li><strong>CDL, TLC, &amp; IMMIGRATION VISITS ARE NOT COVERED BY INSURANCE.</strong></li></ol><ol type="1" id="1bc72537-d4f5-43f4-b45f-6128d7822d15" class="numbered-list" start="4"><li><em><strong>Medical Records:</strong></em><em><strong> We do not accept insurance for medical record requests. They are at an </strong></em><em><strong>additional cost of </strong></em><em><strong>$0.75/page</strong></em><em><strong>.</strong></em></li></ol><ol type="1" id="30d75ddd-74b6-4c63-ab22-6cc0cd4a0588" class="numbered-list" start="5"><li><em><strong>Forms:</strong></em><em><strong> We do not accept insurance for the completion of forms that patients bring in. They are at an </strong></em><em><strong>additional cost of </strong></em><em><strong>$10/page</strong></em><em><strong>.</strong></em></li></ol><ol type="1" id="555ab694-55e4-416f-8c0b-11fc0a7d9148" class="numbered-list" start="6"><li><strong>SPECIAL INSURANCE CASES:</strong><strong> The following insurances have additional information that needs to be provided or verified in addition to the verification process on eClinicalWorks (detailed later on in this manual).</strong></li></ol><ol type="1" id="51adce87-9f1d-48bd-ad46-c967a50a2040" class="numbered-list" start="7"><li><strong>MEDICARE:</strong><strong> </strong><strong>Patients with Medicare as their primary insurance should be made aware of the following:</strong></li></ol><ul id="2e86d6b1-13a7-4381-8865-5450f7c4f398" class="bulleted-list"><li>Medicare holders have a <strong>start of year deductible</strong> which <em>changes each January 1</em><em>st</em><em>.</em> That deductible must be fulfilled before Medicare will start covering services rendered.</li></ul><ul id="e3de4de1-d2e3-4289-bfb6-2d74558af3a7" class="bulleted-list"><li>Medicare patients <strong>must complete</strong> a <em>Medicare Advanced Beneficiary Notice</em> at the <strong>start of each year</strong>. This notice specifies what Medicare does not cover &amp; the patient must choose their preferred billing options on the form, followed by signature &amp; date.</li></ul><ul id="93de3f4b-2153-4d9c-a5e2-ae86ec669b3c" class="bulleted-list"><li>All claims must be submitted to Medicare by our facility, <em>inclusive of those services that we do not normally accept insurance for.</em><strong>The </strong><em><strong>ONLY</strong></em><strong> exception is with regards to vaccinations. </strong><strong>NO ADMINISTERED VACCINES ARE TO BE SUBMITTED TO MEDICARE </strong><em><strong>EXCEPT</strong></em><strong> THE TD (TETANUS) VACCINE IF NEEDED DUE TO INJURY</strong><strong> (e.g.; stepped on a nail, dog bite, wound, etc).</strong></li></ul><ul id="0d0fd986-7486-4ec9-8548-3d719fff9ee5" class="bulleted-list"><li>Medicare patients will normally have a form of <em>secondary insurance.</em> These insurances <strong>must also be verified</strong> in addition to the primary Medicare insurance. Examples of secondary insurances are The Empire Plan, AARP, United Healthcare, Medicaid, etc.</li></ul><p id="07db8afe-c5a1-48f1-bac6-b16d6b85e02a" class="">b)    <strong>FIDELIS: </strong>There are three forms of Fidelis insurance; Fidelis Care of NY Exchange, Fidelis	Medicaid, &amp; Fidelis Medicare. <strong>ALL</strong> Fidelis insurances must be verified at the initial visit.</p><ul id="fe203695-4a22-4b5a-8e60-8c272ab33ab6" class="bulleted-list"><li><strong>FIDELIS CARE OF NY EXCHANGE:</strong> These plans <em>usually</em> have a <em>co-payment amount printed on the insurance card.</em> It is best to call &amp; verify the patient’s coverage. <strong>Even</strong> <strong>IF</strong> the member has a co-payment amount, a Fidelis Prior Authorization Form should be completed upon the first visit. If we receive a confirmation that states “No Prior Authorization Needed” from Fidelis, then the Prior Authorization form <em><strong>DOES NOT</strong></em> need to be completed for future visits.</li></ul><ul id="30e0a904-67d3-4c8f-ba31-7c1a87c3b049" class="bulleted-list"><li>If you speak to a representative at Fidelis, a Billing Alert should be added to the patient’s chart with the <strong>name of the person</strong> you spoke to at Fidelis, <strong>“no prior-auth needed,”</strong>&amp; a <strong>timestamp. </strong><em>(e.g.; “Spoke to Bob at Fidelis. No prior-auth needed. &lt;</em><em>Vaishnav,Siddhi 03/16/2016 03:12:03 PM EDT &gt;”)</em></li></ul><ul id="f6ca09c6-790d-441b-a310-59c01f2c6505" class="bulleted-list"><li><strong></strong><strong>FIDELIS MEDICAID:</strong> These plans <em>usually need a Fidelis Prior Authorization Form</em> to be completed before the patient is seen by the provider. It is best to call &amp; verify the patient’s coverage. For Fidelis Medicaid patients, the <strong>Prior Authorization Form</strong> must be completed as follows:</li></ul><ul id="f39d00bc-e8fc-490f-9267-28d68183fe85" class="bulleted-list"><li>The <strong>front desk</strong> must print:</li></ul><p id="36dc9076-28ca-4437-a371-124a20082dad" class="">1. Fidelis Care <strong>Member Name</strong></p><p id="13d57a99-9445-463b-b250-3f6f499d183f" class="">2. Fidelis Care <strong>Member ID #</strong></p><p id="f3dc1b59-c86c-4014-9ab1-3693de05a1d5" class="">3. Patient’s <strong>Date of Birth</strong></p><p id="d548a10e-c847-4861-b2c3-700c12bba8ce" class="">4. Patient’s <strong>Date of Procedure (the Date Of Service).</strong></p><ul id="2538696a-753c-4a87-b14d-3e0be7e4b6bd" class="bulleted-list"><li>The <strong>scribe</strong> must print:</li></ul><p id="6a801028-0d39-4db7-82b8-e8f372383949" class="">1. <strong>ICD-10</strong> Diagnosis Code(s)</p><p id="5090368a-f0d9-4a37-bf09-7a56d8f9293b" class="">2. Services: <strong>CPT/Procedure Code(s) &amp; Description</strong>.</p><ul id="4d5264e4-0e9e-4a65-aab7-685ada89d714" class="bulleted-list"><li>The <strong>provider</strong> must bring the <strong>completed</strong> paperwork to the front desk by <strong>end of patient’s visit.</strong></li></ul><ul id="a67ef5ad-46f4-4a0e-8ad1-ba797b60039a" class="bulleted-list"><li>The <strong>front desk</strong> must <strong>fax</strong> the <strong>completed</strong> paperwork to Fidelis at the number printed on the Prior Authorization Form by <strong>end of day.</strong></li></ul><ul id="0f5f19f9-64ee-4e71-9b25-76304d6be3a9" class="bulleted-list"><li>The <strong>front desk</strong> must <strong>scan</strong> both the <strong>completed </strong>paperwork &amp; the <strong>fax confirmation </strong>into the patient’s chart in the <em>“Ins Eligibility”</em> folder as <em>“Date/Prior Auth/Fax Conf Fidelis” (i.e.; “03.16.16 Prior Auth/Fax Conf Fidelis”).</em></li></ul><p id="01ece16b-9429-481d-8e9b-08699defad2d" class="">1. This paperwork is <strong>NOT</strong> to be “Reviewed.”</p><p id="88faa511-18db-45d5-aa5a-e012d6b5b300" class="">2. You must select <em>“Browse”</em> in the <em>“Description”</em> section &amp; choose the template for <strong>“FIDELIS PRIOR AUTH.”</strong></p><p id="6798e396-1932-4e6e-9b0b-e8d978993104" class="">3. Select <strong>“OK.”</strong></p><p id="ab4e30ed-79b4-4e69-98d6-471e358d87d0" class="">4. Input the <strong>Date Of Service</strong> where it says <strong>“[DATE].”</strong></p><p id="2e91f035-a8b4-47fa-923b-bd2945bcad0e" class="">5. <strong>Assign</strong> to <em>“Billing, One.”</em></p><p id="777d037a-2f06-42d1-9c37-b52d9ac00083" class="">6. Select <strong>“OK.”</strong></p><ul id="544914ef-b7b1-42a4-a241-9dafa27278b1" class="bulleted-list"><li>An approval or denial of the patient’s visit by Fidelis is <em>usually faxed to our facility within 24 hours.</em> The approval or denial <strong>must also be scanned</strong> into the patient’s chart in the <em>“Ins Eligibility”</em> folder as <em>“Date/Approval or Denial Fidelis” (i.e.; “03.16.16 Approval Fidelis”, “03.16.16 Denial Fidelis”).</em></li></ul><p id="4cf0a82b-7d5f-40ca-9f3c-86b4bf9b3719" class="">1. This paperwork is <strong>NOT</strong> to be “Reviewed.”</p><p id="b40606a7-c5c2-4c0e-8610-c253943f0fcb" class="">2. <strong>Assign</strong> to <em>“Billing, One.”</em></p><p id="c236c05d-0c30-423c-9028-e769fedec02a" class="">3. Select <strong>“OK.”</strong></p><ul id="28e67ccb-6e10-4771-b6a5-578e3b70733a" class="bulleted-list"><li>If we receive a notice from Fidelis that states that a patient does not require prior authorization though they may have no specified co-payment on the card, you must add a Billing Alert stating <strong>“Patient does not require Fidelis Prior-Authorization”</strong>&amp; a <strong>timestamp. </strong><em>(i.e.; “Patient does not require Fidelis Prior-Authorization. &lt;</em><em>Vaishnav,Siddhi 03/16/2016 03:12:03 PM EDT &gt;”). </em>This notice <strong>must also be scanned </strong>into the patient’s chart in the <em>“Ins Eligibility” </em>folder as <em>“Date/No Auth Needed/Fidelis” (i.e.; “03.16.16 No Auth Needed Fidelis”).</em></li></ul><p id="11d6bb26-1171-4665-8e55-9fb4231a513d" class="">1. This paperwork is <strong>NOT</strong> to be “Reviewed.”</p><p id="c8169d05-fcda-43f9-afc4-af486758d577" class="">2. <strong>Assign</strong> to <em>“Billing, One.”</em></p><p id="fccea89a-416a-4d98-a15f-6fd6b3c628e2" class="">3. Select <strong>“OK.</strong></p><ol type="1" id="56016c5b-8644-4228-a93d-d0e635c762fc" class="numbered-list" start="1"><li><strong>CO-PAYMENTS &amp; DEDUCTIBLES:</strong></li></ol><ol type="1" id="343dd0ad-dac9-4f58-a068-f7b3fdd90aee" class="numbered-list" start="2"><li>Statcare is <strong>not</strong> a <em>Primary Care Provider (PCP)</em>; it is an <em>Urgent Care Facility</em>. Because of this, we collect either a <strong>“Specialist Co-Pay”</strong> or a specified <strong>“Urgent Care Co-Pay”</strong> from a patient. These are <em>usually</em> printed on the patient’s insurance card.</li></ol><ol type="1" id="77ee43c2-d28b-4e02-ac3e-02e4d74b5dbe" class="numbered-list" start="3"><li>If a patient has an <strong>in-network deductible</strong>, we collect $100.00 up front as payment which is applied to the patient’s deductible. Once a patient’s deductible has been met, only then will the co-payment apply. Patients with questions or hesitations with regards to this policy must call their insurance provider &amp; clarify whether or not their in-network deductible applies to our specific facility &amp; provide the name of the individual they spoke with/date of the call/reference #.</li></ol><ul id="100705b3-684a-42c8-8b6d-9968fe78e814" class="bulleted-list"><li>The <strong>$100.00</strong> is collected to be applied towards the deductible for a patient’s <strong>initial visit.</strong></li></ul><ul id="6f8134d6-95e4-48f5-ba49-ae20c636aec2" class="bulleted-list"><li>For a <strong>follow-up visit for the </strong><strong>SAME</strong><strong> chief complaint</strong>, <strong>$75.00</strong> is collected to be applied towards the deductible.</li></ul><ul id="991c58c4-bc33-4f6d-9b03-1e12943bff62" class="bulleted-list"><li>If the patient returns to the facility for a <strong>NEW </strong>chief complaint, <strong>$100.00</strong> is collected once again, to be applied towards the deductible.</li></ul><ol type="1" id="481f6c43-00b1-483b-b20c-6dd1563b001f" class="numbered-list" start="1"><li><strong>MISCELLANEOUS:</strong></li></ol><ul id="53d2219d-b7bc-4bd0-8ac2-f4e86d9ccac4" class="bulleted-list"><li><em><strong>ALWAYS check the address on the back of an insurance card</strong></em><em><strong> to check the correct address for where to send </strong></em><em><strong>MEDICAL CLAIMS.</strong></em><em><strong> Different insurances with the same names (i.e.; EmblemHealth, United Healthcare, HIP, Fidelis, etc.) may sometimes have different addresses/P.O. Boxes depending on the patient’s specific plan. </strong></em><em><strong>The incorrect address may delay any payment to our facility on behalf of the insurance company &amp; may also affect a patient’s balance in our system.</strong></em></li></ul><ul id="9a370e02-7813-4e14-9867-02951b9df3a8" class="bulleted-list"><li><strong>ALWAYS </strong><strong>scan the </strong><strong>FRONT </strong><strong>AND</strong><strong> BACK</strong><strong> of a patient’s insurance card into the chart.</strong></li></ul><ul id="0122e3e7-6dd7-4016-82d1-54787ab82deb" class="bulleted-list"><li><strong>ALWAYS </strong><strong>verify the patient’s insurance using the </strong><strong>“IE”</strong><strong> button in the chart. If you receive an error message, you may call the insurance company and/or use the online portals available whose details are on the </strong><em><strong>“Front Desk Master Spreadsheet”</strong></em><strong> in your </strong><strong>Google Drive.</strong></li></ul><ul id="6b3a4ec3-7a0c-4ce1-b044-1483e5fdb10e" class="bulleted-list"><li><strong>ALWAYS</strong><strong> verify that the insured’s name is input into their chart </strong><em><strong>the exact way</strong></em><strong> as is listed on their insurance card.</strong></li></ul><ul id="dfdc7073-4ec6-4ab7-9b25-e2046e482bd5" class="bulleted-list"><li><strong>ALWAYS </strong><strong>confirm who the </strong><strong>primary holder</strong><strong> of the insurance is. This will be input into the </strong><em><strong>“Responsible Party”</strong></em><strong> section in the patient’s chart (detailed later in the manual).</strong></li></ul><ul id="f85d11cd-215d-4230-944d-b8cadd8a71e6" class="bulleted-list"><li><strong>ALWAYS </strong><strong>make sure that the name and </strong><strong>face</strong><strong> on the patient’s photo ID matches that of the name on the insurance card. If the patient is a minor (under the age of 18), verify that they are covered under the primary holder’s policy.</strong></li></ul><ul id="260baad1-8613-46ff-b56d-06742ce5ad4f" class="bulleted-list"><li><strong>Medicaid Plans </strong><strong>will have the patient as the “Responsible Party,” </strong><strong>even if the patient is a minor.</strong><strong> Some examples are </strong><em><strong>United Healthcare Community Plan, Healthfirst (paper card), Fidelis Medicaid, Affinity Medicaid, etc.</strong></em></li></ul><ul id="fc727c72-04dd-4866-aec7-314a6f919231" class="bulleted-list"><li><strong>If a patient asks for an </strong><strong>itemized receipt</strong><strong> for services rendered, you may do </strong><em><strong>one of two things:</strong></em></li></ul><ol type="1" id="285ca5d9-4974-4b02-8e4c-e05cc7d18e8c" class="numbered-list" start="1"><li><strong>Go to the </strong><strong>Patient Hub </strong><strong>&amp; select </strong><strong>“Medical Summary.”</strong><strong> This will print out a sheet with </strong><em><strong>procedure codes, dates of service, &amp; any other pertinent information</strong></em><strong> that the patient may need for their personal records or to submit to their insurance company.</strong></li></ol><ol type="1" id="2f469b15-2792-4c7d-b268-fc6f5331d9b9" class="numbered-list" start="2"><li><em><strong>Ask a manager</strong></em><strong> if they can access the patient’s payments through eClinicalWorks &amp; print out a detailed &amp; itemized receipt for the patient.</strong></li></ol></div></article></body></html>

@@ -1,0 +1,636 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Company Personnel Directory</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2726973c-0d19-4b1b-b805-7183284803f0" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_04.png" style="object-position:center 85.3%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🙋‍♂️</span></div><h1 class="page-title">Company Personnel Directory</h1></header><div class="page-body"><div id="e298680c-05ff-4527-bbc9-d5c3fac095df" class="collection-content"><h4 class="collection-title">Nao Medical Company Directory</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Extension</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Location</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Role</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesEmail"><path d="M14,6.22508 C14,7.0471 13.8666,7.79918 13.5999,8.48134 C13.3332,9.16351 12.9563,9.69867 12.4692,10.0868 C11.9821,10.475 11.524,10.6862 10.9764,10.6862 C10.5473,10.6862 10.1676,10.5849 9.83705,10.3823 C9.50653,10.1796 9.2688,9.91274 9.12384,9.58165 C8.51065,10.318 7.56114,10.6862 6.5928,10.6862 C5.56647,10.6862 4.75762,10.3823 4.16618,9.77431 C3.57473,9.16636 3.27902,8.33436 3.27902,7.27829 C3.27902,6.0738 3.66752,5.10337 4.44451,4.36697 C5.2215,3.63058 6.2362,3.26239 7.48867,3.26239 C7.98734,3.26239 9.5206,3.47449 9.74131,3.53033 C10.2518,3.65949 10.6003,4.12335 10.5763,4.6417 C10.5697,4.78537 10.5175,5.88115 10.4198,7.92905 C10.4198,8.72253 10.6401,9.11927 11.0808,9.11927 C11.4519,9.11927 11.7476,8.8524 11.968,8.31865 C12.1883,7.78491 12.2985,7.08706 12.2985,6.22508 C12.2985,5.30601 12.1042,4.49399 11.7157,3.78899 C11.3272,3.08399 10.7808,2.54597 10.0762,2.17492 C9.37173,1.80387 8.56719,1.61835 7.66263,1.61835 C6.49134,1.61835 5.47373,1.85525 4.60976,2.32905 C3.74579,2.80286 3.08332,3.48644 2.62234,4.37981 C2.16136,5.27319 1.93089,6.30499 1.93089,7.47523 C1.93089,9.05077 2.35851,10.2595 3.21378,11.1015 C4.06905,11.9435 5.30847,12.3645 6.93203,12.3645 C7.54667,12.3645 8.22216,12.2975 8.95856,12.1633 C9.18419,12.1222 9.47682,12.0555 9.83645,11.9632 C10.2649,11.8532 10.7081,12.0814 10.8607,12.4905 C11.0082,12.8863 10.802,13.3249 10.4001,13.4701 C10.3865,13.475 10.3728,13.4796 10.359,13.4837 C9.30721,13.7996 8.18808,13.9716 7.00161,14 C4.7982,14 3.08041,13.4292 1.84823,12.2875 C0.616061,11.1458 0,9.55883 0,7.52661 C0,6.11661 0.314555,4.8365 0.943688,3.68624 C1.57282,2.53598 2.46867,1.63405 3.63126,0.980429 C4.79385,0.326807 6.13184,0 7.64524,0 C8.9209,0 10.1589,0.290316 11.0634,0.770643 C11.968,1.25097 12.6374,1.99796 13.1824,2.94557 C13.7275,3.89318 14,4.98634 14,6.22508 Z M5.38462,7.23555 C5.38462,8.44263 5.87335,9.04616 6.85083,9.04616 C7.3623,9.04616 7.75159,8.86452 8.01869,8.50126 C8.28579,8.13799 8.44773,7.54734 8.50456,6.72927 L8.61539,4.83286 C8.32555,4.76993 7.9988,4.73846 7.63509,4.73846 C6.92471,4.73846 6.37204,4.96157 5.97707,5.40779 C5.58211,5.854 5.38462,6.46325 5.38462,7.23555 Z"></path></svg></span>E-mail Address</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPhoneNumber"><path d="M2.20731,0.0127209 C2.1105,-0.0066419 1.99432,-0.00664663 1.91687,0.032079 C0.871279,0.438698 0.212942,1.92964 0.0580392,2.95587 C-0.426031,6.28627 2.20731,9.17133 4.62766,11.0689 C6.77694,12.7534 10.9012,15.5223 13.3409,12.8503 C13.6507,12.5211 14.0186,12.037 13.9993,11.553 C13.9412,10.7397 13.186,10.1588 12.6051,9.71349 C12.1598,9.38432 11.2304,8.47427 10.6495,8.49363 C10.1267,8.51299 9.79754,9.05515 9.46837,9.38432 L8.88748,9.96521 C8.79067,10.062 7.55145,9.24878 7.41591,9.15197 C6.91248,8.8228 6.4284,8.45491 6.00242,8.04829 C5.57644,7.64167 5.18919,7.19632 4.86002,6.73161 C4.7632,6.59607 3.96933,5.41495 4.04678,5.31813 C4.04678,5.31813 4.72448,4.58234 4.91811,4.2919 C5.32473,3.67229 5.63453,3.18822 5.16982,2.45243 C4.99556,2.18135 4.78257,1.96836 4.55021,1.73601 C4.14359,1.34875 3.73698,0.942131 3.27227,0.612963 C3.02055,0.419335 2.59457,0.0708094 2.20731,0.0127209 Z"></path></svg></span>Cellphone Number</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Reporting To</th></tr></thead><tbody><tr id="3e1841d6-c3c6-4687-baf5-bcd3ce806030"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/100%203e1841d6c3c64687baf5bcd3ce806030.html">100</a></td><td class="cell-tv{Q">Priti &amp; Sandeep Jain</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">CEO/CMO </td><td class="cell-hU^&lt;"><a href="admin@statcarewalkin.com" class="url-value">admin@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A " class="url-value">N/A </a></td><td class="cell-t[uS"></td></tr><tr id="2dc6d339-f17d-4837-9991-be32c5bfeb8c"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/101%202dc6d339f17d48379991be32c5bfeb8c.html">101</a></td><td class="cell-tv{Q">Frontdesk 1</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="e5564c19-b87a-41c6-9f8b-11e9d4369fdb"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/102%20e5564c19b87a41c69f8b11e9d4369fdb.html">102</a></td><td class="cell-tv{Q">Frontdesk 2</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="19519bc0-69c9-48dc-942a-e66fb1b29182"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/104%2019519bc069c948dc942ae66fb1b29182.html">104</a></td><td class="cell-tv{Q">Iman Simmonds</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Executive Assistant</td><td class="cell-hU^&lt;"><a href="simmondsi@statcarewalkin.com" class="url-value">simmondsi@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 263-1729" class="url-value">(516) 263-1729</a></td><td class="cell-t[uS"></td></tr><tr id="a3a6e645-e159-47d5-b5d7-206977b3ad30"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/108%20a3a6e645e15947d5b5d7206977b3ad30.html">108</a></td><td class="cell-tv{Q">Debra Arena</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Accounting</td><td class="cell-hU^&lt;"><a href="arenad@statcarewalkin.com" class="url-value">arenad@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 697-0253" class="url-value">(516) 697-0253</a></td><td class="cell-t[uS"></td></tr><tr id="93d14460-1914-4fb0-8876-1e22db757247"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/109%2093d1446019144fb088761e22db757247.html">109</a></td><td class="cell-tv{Q">Argyro Papoutsaki </td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Site Manager</td><td class="cell-hU^&lt;"><a href="papoutsakia@statcarewalkin.com" class="url-value">papoutsakia@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 343-6001" class="url-value">(516) 343-6001</a></td><td class="cell-t[uS"></td></tr><tr id="83b2bd65-5b65-42ae-b126-7a03ec2c301f"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/201%2083b2bd655b6542aeb1267a03ec2c301f.html">201</a></td><td class="cell-tv{Q">Frontdesk 1</td><td class="cell-nTcv">Astoria</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="8dbd4e33-5e4c-480d-b35b-9f50f1d630e7"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/202%208dbd4e335e4c480db35b9f50f1d630e7.html">202</a></td><td class="cell-tv{Q">Frontdesk 2</td><td class="cell-nTcv">Astoria</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="73c6dce9-4ccf-4055-bd98-8c7206310689"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/201%2073c6dce94ccf4055bd988c7206310689.html">201</a></td><td class="cell-tv{Q">Pamela Tapia</td><td class="cell-nTcv">Astoria</td><td class="cell-{;Gk">Site Manager</td><td class="cell-hU^&lt;"><a href="tapiap@statcarewalkin.com" class="url-value">tapiap@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(347) 744-8725" class="url-value">(347) 744-8725</a></td><td class="cell-t[uS"></td></tr><tr id="1c7dda93-91cb-4ac6-8e42-3dab16dbec5a"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/266%201c7dda9391cb4ac68e423dab16dbec5a.html">266</a></td><td class="cell-tv{Q">Amanda Alladin</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Quality Assurance Manager and Compliance Officer</td><td class="cell-hU^&lt;"><a href="alladina@statcarewalkin.com" class="url-value">alladina@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(954) 529-3919" class="url-value">(954) 529-3919</a></td><td class="cell-t[uS"></td></tr><tr id="754a3eae-0ef3-4023-9775-6cb243434d23"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/288%20754a3eae0ef3402397756cb243434d23.html">288</a></td><td class="cell-tv{Q">Sharad Suri</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Chief Experience Officer, Business Development and Marketing</td><td class="cell-hU^&lt;"><a href="suris@statcarewalkin.com" class="url-value">suris@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 439-2664" class="url-value">(516) 439-2664</a></td><td class="cell-t[uS"></td></tr><tr id="9e38e828-965c-484a-92d6-cfcd9c1e5799"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/301%209e38e828965c484a92d6cfcd9c1e5799.html">301</a></td><td class="cell-tv{Q">Frontdesk 1</td><td class="cell-nTcv">Brooklyn</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="427d2ea9-afac-4a04-b354-22080bc6db55"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/302%20427d2ea9afac4a04b35422080bc6db55.html">302</a></td><td class="cell-tv{Q">Frontdesk 2</td><td class="cell-nTcv">Brooklyn</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="869a9242-3fd0-48ce-b38c-3a1361e1c7e1"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/309%20869a92423fd048ceb38c3a1361e1c7e1.html">309</a></td><td class="cell-tv{Q">Maria Rodriguez</td><td class="cell-nTcv">Brooklyn</td><td class="cell-{;Gk">Site Manager</td><td class="cell-hU^&lt;"><a href="Rodriguezm@statcarewalkin.com" class="url-value">Rodriguezm@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="d1354887-83df-408e-a512-5b0da5d7b03f"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/362%20d135488783df408ea5125b0da5d7b03f.html">362</a></td><td class="cell-tv{Q">Sandeep Jain</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">CEO, Business Development and Marketing</td><td class="cell-hU^&lt;"><a href="jainmd@statcarewalkin.com" class="url-value">jainmd@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 695-7524" class="url-value">(516) 695-7524</a></td><td class="cell-t[uS"></td></tr><tr id="534d5825-f645-44b5-94ea-939c4e640015"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/401%20534d5825f64544b594ea939c4e640015.html">401</a></td><td class="cell-tv{Q">Frontdesk 1</td><td class="cell-nTcv">Bartow, Bronx</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="a13c47a6-d89d-4f13-a148-30209cb0e7b0"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/402%20a13c47a6d89d4f13a14830209cb0e7b0.html">402</a></td><td class="cell-tv{Q">Frontdesk 2</td><td class="cell-nTcv">Bartow, Bronx</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="d1329954-716d-4968-966a-0a961c24f4e7"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/409%20d1329954716d4968966a0a961c24f4e7.html">409</a></td><td class="cell-tv{Q">Diannette Velez</td><td class="cell-nTcv">Bartow, Bronx</td><td class="cell-{;Gk">Site Manager </td><td class="cell-hU^&lt;"><a href="velezd@statcarewalkin.com" class="url-value">velezd@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(787) 430-4695" class="url-value">(787) 430-4695</a></td><td class="cell-t[uS"></td></tr><tr id="3936de18-0542-489f-997f-1b6bf438b618"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/501%203936de180542489f997f1b6bf438b618.html">501</a></td><td class="cell-tv{Q">Frontdesk 1</td><td class="cell-nTcv">174th, Bronx</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="760f4f5b-2019-457f-9b6e-7681a9334a11"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/502%20760f4f5b2019457f9b6e7681a9334a11.html">502</a></td><td class="cell-tv{Q">Frontdesk 2</td><td class="cell-nTcv">174th, Bronx</td><td class="cell-{;Gk">PCA</td><td class="cell-hU^&lt;"><a href="frontdesk@statcarewalkin.com" class="url-value">frontdesk@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="e49a3c39-effe-4ced-b58b-e27ee0f05183"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/509%20e49a3c39effe4cedb58be27ee0f05183.html">509</a></td><td class="cell-tv{Q">Christina Castillo</td><td class="cell-nTcv">174th, Bronx</td><td class="cell-{;Gk">Site Manager</td><td class="cell-hU^&lt;"><a href="castilloc@statcarewalkin.com" class="url-value">castilloc@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(917) 557-7258" class="url-value">(917) 557-7258</a></td><td class="cell-t[uS"></td></tr><tr id="26518693-9572-4ac3-840a-171c4b0580b0"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/700%202651869395724ac3840a171c4b0580b0.html">700 </a></td><td class="cell-tv{Q">Atif Farid </td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Clinical Operations Manager and Human Resources</td><td class="cell-hU^&lt;"><a href="farida@statcarewalkin.com" class="url-value">farida@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(347) 990-70253" class="url-value">(347) 990-70253</a></td><td class="cell-t[uS"></td></tr><tr id="cb65ca9f-0c5b-4efb-b9b2-ec9d9d1de7ad"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/723%20cb65ca9f0c5b4efbb9b2ec9d9d1de7ad.html">723</a></td><td class="cell-tv{Q">Jason Aguilar</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">Business Operations Manager and Safety Officer</td><td class="cell-hU^&lt;"><a href="aguilarj@statcarewalkin.com" class="url-value">aguilarj@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 713-0140" class="url-value">(516) 713-0140</a></td><td class="cell-t[uS"></td></tr><tr id="adb1df5b-ae97-4acb-8cac-3e73ca366546"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/747%20adb1df5bae974acb8cac3e73ca366546.html">747</a></td><td class="cell-tv{Q">Priti Jain</td><td class="cell-nTcv">Hicksville</td><td class="cell-{;Gk">CEO and Chief Medical Officer</td><td class="cell-hU^&lt;"><a href="admin@statcarewalkin.com" class="url-value">admin@statcarewalkin.com</a></td><td class="cell-wgJE"><a href="(516) 695-7493" class="url-value">(516) 695-7493</a></td><td class="cell-t[uS"></td></tr><tr id="de72a176-006c-4595-9838-f66360d634f7"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/750%20de72a176006c45959838f66360d634f7.html">750</a></td><td class="cell-tv{Q">Call Center</td><td class="cell-nTcv">N/A</td><td class="cell-{;Gk">N/A</td><td class="cell-hU^&lt;"><a href="N/A" class="url-value">N/A</a></td><td class="cell-wgJE"><a href="N/A" class="url-value">N/A</a></td><td class="cell-t[uS"></td></tr><tr id="e23b2ae0-fe72-4d0a-9f9d-e0cebd6309a5"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%20e23b2ae0fe724d0a9f9de0cebd6309a5.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="8a378cf0-fd8f-4243-a303-dc9759120263"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%208a378cf0fd8f4243a303dc9759120263.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="c5a26207-bbaf-4a53-aa2b-8bf01edf968a"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%20c5a26207bbaf4a53aa2b8bf01edf968a.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="9e4b6db8-5acf-4f9b-b26c-5223e27560aa"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%209e4b6db85acf4f9bb26c5223e27560aa.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="e7424f11-10ad-4d6b-8d03-d5b0e31eade2"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%20e7424f1110ad4d6b8d03d5b0e31eade2.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="42d6a7d1-8306-43b8-8dac-0610907c2d73"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%2042d6a7d1830643b88dac0610907c2d73.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="58e9a2ff-d68e-42cc-87bb-006c26849b1a"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%2058e9a2ffd68e42cc87bb006c26849b1a.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="5bed0e13-8444-4e7a-942a-8d4becd7cd50"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%205bed0e1384444e7a942a8d4becd7cd50.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="5889a9f7-10ce-4121-8286-8dd5a28fd1ed"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%205889a9f710ce412182868dd5a28fd1ed.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr><tr id="a3fdb45a-8250-42bf-b784-e69c76ee7978"><td class="cell-title"><a href="Company%20Personnel%20Directory%202726973c0d194b1bb8057183284803f0/Nao%20Medical%20Company%20Directory%20e298680c05ff4527bbc9d5c3fac095df/Untitled%20a3fdb45a825042bfb784e69c76ee7978.html">Untitled</a></td><td class="cell-tv{Q"></td><td class="cell-nTcv"></td><td class="cell-{;Gk"></td><td class="cell-hU^&lt;"></td><td class="cell-wgJE"></td><td class="cell-t[uS"></td></tr></tbody></table></div><p id="2858af3a-85ee-444c-bbdc-2951417209fe" class="">
+</p></div></article></body></html>

@@ -1,0 +1,647 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Compensation &amp; Pay</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default 
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c460bc8d-6a11-4036-ae4e-3d76f44c1191" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_02.png" style="object-position:center 84.1%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💸</span></div><h1 class="page-title">Compensation &amp; Pay</h1></header><div class="page-body"><nav id="b740cd76-0394-40f0-b3c8-31986738390a" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a43a348b-b184-464b-b082-0a92a2de0a1f"><strong>Paychecks</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#89816864-22b3-4dc3-8980-4b1dc5631e78"><strong>Paycheck Errors</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#af2634b6-f7f5-429e-bbaa-729d0f49075f"><strong>Garnishment</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#50e5a970-1638-457c-9441-9a1f2699485f"><strong>Exempt Employees</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01a7f9df-7d2f-410d-ac3a-7a8aa9ce003a"><strong>Overtime</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#211af3cc-2859-40cd-bd0d-39c48b53a6c8"><strong>Notification of Wages</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bd4cd6bb-d93a-43be-b004-a487283984db"><strong>On-Call/AOD</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#da389d19-291e-422b-8300-18e95df74d88"><strong>NYC - Commuter Benefit</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#826eadf0-4113-42b8-911e-c89e036d1ff5"><strong>Health Benefits</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5ca25cf8-cfc7-4246-a238-6559c7ff1c69"><strong>Disability Benefits</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1c44e279-7ae3-45c5-912e-ac54b878339f"><strong>401(k) Defined Benefit Pension Plan/Smart Dollar</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#59c4985b-4d7a-4dda-9af4-252e43345847"><strong>Employee Medical Benefit</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f271126-3a26-42e0-a68b-bf306261b2f0"><strong>Unemployment Insurance</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b9675acc-b27f-4ef1-812c-01a3d2fd91bd"><strong>Workers’ Compensation</strong></a></div></nav><h2 id="a43a348b-b184-464b-b082-0a92a2de0a1f" class=""><strong>Paychecks</strong></h2><p id="6d38bd6f-fc11-415e-8a22-3e325d9a38cc" class="">You will receive your paycheck twice monthly as compensation for the previous pay period. For payroll and overtime purposes the workweek starts on Monday and ends on Sunday. If the normal payday falls on a weekend or holiday, you may be paid the day before or the day after the weekend or holiday depending on payroll processing. Direct deposit will not be used without employee consent. Payroll advances will not be made under any circumstances.</p><p id="30e2ad45-438d-47b4-9692-704fb768331c" class="">Employees may not be compelled to accept wages by direct deposit or debit card. In order to receive wages by direct deposit, employees must provide their signed written consent through Paycom. Providers will be compensated by means of physical check mailed every payday.</p><p id="040a1ec5-1f62-4d74-8caf-a5d7d00ae217" class="">You will be provided a W-2 form at the end of the year. Employers are not required and do not check the validity or accuracy of employee withholdings and exemptions as reported on W-4 forms or state equivalents. Employees are solely responsible for reviewing their withholdings each pay period and for updating their W-4 and equivalent state forms as necessary. It may take 2-4 weeks to process any revisions to tax withholdings.</p><p id="f5444c98-f6d2-425c-9f0a-d89ebdd6e981" class="">In the event of termination for any reason, final paychecks will be paid no later than the next regular payday.</p><p id="b4821ac6-3034-4141-8a7b-d67946302d0d" class="">As with any other policy, paycheck policies may be changed at any time. All employees are encouraged to deal with management directly regarding any concern about wages, hours, or other terms and conditions of employment. However, nothing in this handbook is intended to restrict non-supervisory employees from exercising their right to communicate with fellow employees about such matters, and Nao Medical prohibits retaliation against any employee for the exercise of such rights.</p><h2 id="89816864-22b3-4dc3-8980-4b1dc5631e78" class=""><strong>Paycheck Errors</strong></h2><p id="113932d9-6d18-4cca-80b8-3b9d545833fc" class="">All employees are asked to review your paycheck carefully for errors. If you find a mistake, report it to Human Resources as soon as possible, but no later than thirty (30) days after receiving your check, so that we may take the steps necessary to correct the error. Errors in payroll will be corrected and paid in the next scheduled paycheck after we receive notice. After thirty (30) days, we will assume there are no errors, and your recourse may be limited or unavailable.</p><p id="2175bee6-3b65-4d7b-8594-c24b14db1baa" class="">Corrections for overpayments will be made within eight (8) weeks. Employees will be given three (3) days written notice prior to deduction to recover overpayment of wages. Recovery for overpayment of wages may be made through payroll deduction without written authorization from employees, as long as such overpayment does not exceed the net wages earned in the immediately subsequent paycheck.</p><p id="aaef1f4a-bf9d-4e4e-a164-7d383bc42653" class="">Should the overpayment exceed the net wages in the next paycheck, no more than 12.5% of gross wages will be deducted from each subsequent paycheck, until such overpayment is repaid in full, and no deduction shall reduce the effective hourly wage below the state minimum wage. Employees may dispute overpayment recovery by submitting a written explanation to management.</p><h2 id="af2634b6-f7f5-429e-bbaa-729d0f49075f" class=""><strong>Garnishment</strong></h2><p id="60ba7521-3601-4890-a57b-1c24695d6dd4" class="">Nao Medical is required to comply with any court ordered garnishment of your wages. If you are hired by Nao Medical and currently subject to such a court order, you must supply the appropriate documentation and nature of the action immediately. If Nao Medical must garnish your wages, you may be charged a fee for administrative expenses in the amount permitted by state law.</p><h2 id="50e5a970-1638-457c-9441-9a1f2699485f" class=""><strong>Exempt Employees</strong></h2><p id="9237c009-3d2b-40fe-9326-2f9e7ddc8e9a" class="">It is our policy to comply with FLSA salary-basis requirements, and therefore Nao Medical prohibits improper deductions from salaries of exempt employees. Improper deductions include
+those for less than a full day of work and for absences due to sickness or injury, except that
+deductions for sickness or injury related absences can be made from accrued paid sick or
+vacation benefits, if available. When any such benefits have been exhausted, the weekly salary may be prorated in full day increments for absences of a full day or more. Deductions may be
+made for absences of a full day or more due to personal reasons unrelated to sickness or injury,
+for unpaid disciplinary suspensions, and to prorate for the first and last week of work. If the
+office is closed due to a holiday or other Nao Medical needs that are not the fault of the employee, no vacation, sick or salary deduction will be made.</p><h2 id="01a7f9df-7d2f-410d-ac3a-7a8aa9ce003a" class=""><strong>Overtime</strong></h2><p id="d5211968-c60d-4304-9a7a-03c81c95d6c4" class="">At times, you may be requested to work overtime in order to meet the needs of Nao Medical. However, working overtime is generally discouraged. Exempt employees are not eligible for overtime pay. Non-exempt employees will be paid at their regular rate plus one-half for hours actually worked in excess of 40 hours in a work week, or as otherwise prescribed by state law. Paid time off does not count towards overtime.</p><p id="3fd4dc94-3f61-43bc-b50e-dfe07a8b55cd" class="">Non-exempt employees whose regular rate of pay is at or just above minimum wage will also receive an additional hour of pay at minimum wage if they work a split shift or work more than 10 hours in a workday (including break times).</p><h2 id="211af3cc-2859-40cd-bd0d-39c48b53a6c8" class=""><strong>Notification of Wages</strong></h2><p id="15ec916f-d9b6-4b2e-bc74-99b59811de56" class="">Nao Medical complies with all applicable New York wage notification laws and intends for all employees to be paid accurately and fairly for all hours worked. Employees will receive a notification at the time of hire which details information about the employee’s compensation, including: the regular rate of pay, the pay day, the overtime rate of pay, the method of payment, any allowances claimed as part of minimum wage (usually none), as well as the name and contact information of Nao Medical. This notification will be provided in English, or in the employee’s primary language if other than English, upon the employee’s request. Employees will be given seven (7) days advance notice of any changes to your wage information. </p><p id="2275c1fa-2923-48d7-aa05-85a465bea047" class="">If you have questions about your wages or compensation, please ask. Nao Medical does not
+retaliate against employees for complaining or questioning our compliance with wage and hour
+laws.</p><h2 id="bd4cd6bb-d93a-43be-b004-a487283984db" class=""><strong>On-Call/AOD</strong></h2><p id="69b862d1-1c82-4e81-b263-b6a18b519215" class="">Leadership assigned to be “on-call” during non-work hours will be compensated an additional $300 per full week of on call time that they are required to work. Weeks that are split by one or more days the compensation will be allocated to the person that does that week&#x27;s weekend coverage. Please refer to the AOD guidelines slidedeck for required duties while being on AOD shifts. M-F shifts start at 5:30pm until close of all sites. On weekends at 8am until close of all sites. Requested changes must be made and approved at least 30 days in advance.</p><h2 id="da389d19-291e-422b-8300-18e95df74d88" class=""><strong>NYC - Commuter Benefit</strong></h2><p id="50f81e3c-e30a-4d0e-badf-b71349fb1877" class="">Nao Medical complies with New York City&#x27;s Commuter Benefits Law and provides the option for employees who have worked an average of thirty (30) hours or more per week for a minimum of four (4) weeks to participate in plan that will allow them to utilize pre-tax money to cover certain types of qualified transit expenses. For more information or to participate in this plan, please speak with Human Resources</p><h2 id="826eadf0-4113-42b8-911e-c89e036d1ff5" class=""><strong>Health Benefits</strong></h2><p id="4352d603-838d-44bf-8eab-8f121d75a5a2" class="">In accordance with the Patient Protection and Affordable Care Act (PPACA), Nao Medical offers all employees who work more than thirty (30) hours per week (or 130 hours per month) access to affordable health insurance coverage for themselves and their dependents up to age twenty-six (26). Employees become eligible to participate on the first day of the month following sixty (60) days of continuous employment, and no later than ninety (90) days. Spouses may be added to coverage at the employee’s sole expense. Employees should consult the Plan Documents for more details of the plan and any Nao Medical provided contributions. Where the Plan Documents and this policy conflict, the Plan Documents control. Nao Medical contributions may be changed at Nao Medical’s sole discretion.</p><h2 id="5ca25cf8-cfc7-4246-a238-6559c7ff1c69" class=""><strong>Disability Benefits</strong></h2><p id="0487aec6-6af2-4888-8402-20852f53b97b" class="">Nao Medical provides state required disability insurance benefits for employees who have a non- work-related injury or illness, or a disability due to pregnancy, beginning with the 8th consecutive day of disability. This plan includes Paid Family Leave coverage, as required by law
+and as outlined in the New York Paid Family Leave policy. </p><p id="957f592f-0de6-47de-8024-11871d682c86" class="">Please see management for additional information and claim forms. This is a cash wage replacement benefit paid directly through the insurance carrier; medical bills are not covered.</p><p id="6502ec58-fda1-435f-a418-96b1ef8a151a" class="">Employees whose regular work schedule never achieves twenty-six (26) weeks or 175 days in a 52-week period have the option to waive this coverage. Please see the management if you wish to do so.</p><h2 id="1c44e279-7ae3-45c5-912e-ac54b878339f" class=""><strong>401(k) Defined Benefit Pension Plan/Smart Dollar</strong></h2><p id="a00b632f-fdca-4267-aa88-c0cedf2a6c2d" class="">Employees who are at least 21 years of age and who have completed at least 1000 hours and one full year of service are eligible to contribute to a 401(k) defined benefit plan. Employees may lose eligibility if they fail to fail to perform 500 or more hours of work annually. Please see management for further details and additional written materials for details. Smart dollar is a free debt management software that is available to all employees. Your information is confidential and can only be accessed by such employees. Reach out to HR for sign up information.</p><h2 id="59c4985b-4d7a-4dda-9af4-252e43345847" class=""><strong>Employee Medical Benefit</strong></h2><p id="1d54236a-c1da-423f-a856-d6fee303e6a0" class="">Nao Medical has an in-house medical treatment plan that allows full-time employees who have successfully completed the getting acquainted period to receive enumerated medical treatment and services at Nao Medical without charge, up to $2,000 per calendar year, excluding lab fees and any other unusual expenses.</p><p id="aeb08219-0ae7-4ee2-b670-aba0b51f4851" class="">Immediate family members (spouse and children under 21 years of age) receive complimentary care on the covered services list, not including lab fees and any other unusual expenses. Employees should consult the covered services list for questions about available services and current pricing prior to requesting or obtaining services.</p><p id="6bf16177-fd0e-40be-913c-9e56d5e41681" class="">Employees are to clock out while receiving medical treatment from Nao Medical, and to schedule treatment for themselves and their families only at times designated by Nao Medical, or otherwise so as not to disrupt peak patient treatment hours. Treatment dollar amounts for employees and their families will not be included when calculating production numbers.</p><p id="d4e18d0a-81b4-4c15-ac42-7153ccbf054d" class="">Nao Medical reserves the right at its sole discretion to refuse treatment to anyone. Employees are required to pay any balances due at time of service, unless special arrangements are approved at the discretion of Nao Medical, and accompanied by an authorization for deduction of up to 10% per paycheck. At the time of termination, employees will be required to arrange for payment of any outstanding balances due to Nao Medical.</p><h2 id="0f271126-3a26-42e0-a68b-bf306261b2f0" class=""><strong>Unemployment Insurance</strong></h2><p id="43e72af1-9a5b-4be4-a91c-6a4302a603e5" class="">Upon separation from employment, you may be entitled to state and federal unemployment compensation benefits. These laws generally provide eligible unemployed persons weekly cash benefits for a designated number of weeks or until such time as they are able to obtain employment. While we have no desire to deny unemployment benefits to any person who is legally entitled to them, it is Nao Medical&#x27;s policy to contest all unemployment claims and apply for relief from charges for those claims that do not comply with the requirements of the law.</p><h2 id="b9675acc-b27f-4ef1-812c-01a3d2fd91bd" class=""><strong>Workers’ Compensation</strong></h2><p id="f7a7fa11-000a-43a4-9cbf-f469607b4846" class="">Nao Medical provides Workers’ Compensation insurance covering injuries or illnesses occurring in the course of your employment at no cost to you. State law, not Nao Medical, determines employee eligibility to receive Workers’ Compensation benefits. It is our policy to comply with state laws and to aid any employee whose injury or illness is determined to be compensable under the provisions of the state&#x27;s Workers’ Compensation act, as well as other applicable laws, which may include FMLA, ADA, OSHA, and/or HIPAA.</p><p id="ef5fd721-75cf-4310-91d9-d88c1a64bc46" class="">All employees must report complete and immediate information to management regarding any accident that occurs on the company premises in which you are involved, no matter how slight the resulting injury or illness. Failure to do so may jeopardize your eligibility to receive benefits. Generally, coverage does not include injuries received traveling to or from work or during the
+lunch period, nor does it cover incidents caused by an employee’s intoxication or other flagrant
+abuse of Nao Medical policies. Periodically, you may be asked to confirm in writing whether you
+have had any work-related injuries or illnesses.</p></div></article></body></html>

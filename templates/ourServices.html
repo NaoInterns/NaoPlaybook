@@ -1,0 +1,637 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Our Services</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        text-indent: -1.7em;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default
+    .highlight-gray {
+        color: rgb(155,154,151);
+    }
+    .highlight-brown {
+        color: rgb(100,71,58);
+    }
+    .highlight-orange {
+        color: rgb(217,115,13);
+    }
+    .highlight-yellow {
+        color: rgb(223,171,1);
+    }
+    .highlight-teal {
+        color: rgb(15,123,108);
+    }
+    .highlight-blue {
+        color: rgb(11,110,153);
+    }
+    .highlight-purple {
+        color: rgb(105,64,165);
+    }
+    .highlight-pink {
+        color: rgb(173,26,114);
+    }
+    .highlight-red {
+        color: rgb(224,62,62);
+    }
+    .highlight-gray_background {
+        background: rgb(235,236,237);
+    }
+    .highlight-brown_background {
+        background: rgb(233,229,227);
+    }
+    .highlight-orange_background {
+        background: rgb(250,235,221);
+    }
+    .highlight-yellow_background {
+        background: rgb(251,243,219);
+    }
+    .highlight-teal_background {
+        background: rgb(221,237,234);
+    }
+    .highlight-blue_background {
+        background: rgb(221,235,241);
+    }
+    .highlight-purple_background {
+        background: rgb(234,228,242);
+    }
+    .highlight-pink_background {
+        background: rgb(244,223,235);
+    }
+    .highlight-red_background {
+        background: rgb(251,228,228);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(55, 53, 47, 0.6);
+        fill: rgba(55, 53, 47, 0.6);
+    }
+    .block-color-brown {
+        color: rgb(100,71,58);
+        fill: rgb(100,71,58);
+    }
+    .block-color-orange {
+        color: rgb(217,115,13);
+        fill: rgb(217,115,13);
+    }
+    .block-color-yellow {
+        color: rgb(223,171,1);
+        fill: rgb(223,171,1);
+    }
+    .block-color-teal {
+        color: rgb(15,123,108);
+        fill: rgb(15,123,108);
+    }
+    .block-color-blue {
+        color: rgb(11,110,153);
+        fill: rgb(11,110,153);
+    }
+    .block-color-purple {
+        color: rgb(105,64,165);
+        fill: rgb(105,64,165);
+    }
+    .block-color-pink {
+        color: rgb(173,26,114);
+        fill: rgb(173,26,114);
+    }
+    .block-color-red {
+        color: rgb(224,62,62);
+        fill: rgb(224,62,62);
+    }
+    .block-color-gray_background {
+        background: rgb(235,236,237);
+    }
+    .block-color-brown_background {
+        background: rgb(233,229,227);
+    }
+    .block-color-orange_background {
+        background: rgb(250,235,221);
+    }
+    .block-color-yellow_background {
+        background: rgb(251,243,219);
+    }
+    .block-color-teal_background {
+        background: rgb(221,237,234);
+    }
+    .block-color-blue_background {
+        background: rgb(221,235,241);
+    }
+    .block-color-purple_background {
+        background: rgb(234,228,242);
+    }
+    .block-color-pink_background {
+        background: rgb(244,223,235);
+    }
+    .block-color-red_background {
+        background: rgb(251,228,228);
+    }
+    .select-value-color-default { background-color: rgba(206,205,202,0.5); }
+    .select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+    .select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+    .select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+    .select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+    .select-value-color-green { background-color: rgba(0,135,107,0.2); }
+    .select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+    .select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+    .select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+    .select-value-color-red { background-color: rgba(255,0,26,0.2); }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style></head><body><article id="52d83bab-533d-4e65-b111-9eda0efaeef2" class="page sans"><header><img class="page-cover-image" src="./static/Nao_Banner_07.png" style="object-position:center 85.64%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏥</span></div><h1 class="page-title">Our Services</h1></header><div class="page-body"><h2 id="8365b6d8-380b-443d-aca7-f092e17a6f5d" class="">Urgent Care</h2><ul id="55957496-ac8b-483d-a745-d2b399ce210d" class="bulleted-list"><li><strong>Emergency Care: </strong>Whether you are having an allergic reaction or have a cut that needs stitches, Nao Medical takes care of all of life’s little emergencies! We are open for more hours than a typical primary care physician’s office and provide faster, more efficient services than most family medicine or general practices. </li></ul><ul id="dce44a72-94a5-4436-bd3e-6ddf5802ca5f" class="bulleted-list"><li><strong>Urgent Care: </strong>We offer urgent care service to deal with issues that require immediate medical attention and treatment - including non-emergency injuries, non-fatal illnesses, or any medical condition that is not life threatening. When a doctor is unavailable and a patient needs essential medical care and assistance right away, Nao Medical&#x27;s urgent care services are the answer.</li></ul><ul id="eadfdd06-926b-4934-a515-a1a0c4817c11" class="bulleted-list"><li><strong>Pediatric Urgent Care: </strong>At Nao Medical, we provide high-quality after-hours pediatric urgent care for children above 2 years of age. We offer medical services for treating routine bugs and illnesses, and also have a range of vaccines available on site. Pediatric care is provided both on-site and through virtual visits by specially trained pediatric emergency specialists. Knowing the importance of having an exceptional physician or pediatrician for your child, our Nao Medical pediatric urgent care clinic helps from start to finish, with scheduled follow-ups. Our pediatric urgent care can share all reports and findings with a patient&#x27;s pediatrician’s office.</li></ul><h2 id="b29bf597-554c-464f-9409-a40c3c874065" class=""><strong>Walk-in Clinic &amp; Primary Care </strong></h2><ul id="6462b173-492e-4d94-95f3-c3f40170da48" class="bulleted-list"><li><strong>Walk-In Clinic &amp; Doctor Visits: </strong>Nao Medical&#x27;s walk-in clinic is a convenient option when you need a doctor&#x27;s visit in a hurry. We offer appointments at our beautiful, modern offices, equipped with the latest medical facilities and technology. Nao Medica&#x27;s walk-in clinic is more convenient than going to a primary care physician or a pediatrician – patients can receive immediate walk-in care without an appointment, anytime, 7 days a week! Plus, Statcare is open in the evening and on weekends, 365 days a year, including Saturdays, Sundays, and all holidays. Statcare has its own on-site parking and it’s free. All our walk-in clinic locations are certified by the UCAOA and the medical visit charges are covered by your health plan.</li></ul><h2 id="6c633c90-dff4-40a4-9705-07f98b10d796" class="">Telemedicine: </h2><ul id="10b4eca8-51c9-499e-abcc-0b019e7961a2" class="bulleted-list"><li>Nao Medical&#x27;s telemedicine services allow you to receive world class care from the comfort of your home! Receive medical advice and prescriptions from certified doctors, without needing to wait in a hospital room or office. This is especially convenient for pediatric urgent care! </li></ul><h2 id="647c1634-7e31-4dd7-8c6e-a9d023018c9d" class="">Physicals </h2><ul id="50b1a11b-cee7-455d-b784-ec02b756081a" class="bulleted-list"><li><strong>DOT/CDL Physicals:</strong> At Nao Medical, we offer CDL physicals that are quick and easy, to get patients back on the road as soon as possible. Once a patient has passed their physical, the certificate is good for 24 months and we keep it on file. Our team also follows-up to remind patients when it&#x27;s time to renew their physicals! </li></ul><ul id="64100240-8f73-440f-9e34-ef443a3e1bce" class="bulleted-list"><li><strong>School Physicals: </strong>Prior to entering school or college, children must be up-to-date on their immunizations. At Nao Medical, we perform school and college physicals on the spot, without the need for an appointment. Nao Medical staff will fill the form for the physical, and perform any testing that may be needed (including vision, hearing, spinal exams, PPD testing, etc.)</li></ul><ul id="a5eebef4-7d84-4b70-95f5-6153dbebf3af" class="bulleted-list"><li><strong>Summer Camp Physicals: </strong>Summer camps often require a physical to make sure the child enrolling has had all the required vaccines, and that any health issues present have been addressed. During a camp physical at Nao Medical, our staff will evaluate your child’s current fitness level and risk of injury by checking their muscles, joints, strength, and flexibility. The goal is to determine whether it’s safe for your child to participate in a particular activity or sport and at what level (contact/collision, limited contact/impact, non-contact, etc.) A camp physical should be conducted about 6 weeks before camp begins to allow enough time to follow up on an issue, if necessary.</li></ul><ul id="4318ac42-a24c-480c-b393-a7d9d4c164e4" class="bulleted-list"><li><strong>Sports Physicals: </strong>If your child has been held out of PE class or sports due to a prior injury or medical condition, a sports physical is often needed to get medical clearance to return to class or sport. A sports physical should be conducted about 6 weeks before the sports season begins to allow enough time to follow up on an issue, if necessary.</li></ul><ul id="368eefcb-ddec-40ed-b63e-5a160dc40369" class="bulleted-list"><li><strong>Pre-Employment Physicals: </strong>Job physicals or pre-employment physicals focus on determining whether you as a job candidate have the physical capability to perform the essential functions of the job you have applied for. Many employers also require a urine drug screen prior to making a job offer. </li></ul><ul id="c924f8db-28f8-46d5-a1f0-3ee4f2f3b37c" class="bulleted-list"><li><strong>Insurance Medical Exam: </strong>Health and life insurance companies may require a medical exam to determine if an individual has any pre-existing conditions or condition that could shorten their life. The insurance medical exam typically includes blood work, urinalysis, and other tests such as EKG, treadmill stress test, etc. Based on the results, insurance underwriters will decide whether to insure an individual, and how much the premium should be.</li></ul><ul id="50d2aaf9-428c-498b-8306-cec2f43fd617" class="bulleted-list"><li><strong>Brain Physical: </strong>Nao Medical&#x27;s specialized EEG testing for concussions helps risk stratify patients for all levels. This means that patients with head injury who undergo EEG concussion Testing can be separated into several groups – those that need a CT Head for evidence of structural damage on EEG, and those that do not need CT Head or MRI. This can be done with an extremely high degree of confidence. </li></ul><h2 id="81ffffea-f194-411b-95ee-c54ec4031ce6" class="">Medical Exams<strong> </strong></h2><ul id="d9e306b2-e602-4e4a-89df-2027ea27f580" class="bulleted-list"><li><strong>DOT Physical &amp; Medical Exam: </strong>A Commercial Driver&#x27;s License (CDL) physical is the medical exam required to obtain a commercial driver’s license. It is also known as the DOT physical. The demands of a commercial driving job can take a toll on a driver&#x27;s body and health, so the Department of Transportation has created a standardized test to keep drivers, and others on the road, safe.</li></ul><ul id="88c8cd58-bdb1-4482-8a4d-8f8889ee6e0d" class="bulleted-list"><li>CDL physicals are only available at US DOT certified exam locations. At Nao Medical, all of our doctors are certified to complete the CDL physical. No matter the location, our NRCME certified medical examiners are able perform the CDL medical exam and assist patients through the process quickly and painlessly. For new commercial drivers, they then can become eligible to take the road test given by the New York State Department of Motor Vehicles under FMCSA and USDOT guidelines.</li></ul><h2 id="986bac92-a2f5-48e2-bb06-74a8655046ed" class="">Immigration Services </h2><ul id="e7ae67a8-8675-45ea-bf9b-09f7ce8994a7" class="bulleted-list"><li><strong>Immigration Medical Exam/Green Card Physical: </strong>The United States Citizenship and Immigration Services (USCIS) requires an i-693 medical exam for anyone looking to get a green card. The aim of the USCIS medical exam is to ensure that someone who comes to live in the United States is healthy, that all physical and mental disorders are addressed, and all the necessary required vaccines have been taken to maintain good health as long as they plan to live here. This Immigration exam can only be performed by USCIS designated Civil Surgeons, Surgery Physicians, or Panel Physicians who are required to address the communicable disease panel (syphilis, gonorrhea, tuberculosis). At Nao Medical, we have three approved immigration doctors on staff who can conduct the required physical, and provide a sealed envelope for USCIS purposes as well as a copy of the paperwork. Only USCIS authorized personnel are allowed to open the envelope.</li></ul><ul id="50dc5c3d-85ae-4eda-a478-9d7fd3f9e527" class="bulleted-list"><li><strong>USCIS Civil Surgeons / Immigration Doctors: </strong>People who are applying for US Immigration and Citizenship must also apply for an adjustment of status (Form I-485). Part of the adjustment of status form includes a medical examination by a USCIS-certified civil surgeon. The medical exam cannot be done by regular doctors. They have to be completed by USCIS doctors who have years of experience practising as a medical doctor before they can be appointed as USCIS approved doctors.  Nao Medical&#x27;s USCIS doctors are not only certified by USCIS but also understand the standards of each exam.  </li></ul><ul id="73b9126b-5961-4ee4-a51e-1f30c5a45128" class="bulleted-list"><li>The paperwork itself is more than a dozen pages, requiring all proofs and supporting documentation be attached.  This can be a nerve wracking process where no one can afford to make a mistake as proper completion of this paperwork is essential prerequisite for a green card approval. An immigration medical exam is therefore, one area where expertise and experience really matters a lot. At Nao Medical, our USCIS doctors have seen patients from almost every country around the globe and are very familiar with vaccinations and healthcare provided in other countries. They are here to help patients negotiate this maze successfully!</li></ul><h2 id="e8c91715-c5db-40a8-acab-f92fc3c49fe2" class="">Tuberculosis Testing</h2><ul id="5328e391-bb2c-4e23-b1e5-f3e80658fd6e" class="bulleted-list"><li>At Nao Medical, we perform PPD Testing and 2-Step PPD Tests for tuberculosis on a walk-in basis, all 7 days a week. We do more PPD Tests than anyone in the NY Metro Area. </li></ul><h2 id="f1598521-75c6-443a-94fb-15271faeb7f3" class="">STD Screening</h2><ul id="3c4897dc-7b1f-432d-9b5b-51f5f578c84e" class="bulleted-list"><li>Nao Medical performs STD tests for anyone who needs to be screened for an STD as per the Centers for Disease Control and Prevention (CDC) Guidelines. Anyone who is sexually active (especially those having sex with multiple partners) should get screened and tested fairly frequently for syphilis, HPV, HIV, chlamydia, gonorrhea, and other common STDs. </li></ul><h2 id="3cfc05a7-3c21-4f0a-8555-cfc92206fd40" class="">Travel Clinic</h2><ul id="cc474d02-d4b4-4b74-8722-5a0212e605f7" class="bulleted-list"><li><strong>Travel Clinic Vaccines &amp; Immunizations: </strong>Each year more and more Americans travel abroad – for vacation, business, volunteerism, mission trips, or to visit family and friends. Whatever the reason for traveling, travellers may need to protect their health with travel vaccines or medication for:<ul id="804fa1e1-e8f5-416f-af20-5307ab17c162" class="bulleted-list"><li>Yellow Fever Vaccine </li></ul><ul id="1630fead-4baf-4d52-a49b-fd7c632f64ff" class="bulleted-list"><li>Typhoid Fever Vaccine </li></ul><ul id="cdc6e74b-0efb-429a-a8e6-c0da8bb8fc9d" class="bulleted-list"><li>Malaria </li></ul></li></ul><ul id="ef467c95-499f-4260-adeb-bcd93e10b7fd" class="bulleted-list"><li>Nao Medical is a designated yellow fever vaccination center. We offer the yellow fever vaccine, as well as typhoid fever vaccine, Japanese encephalitis vaccine and anti-malaria medications for those who are planning international travel. Our travel clinic vaccines and immunizations are easy to get and very affordable.</li></ul><h2 id="9b595848-dffc-4d6e-8c66-0798233e6345" class="">Vaccinations</h2><ul id="51513314-f00e-4052-a407-e0ec53b99260" class="bulleted-list"><li><strong>Flu Vaccine:  </strong>Flu vaccines are shots that are given in your arm by a needle to build immunity and lower your chances of getting three or four influenza viruses. For 2020-2021, the vaccine protects against four strains of flu: H1N1, H3N2, B/Victoria lineage &amp; Yamagata lineage. At Nao Medical, we can diagnose the flu by a rapid flu test and also administer the flu vaccine, all through the flu season.</li></ul><ul id="ebe84af5-5b79-4cce-82e3-b2ce9f0a743e" class="bulleted-list"><li><strong>Tetanus: </strong>We offer the tetanus and tetanus booster vaccine for both adults and children. </li></ul><ul id="010b38f7-12cf-41ff-97aa-57950e14598b" class="bulleted-list"><li><strong>Measles, Mumps, Rubella (MMR): </strong>We offer MMR vaccines for children and adults, available at all Nao Medical locations. If a patient isn&#x27;t sure about their MMR vaccination or immunity status, we offer MMR titers as well.</li></ul><ul id="a8fe674e-11a0-46f7-a5d7-d2c33e3e4786" class="bulleted-list"><li><strong>Varicella Vaccine: </strong>Varicella or chicken pox is a concern for kids and adults whose immunity may have waned over the years. We offer the varicella vaccine for children and unvaccinated adults, particularly healthcare professionals, teachers, and others involved in child care. </li></ul><ul id="de54a95d-b86a-4d27-abeb-fa74aeff4d7c" class="bulleted-list"><li><strong>Hepatitis B Vaccine: </strong>We offer the hepatitis B vaccine for children and adults, particularly healthcare professionals.</li></ul><ul id="ad048db3-adb0-4f97-83df-e60e41fa09f8" class="bulleted-list"><li><strong>Meningitis &amp; Japanese Encephalitis vaccine: </strong>Available on pre-order. </li></ul><h2 id="d0700f91-85c4-4300-b2ae-763a84045865" class="">Worker’s Compensation</h2><ul id="a1a0835a-c0bb-4312-ba7c-74d124c423e5" class="bulleted-list"><li>Nao Medical sees workers compensation and no fault cases. We specialize in accessible, value-driven and coordinated workers’ comp injury services through appropriate, cost-effective care focused on return-to-work strategies for injured employees.</li></ul><h2 id="8571185a-f2b3-43af-b0ae-174738684777" class="">Head Injury &amp; Concussion Testing</h2><ul id="3ae324c7-ae79-49db-8e66-84844323708e" class="bulleted-list"><li>Nao Medical provides concussion testing for people with head injuries playing sports (including children over 7 years old playing soccer, football, basketball) using SportGait. We also can do brain physicals for athletes to get their baseline brain function. This can be part of a sports or camp physical and is not covered by insurance.</li></ul><ul id="5a390cea-55c7-437c-83f9-6c2c041c45cc" class="bulleted-list"><li>We also offer concussion testing for people with head injuries at work or in a motor car accident using Brainscope. </li></ul><ul id="cf8bff43-ccab-4fa2-a3da-45250c1a8bdc" class="bulleted-list"><li>Head Injury &amp; Concussion Testing </li></ul><ul id="f3ccdce8-d522-4706-bb06-ac9ef2b31f04" class="bulleted-list"><li>Concussion Test EEG </li></ul><h2 id="63ebe029-75ba-49c0-aa3d-798eac805f26" class="">Additional Services </h2><ul id="e054ca87-4319-4724-bc8f-f6cfb4976101" class="bulleted-list"><li>Suboxone and Sublocade treatment to help people get off opiate (percocet, oxycodone, heroin etc.) addiction</li></ul><ul id="09b99e94-dc6f-4c1f-bd3b-dc9f43c86a5c" class="bulleted-list"><li>Prescription refills including Hormone Replacement Therapy; blood pressure medication; diabetes medication</li></ul><ul id="a4120373-8aa8-494d-bc81-7246775f4103" class="bulleted-list"><li>Blood tests and lab analysis. </li></ul><ul id="705c6e81-8680-49bc-a12d-df45a8cd777f" class="bulleted-list"><li>Strep and flu tests, pregnancy tests, drug tests, HIV tests, and tests for mono at our locations.</li></ul><ul id="d6c93663-1a10-4607-947b-38b2f5fc9495" class="bulleted-list"><li>Online Doctor visits for medical problems that can be treated at home instead of having the patient to come in for an office visit. We use a secure network and patients can use their phones, ipad and computer to complete their televisit.</li></ul><p id="786683e8-1ad3-45d6-acca-82cfe206d504" class="">
+    </p></div></article></body></html>

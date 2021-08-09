@@ -1,0 +1,651 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tone of Voice &amp; Personality</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3b54e604-74be-47e0-8689-9a53f8a25666" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Pattern_3.jpg" style="object-position:center 66.72%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔈</span></div><h1 class="page-title">Tone of Voice &amp; Personality</h1></header><div class="page-body"><p id="db0105c5-31da-4a1e-8f24-88362e21e955" class="">One way we write empowering content is by being aware of our voice and our tone. This section explains the difference between voice and tone, and lays out the elements of each as they apply to Nao Medical.</p><p id="4da141f3-2dbf-4fad-b473-ce8278befcf2" class="">What’s the difference between voice and tone? Think of it this way: You have the same voice all the time, but your tone changes. You might use one tone when you&#x27;re out to dinner with your closest friends, and a different tone when you&#x27;re in a meeting with your boss.</p><p id="fea84e21-3f03-4380-922d-eb20dbd62a8c" class="">Your tone also changes depending on the emotional state of the person you’re addressing. You wouldn’t want to use the same tone of voice with someone who’s scared or upset as you would with someone who’s laughing.</p><p id="15668f19-e114-4fec-b1d8-e34f9c9ec7dd" class="">The same is true for Nao Medical. Our voice doesn’t change much from day to day, but our tone changes all the time.</p><hr id="be6eb7d4-5b44-437d-9bf3-d1e9daaa50af"/><nav id="57fdc82c-54f5-45d8-8934-c660812913f7" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f4c491f8-19cf-4d41-bc0c-2ab27e5d273a">Voice</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#679d1c31-e9c3-4d8d-805b-7d934cbf76a9"><strong>We are plainspoken.</strong> </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a7d4e015-8ba4-40cf-915a-f40d98bd9d58"><strong>We are genuine.</strong> </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3c6ac8a5-3f68-4bce-9a88-95ec83f760c3"><strong>We are translators.</strong> </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2b5c8ba4-e04d-43f7-a9cf-eb66fbc6a2d1">Personality </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#5cb6275c-9735-4891-8a9b-a50962d271bd">Professional, but not brusque</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d3837605-862d-475e-ad72-96c70c7b4a62">Knowledgeable, but not patronizing</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#0c6246f6-eb85-46d3-9f52-d385660658d2">Calm, but not passive</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8efa3bb5-6ef4-4062-bed2-2fb8e4a651d7">Expressive, but not sentimental</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f29a474d-9a0e-4f4f-a5b2-5b8f6fd08235">Tone</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#48f5b332-fc5a-4096-8ff5-6b0690d27591"><strong>Example One: Outdoor Ad</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4069cde7-4536-4b8e-82d1-20b7c3c72799">Example Two: Subway Ad </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#dc81d6ac-cad8-4716-ae91-2e039a04b0ef">Example Three: Social Media</a></div></nav><hr id="ca702017-7a55-42b2-8819-90a80b1584ef"/><h1 id="f4c491f8-19cf-4d41-bc0c-2ab27e5d273a" class="">Voice</h1><p id="182cb184-c7d3-47ab-9679-44f52cc11893" class="">At Nao Medical, we’ve walked in our patients&#x27; shoes, and we know healthcare can be full of confusing terminology. That’s why we speak like the experienced and compassionate support we wish we’d had way back when.</p><p id="92748e82-ac76-45a6-a80b-a3abf68631ab" class="">We treat our patients with respect. We want to educate people without patronizing or confusing them.</p><p id="dfc5b49a-780b-4351-bb05-76ed4e2c7211" class="">Using a friendly and conversational voice, we play with language to bring joy to their work. We prefer the subtle over the noisy, the wry over the farcical.</p><p id="2c384c2e-c5bc-44ff-8ba5-ff89f278cb90" class="">Whether people know what they need from us or don’t know the first thing about marketing, every word we say informs and encourages. We impart our expertise with clarity, empathy, and wit.</p><p id="1a89d108-7ebe-40ae-8200-65a593b4cdaa" class="">All of this means that when we speak to patients, or write copy for them:</p><h3 id="679d1c31-e9c3-4d8d-805b-7d934cbf76a9" class=""><strong>We are plainspoken.</strong> </h3><h3 id="a7d4e015-8ba4-40cf-915a-f40d98bd9d58" class=""><strong>We are genuine.</strong> </h3><h3 id="3c6ac8a5-3f68-4bce-9a88-95ec83f760c3" class=""><strong>We are translators.</strong> </h3><h2 id="2b5c8ba4-e04d-43f7-a9cf-eb66fbc6a2d1" class="">Personality </h2><p id="63259ae8-cc1f-4269-82ee-0ea0f9705546" class="">The key to understanding Nao Medical’s personality lies in understanding who we are:
+an essential walk-in medical practice committed to providing the highest quality of care,
+in an environment of respect, clarity and thoughtfulness.</p><ul id="844b4cc4-67f6-4d5f-a5c9-c54525ab22df" class="bulleted-list"><li>We are healers, here to soothe people troubled by injury and illness.</li></ul><ul id="a8fff6af-49ef-4f2f-b17a-74afb649b3e3" class="bulleted-list"><li>We are guides, chaperoning people from a moment of stress to a moment of calm.</li></ul><ul id="3d6ce80c-b17d-4683-8d61-704f9501851c" class="bulleted-list"><li>We are advisors, providing people with the information they need when they need it.</li></ul><h3 id="5cb6275c-9735-4891-8a9b-a50962d271bd" class="">Professional, but not brusque</h3><p id="1558bf7a-7569-403c-96a3-2bd39936d2ec" class="">Our patients come to us looking for solutions they can trust, and service they can rely on.</p><p id="69c01b52-820e-40ae-abab-2ef24deef1a0" class="">Reassure them with confidence, but don’t be dismissive or terse.</p><h3 id="d3837605-862d-475e-ad72-96c70c7b4a62" class="">Knowledgeable, but not patronizing</h3><p id="de9273ef-9cd3-4c3d-ae23-11a9a6fb3d67" class="">Our patients’ trust and lived experiences are central to their diagnosis and treatment.</p><p id="30d8c0c2-a32d-4d26-93aa-554944353797" class="">Precisely because we are experts, we listen to them and account for their experiences, but don’t talk down to them or leave them feeling uncertain.</p><h3 id="0c6246f6-eb85-46d3-9f52-d385660658d2" class="">Calm, but not passive</h3><p id="69babd03-82d7-4dd0-b481-5613f53f35c9" class="">We know this is a stressful time for our patients and getting medical attention can be unnerving.</p><p id="e80b6912-83ff-48dc-a542-c809235038af" class="">We provide a sense of quiet, steady support, spoken and unspoken, in words and in our actions.</p><h3 id="8efa3bb5-6ef4-4062-bed2-2fb8e4a651d7" class="">Expressive, but not sentimental</h3><p id="0187662a-9b1b-4677-8fda-6559c85cf9aa" class="">We are positive, friendly and kind but we lean away from over-familiarity, casual remarks and carefree behaviour.</p><h2 id="f29a474d-9a0e-4f4f-a5b2-5b8f6fd08235" class="">Tone</h2><p id="3cb44843-efcc-4628-bcd1-e3de3a557f93" class="">While Tone might seem like an ephemeral concept on the surface, it’s rather intuitive in practice. Even in our daily lives, we switch Tones all the time depending on contextual information. </p><p id="bc4ee6bd-dcec-4112-9876-bc2bd0f89a22" class="">One Tone for consolation, another for celebration, one for a quiet dinner date, another for a night out with the mates; grasping a strong sense of Tone is all about evaluating the situation at hand and Nao Medical’s role within it.</p><p id="3b917154-732c-41b0-bcf0-3b0c791cfa72" class="">Whatever form the copy takes (social media, ad campaigns, brochures), whatever the word limit (generous web prose, five-word headlines, a tweet), as long as you can be mindful of the present moment and Nao Medical’s role within it, you will be able to navigate it.</p><p id="c3ea615b-e8d8-4e5a-8095-5b85e4da39e3" class="">All you need to do is Consider the Nao.</p><h3 id="48f5b332-fc5a-4096-8ff5-6b0690d27591" class=""><strong>Example One: Outdoor Ad</strong></h3><p id="865913fd-f2be-4e01-883e-55480a19f95b" class="">Nao Medical is taking out an outdoor ad in a shopping mall to promote breast cancer
+awareness. We know that this mall gets a lot of visitors, most of whom casually stroll around,
+window-shopping. Therefore, they have enough time on their hands to read a couple of lines
+of copy. That determines the length of your ad. The next is how to broach the matter of breast
+cancer.</p><p id="afedfbb8-bbbb-49e1-997d-82a5c6156c31" class="">Seeing words like ‘threatens’ or throwing out scary statistics will both cause our audience to
+be scared off of the idea, and will be against our brand’s respectful, thoughtful personality.</p><p id="24454dc8-a06e-410c-94ee-cd48137b2d2b" class=""><strong>Which makes: </strong></p><p id="5399da32-7279-4d86-abd4-a8da4f94c95d" class=""><em>The best fight is one that ends before it begins. Walk-in for your annual mammogram nao #BreastCancerAwarenessMonth</em></p><p id="5a107efc-a030-4b8a-93a2-2ec4226b4185" class=""><strong>more suited to our Tone of Voice than</strong></p><p id="8e0cedaf-0943-4483-a5ba-85390ef33cc1" class=""><em>1 out of 8 women are at risk of breast cancer. A mammogram could save your life nao. #BreastCancerAwarenessMonth</em></p><h3 id="4069cde7-4536-4b8e-82d1-20b7c3c72799" class="">Example Two: Subway Ad </h3><p id="c8855d47-4dba-40d6-becd-b12ac9ff3a9c" class="">It’s flu season and Nao Medical is taking out an ad promoting Free Flu Shots in the subway.</p><p id="207c43be-f10a-4f02-a5f9-1baf51393d58" class="">We know that people using the subway are often short on time, only having enough to spare a
+glance at an advertisement in their peripheral vision. We also know that the word ‘Free’ evokes
+an immediate psychological response which means the space next to the word ‘Free’ is prime
+real estate.</p><p id="0ec43aa2-0444-4744-ada1-29f96362ceff" class="">Now, we could be purely informational and put out an ad saying: </p><p id="fde7166e-2dde-49de-914d-67b1ce99d14c" class=""><em>Get Your Free Flu Shots at Nao Medical!</em></p><p id="a91d39f4-298e-4507-8a4b-89f3b29a8da4" class="">But if we were to infuse some humour into the ad, it’s more likely that people will remember us. How do we infuse humour? Consider the person who rides the subway in flu season. Statistically, there must be people sneezing all around them.</p><p id="dc94b446-4179-4c36-b634-548ce2040cf1" class=""><em>&lt;an image of someone sneezing&gt;
+This poster isn’t viral, but the flu is
+Free Flu Shots Available at Nao Medical</em></p><h3 id="dc81d6ac-cad8-4716-ae91-2e039a04b0ef" class="">Example Three: Social Media</h3><p id="2e716361-c9fa-4aed-8001-0c3f8e5ec570" class="">We want to run a social media campaign announcing our transition from the name Statcare to
+Nao Medical.</p><p id="7e1c6b0c-1baa-481e-8abb-d703f599f8ac" class="">Social media is a place where not only can you experiment with your content but also run
+multiple posts with little investment. It’s also a place where people expect a shade of wit and
+surprise. So, you adopt that Tone to announce this transition.</p><p id="ca51faf7-0d2d-44c1-8706-094c0f44addc" class="">A transition is a happy occasion. One approach could be expressing that excitement about this
+step towards the future.</p><p id="12cfd85e-0de1-498a-87a6-4fb06fc7d22c" class=""><strong>Headline: </strong></p><p id="e1320518-ac81-4259-baca-0500d3ed0e80" class=""><em>The Future of Statcare is nao</em></p><p id="4c7e3807-99bf-422f-a9eb-1bc7ae4962ae" class=""><strong>Alternate versions of the headline could speak about our history: </strong></p><p id="0b4ffc8e-ea9e-45a8-bd70-388e15d50d4e" class=""><em>10+ years of healthcare, nao under a new name</em></p></div></article></body></html>

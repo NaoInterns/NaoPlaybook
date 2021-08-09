@@ -1,0 +1,653 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Safety &amp; Health</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default 
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2ab2d22a-bdeb-4330-905e-ff6f9e06ffd8" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_04.png" style="object-position:center 84.24000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">✌️</span></div><h1 class="page-title">Safety &amp; Health</h1></header><div class="page-body"><nav id="bb34e257-e8ff-43c9-bd71-fdbb4ca69def" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#25cc29fa-2700-4fcc-a34a-302d29203b31"><strong>General Safety and Health Policies</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9ef30caa-4032-4685-abb3-342f60526ffc"><strong>Notice of Potential Exposure to Toxic Substances</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#80bfccb9-8f51-4221-8dbf-720ae4e972de"><strong>OSHA Compliance</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cfeb5258-5815-4562-b913-08c1c0c4b7bd"><strong>Blood-borne Pathogens Standard</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e2414ead-3826-4c52-aa72-384996d5c10e"><strong>Hazard Communication Standard</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1c4378e1-0f00-419e-838e-239c3be20143"><strong>Hepatitis B Standard</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1ade2780-5367-4859-bd6d-59f16d2c9246"><strong>Security of Personal Items</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e7a1c11b-d46c-47f3-9e84-8fd0231774c7"><strong>Violence in the Workplace</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#66c6b3b1-d60c-4693-8157-624eb47347e5"><strong>Smoke-Free Environment</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#724ce3e5-dac6-4f5d-bc2b-ea070beb7b19"><strong>Drugs and Alcohol</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b9d3f3c2-8403-4a2e-8ac5-4c7938e73b24"><strong>Rules and Prohibitions</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6db5192c-4683-4214-9047-f40573f4f11b"><strong>Inspections and Investigation</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#09341bf0-4cd4-4006-a5bf-74b281af734f"><strong>Required Testing</strong></a></div></nav><h2 id="25cc29fa-2700-4fcc-a34a-302d29203b31" class=""><strong>General Safety and Health Policies</strong></h2><p id="6701c0bd-51f3-4861-a45b-480a139316ac" class="">The safety of our employees and visitors to our office is of the utmost importance. All team
+members are expected to maintain safe and healthful working conditions and to adhere to all
+practices and procedures designed to prevent injuries and illness. By working together and staying aware of our surroundings we can achieve a safe and healthy environment. Employees are responsible for knowing best safety practices, thinking defensively, anticipating unsafe situations, and reporting unsafe conditions immediately.</p><p id="e4d97220-3b07-4301-8db0-c75210a3e3ec" class="">In addition, please observe the following precautions:</p><ol type="1" id="24fa10ea-8aa8-4686-baf3-f78b35f1a192" class="numbered-list" start="1"><li>Notify management of any emergency situation. If you are injured or become sick at work, no matter how slightly, you must inform management immediately. Failure to make a timely notification to Nao Medical can lead to possible Workers’ Compensation disqualification.</li></ol><ol type="1" id="897060a7-7f0c-4353-b075-f0a2790f98bb" class="numbered-list" start="2"><li>Notify management if you are in a clinical position and you are taking any prescription medication that either the prescribing entity, or you, believe may affect your ability to safely perform the essential functions of your position as it relates to clinical care and treatment of patients.</li></ol><ol type="1" id="b33a4732-b13f-42e1-a96d-bd15b9787411" class="numbered-list" start="3"><li>The use of alcoholic beverages or illegal substances during working hours will not be tolerated.</li></ol><ol type="1" id="00f6503e-3e6c-47fa-8595-c8e88bd70b66" class="numbered-list" start="4"><li>Use, adjust, and repair machines and equipment only if you are trained and qualified.</li></ol><ol type="1" id="ea27ff01-cb5c-4cb3-92a0-91aa42f37673" class="numbered-list" start="5"><li>Always perform a review of any equipment or machinery for its condition and make sure any moving parts are free of foreign objects prior to usage.</li></ol><ol type="1" id="8110c335-0290-4f42-8df9-b7ed27899cc5" class="numbered-list" start="6"><li>Get help when lifting or pushing heavy objects.</li></ol><ol type="1" id="5c9e1176-14f5-4ffb-a2e6-464cbbc900d9" class="numbered-list" start="7"><li>If you are not sure of the safe procedure, do not guess. Ask.</li></ol><ol type="1" id="581a094b-18d9-4a09-a3dd-c46f43c4eb04" class="numbered-list" start="8"><li>Know the locations, contents, and use of first aid and firefighting equipment.</li></ol><ol type="1" id="7debf03f-0417-44c8-9a3b-d700a1480620" class="numbered-list" start="9"><li>Wear personal protective equipment in accordance with the job you are performing.</li></ol><ol type="1" id="003e9f80-157a-427f-afdd-ee520aa8878a" class="numbered-list" start="10"><li>Report the need for repair or replacement of your work materials or the premises (such as light outages, or uneven flooring) as soon as discovered.</li></ol><ol type="1" id="3ea091a8-69ed-4c53-9785-b5be1e227b6a" class="numbered-list" start="11"><li>Store materials and equipment safely and neatly; avoid clutter that might cause accidents.</li></ol><ol type="1" id="19372dbf-6a10-4fe3-9f3d-49bbf1d95db7" class="numbered-list" start="12"><li>Always exercise universal precautions while treating patients, sterilizing instruments, and carrying out other tasks that have a potential for infection, contamination, or exposure to harmful chemicals or bio-hazardous materials.</li></ol><ol type="1" id="c13a2a04-537d-404f-a49d-9fec1705bf52" class="numbered-list" start="13"><li>Know the location of building exits, fire-fighting equipment, and other emergency equipment.</li></ol><p id="6c7eab61-3953-4396-a88f-546ba93e0ff8" class="">Nao Medical reserves the right to request that you leave the premises if, in our judgment, your injury or illness poses a direct threat to the health and safety of you or others in the workplace. In most circumstances, you may not refuse to work because you are afraid of contracting a life- threatening illness from a co-worker or patient. Employees concerned about being infected with a serious disease by a coworker, customer, patient, or other person, should report such concern to management.</p><h2 id="9ef30caa-4032-4685-abb3-342f60526ffc" class=""><strong>Notice of Potential Exposure to Toxic Substances</strong></h2><p id="9ad2a7de-5369-4059-b1dc-10a57a5ad7f4" class="">Studies have shown that some of the processes and substances used in our office may have a harmful effect on women who are pregnant or planning to become pregnant. For example, exposure to procedures involving nitrous oxide and x-ray radiation has been noted as potentially posing a risk to the health of a mother or fetus.</p><p id="d66119f2-6ca7-406f-8b80-ec59e8f18765" class="">In making your decision whether to continue working during your pregnancy, we encourage you to seek out education and guidance from your own physician regarding working in a medical practice while pregnant. It is your responsibility to request any accommodations needed to perform your job duties during your pregnancy. You may request a leave of absence if you or your physician feels that continued performance of your responsibilities may present a hazard to you or the child, or if you are unable to perform the essential functions of your job.</p><h2 id="80bfccb9-8f51-4221-8dbf-720ae4e972de" class=""><strong>OSHA Compliance</strong></h2><p id="5c793475-5589-4564-bfb9-94172a3b99ee" class="">Due to the potentially hazardous nature of our workplace, including the presence of sharp
+instruments, blood contaminated equipment, and potential carcinogens, all team members are
+responsible for familiarity and compliance with OSHA, EPA, and state regulations regarding
+infection control, job safety, and health protection. Nao Medical cooperates with all reasonable
+OSHA and EPA inspections and compliance reviews. Nao Medical provides training and materials
+explaining the applicable standards and guidelines for all employees during the initial 90 day
+getting acquainted period, and periodically when applicable regulations are revised or added.
+All employees are required to participate, and a record will be maintained of all those in
+attendance. Missed meetings and training exercises must be made up within a reasonable time
+to avoid disciplinary action.</p><p id="f4623f20-b1eb-4e74-bbe8-9173a4c1daf6" class="">Please contact management with any questions about vaccine availability, safety supplies,
+training, or applicable standards. Nao Medical maintains a separate written Exposure Control
+plan, which is updated at least annually.</p><h2 id="cfeb5258-5815-4562-b913-08c1c0c4b7bd" class=""><strong>Blood-borne Pathogens Standard</strong></h2><p id="c78f515e-1b80-452f-8770-bfb282c008a0" class="">OSHA&#x27;s Bloodborne Pathogens Standard applies to office personnel who are reasonably anticipated to come into contact with blood or other potentially infectious materials. The standard is intended to limit occupational exposure to potentially infectious materials, as exposure could result in transmission of the pathogens, which could cause death or disease. </p><p id="d354b0ab-6374-4d96-88b3-7354cef387c2" class="">To achieve OSHA standards, Nao Medical requires that team members use universal precautions, treating all bodily fluids as if they are infectious materials. In addition, Nao Medical stresses the need for frequent hand washing and/or use of disinfectant, and use of personal protective equipment, such as gloves, gowns, protective glasses, and masks, to protect employees and patients Nao Medical will provide team members with personal protective equipment and training on office procedures.</p><p id="6565bcbe-b6f9-4166-8306-befbe48ad271" class="">If at any time you have concerns that the office is not following the proper course of action, please notify a member of management. You may do so without fear of retaliation. For further information, please see management for a copy of OSHA&#x27;s Bloodborne Pathogens Standard.</p><p id="d2f17fe4-6081-464f-93e1-73405d5db420" class="">Not following OSHA guidelines is considered to be a serious violation of Nao Medical policy will lead to corrective action.</p><h2 id="e2414ead-3826-4c52-aa72-384996d5c10e" class=""><strong>Hazard Communication Standard</strong></h2><p id="23fa4677-3ecd-44ac-864d-8a9c496cf1ee" class="">OSHA&#x27;s Hazard Communication Standard requires that warning labels with orange and orange- red biohazard symbols be affixed to containers of regulated waste or, alternatively, red bags may be used. Employees who may come into contact with hazardous materials are required to receive information and training after the start of employment. Nao Medical maintains additional information (including a copy of the SDS) about any chemical used or stored in the office, which is available to employees during working hours.</p><h2 id="1c4378e1-0f00-419e-838e-239c3be20143" class=""><strong>Hepatitis B Standard</strong></h2><p id="c3710f61-a876-4ff3-a281-e3833c489c1b" class="">The Hepatitis B vaccination will be made available at no cost to employees who may come in contact with blood or other potentially infectious materials. The first dose will be administered within ten (10) days of your date of hire, unless you have already been vaccinated. If you decline the vaccination, you will be required to sign an informed declination form. If you have been previously vaccinated, you must supply documentation. This information will be kept in your confidential personnel file.</p><h2 id="1ade2780-5367-4859-bd6d-59f16d2c9246" class=""><strong>Security of Personal Items</strong></h2><p id="413f3e0e-f4cd-4d27-942b-69da844fa30d" class="">Nao Medical shall not be held responsible for the personal effects of employees while in the office. Employees are responsible for keeping any personal effects secure.</p><h2 id="e7a1c11b-d46c-47f3-9e84-8fd0231774c7" class=""><strong>Violence in the Workplace</strong></h2><p id="829f683a-e343-4f39-974b-3bbe8d66a287" class="">In order to minimize the potential risk of personal injuries at work and to reduce the possibility of damage to Nao Medical property, neither violence nor threats of violence will be tolerated.</p><p id="db369a9b-4a19-427b-b7fc-d9bc20e6e89e" class="">Employees may not bring weapons of any kind to Nao Medical premises for any reason, regardless of whether they are on your person or properly licensed. Prohibited weapons include, but are not limited to, firearms, toxic substances, and knives not designated for use by Nao Medical. Personal defense items such as mace, stun guns, or tear gas are also prohibited without the express permission of management and under the conditions set thereby.</p><p id="908f899b-bee1-4543-b891-ac628484414e" class="">If you receive or overhear any threatening communications from an employee or third party, or become aware of an employee in violation of the no-weapons policy above, report it to management at once. Do not engage in either physical or verbal confrontation with a potentially violent individual. If you feel you are in immediate danger or you encounter an individual who is threatening immediate harm to an employee or visitor to our premises, contact an emergency agency (such as 911) immediately. All reports of work-related threats will be kept confidential to the extent possible, investigated, and documented. Employees are expected to report and cooperate in an investigation of any suspected or actual cases of workplace violence.</p><p id="a10f2ccc-f58a-4c26-beba-9628097051f8" class="">Violations of this policy, including refusal to cooperate in Nao Medical&#x27;s investigation, will result in corrective action.</p><h2 id="66c6b3b1-d60c-4693-8157-624eb47347e5" class=""><strong>Smoke-Free Environment</strong></h2><p id="23cfdb85-863e-4cde-9817-e5d66578a8d5" class="">For the health and comfort of our team, patients, and visitors, smoking tobacco products, including e-cigarettes and other vape products, is not permitted. Smoking by team members is only allowed during authorized breaks and outside the office building in designated smoking areas. Employees may not smoke in view of patients. Smokers are not entitled to extra breaks because they smoke. In addition, employees are encouraged to refrain from smoking before and during work hours to ensure that clothing, hair, hands, and breath are smoke-free. Nao Medical may prevent any employee who smells like smoke from clocking in for their work shift, or be asked to leave. Employees who violate this policy are subject to corrective action, and may be held responsible for any fines assessed to Nao Medical as a result of a violation.</p><h2 id="724ce3e5-dac6-4f5d-bc2b-ea070beb7b19" class=""><strong>Drugs and Alcohol</strong></h2><p id="74e20e91-79ea-4503-94d6-1636227c3dbc" class="">Nao Medical is committed to providing a safe, quality-oriented, and productive work environment, consistent with the standards of our community. Alcohol and drug abuse poses a threat to the health and safety of our employees and to the security of our patients, equipment and facilities. For these reasons, it is the policy of Nao Medical to provide an alcohol and drug- free work environment.</p><p id="3a67fbc3-ec35-45f4-908b-09bc1cd43ab8" class="">In accordance with New York state law, Nao Medical does not discriminate against certified medical marijuana patients, and no certified patient will be denied employment or terminated based on patient status or a positive drug test. However, employers are not required to accommodate the use of medical use of marijuana in the workplace, or to tolerate impairment on the job. Therefore, any employee who uses marijuana, whose work is impaired by the drug, or whose use of the drug poses a safety risk, is subject to corrective action and/or termination, like any other lawfully prescribed drug that may impair an employee’s functioning at work.</p><p id="f68935b9-3541-4425-85c9-d4d9f614a06f" class="">Substance abuse has many serious health and safety consequences. Nao Medical does not desire to intrude into the private lives of its employees, but recognizes that employees&#x27; off-the- job involvement with drugs and alcohol may have an impact on the workplace. Therefore, Nao Medical reserves the right to take appropriate corrective action for drug use, sale or distribution while off company premises. All employees who are convicted of, plead guilty to or are sentenced for a crime involving illegal drugs are required to report the conviction, plea or sentence to management within five days. Failure to comply will result in automatic termination. A report may result in suspension without pay to allow management to review the nature of the charges and the employee&#x27;s past record.</p><p id="e08fc818-17e8-4bd3-b444-5b22872fc21c" class="">If you would like information or assistance to address drug or alcohol problems, please ask management. Employees who voluntarily seek help for such problems before becoming subject to corrective action or drug testing will be supported to the extent possible by permitting use of paid time off and/or leaves of absence for treatment, as well as provided other reasonable accommodation as required by law. Employees may be required to document that they are successfully following prescribed treatment.</p><h2 id="b9d3f3c2-8403-4a2e-8ac5-4c7938e73b24" class=""><strong>Rules and Prohibitions</strong></h2><p id="63f2168a-29cf-4506-ac00-2b5311f7f369" class="">Employees are prohibited from reporting to work, working, or being present on company property unless they are fit for duty and free from any adverse effects of illegal drugs or alcohol. This policy does not prohibit employees from the lawful use and possession of prescribed medications or over the counter medication. Employees must, however, consult with their doctors about the medications&#x27; effect on their ability to perform their essential job duties and ability to work safely, and they must promptly disclose any work restrictions to their supervisor. Prescribed medications must be carried in the container labeled by a licensed pharmacist and employees must be prepared to produce it if requested.</p><p id="6bd0c38c-c646-471b-87b7-10c91cb1701e" class="">Whenever employees are working, present on Nao Medical property, operating a vehicle on Nao Medical business, or working at an off-site event, the use, possession, purchase, sale, manufacture, distribution, dispensation, concealment, receipt, transportation, or being under the influence of a prohibited substance is not permitted. Prohibited substances (including trace quantities) include the following:</p><ul id="0ee836a0-c314-47fd-8131-88c7f3a242d4" class="bulleted-list"><li>Illegal drugs, controlled substances, marijuana, intoxicants (legal or illegal), &quot;look-alike&quot; substances, designer drugs, counterfeit or synthetic drugs, inhalants, and any other drugs or substances that will, in any way, affect safety, work ability, alertness, coordination, judgment, response, or the safety of others on the job</li></ul><ul id="d826a41b-e255-442e-8834-5d435323bff2" class="bulleted-list"><li>Alcoholic beverages</li></ul><ul id="efc7b166-0883-4d80-a255-b9b43cf8eec1" class="bulleted-list"><li>Drug paraphernalia</li></ul><ul id="bb659e5e-47fd-4cde-892c-e06bc657f86d" class="bulleted-list"><li>Prescription medication unless prescribed by an authorized medical practitioner.</li></ul><h2 id="6db5192c-4683-4214-9047-f40573f4f11b" class=""><strong>Inspections and Investigation</strong></h2><p id="0b0af9ce-0340-4a16-976f-6fa6766198aa" class="">Because of the importance of this policy, Nao Medical reserves the right to inspect all areas of its premises for prohibited substances. Employees may be asked to cooperate in inspections of their persons, work areas, and property that might conceal prohibited substances and contraband. All employees are expected to cooperate with any investigation. Failure to cooperate, providing false information, or omission of relevant information may subject any employee to corrective action up to and including termination of employment.</p><h2 id="09341bf0-4cd4-4006-a5bf-74b281af734f" class=""><strong>Required Testing</strong></h2><p id="3cd78d09-5d50-4b00-8bdf-e46518e35595" class="">A search and inspection may also include and require employees to submit to a Urine Drug Screen Test and/or Blood Test or other examination. Tests/inspections may be required under the following circumstances:</p><ul id="aba14f67-bc71-433f-8525-ab8cdd148723" class="bulleted-list"><li>During pre-employment examinations;</li></ul><ul id="c84215d7-1c51-40e0-837c-d3c15dba1f8f" class="bulleted-list"><li>When management has reasonable suspicion based on observation of apparent
+workplace use, possession or impairment. In such cases, under no circumstances will
+the employee be allowed to drive to the testing facility; or</li></ul><ul id="02593c92-73d4-4de3-84fb-4f8983fe2f61" class="bulleted-list"><li>Within two hours of an accident resulting in an on-the-job injury there is reasonable
+basis to believe prohibited substances may have been a contributing factor to the
+accident. In such cases, under no circumstances will the employee be allowed to
+drive to the testing facility.</li></ul><p id="b33f4e07-7ee7-4163-ba21-391d74698fbe" class="">All testing will be performed at a designated drug-testing facility. Time spent in alcohol or drug testing will be paid time. An employee may then be suspended pending the results of the drug or alcohol test. Information and records relating to positive test results, drug and alcohol dependencies, and any medical explanations provided by the employee will be kept confidential to the extent required by law and maintained in secure files separate from normal personnel files. Employees who have tested positive, refuse to cooperate, or otherwise violated this policy, are subject to corrective action, up to and including termination.</p><p id="bbd6acec-82d2-475e-9d39-d01c87796d04" class="">Nao Medical may refuse to let an employee clock in, or require the employee clock out, if the employee’s ability to safely perform their job duties is impaired by prescribed medication, over the counter medication, alcohol, or illegal drugs.</p></div></article></body></html>
