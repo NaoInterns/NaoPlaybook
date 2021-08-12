@@ -1,0 +1,636 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Daily Tasks</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="32df5a70-6bf0-4c7c-98ab-f661fa12afda" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_04.png" style="object-position:center 84.37%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">☀️</span></div><h1 class="page-title">Daily Tasks</h1></header><div class="page-body"><h2 id="7d474ab2-8194-4a35-aa61-77a497ef4d4e" class="">Each Morning:</h2><h3 id="609f7a3c-6099-4cf5-baf5-ae1c632d7154" class="">Medical assistant, 9:30-10:00:</h3><ul id="ea826633-7801-4cdb-bcfa-2a159dbb7fbc" class="bulleted-list"><li>Check Nao Medical e-mail</li></ul><ul id="f8851985-40f3-478c-aa4d-78af226d6204" class="bulleted-list"><li>Turn on lights</li></ul><ul id="d295e0f9-33b7-471c-b4e1-23fcf54cff03" class="bulleted-list"><li>Candles</li></ul><ul id="8be9e283-a7fd-4f98-bbcf-a185607d5ac7" class="bulleted-list"><li>Turn air conditioning or heat on</li></ul><ul id="605a17b2-f0ed-452d-84dc-e82801e76638" class="bulleted-list"><li>Check refrigerator thermostat and fill out refrigerator log-in sheet</li></ul><ul id="00e7b649-7d10-4250-ba67-5ae4c3311dc0" class="bulleted-list"><li>Be sure there are three pens in each room/drawer — <mark class="highlight-red"><strong>turn on computers in each room!</strong></mark></li></ul><ul id="6f89b040-170c-4ad1-a02a-4e2b2ae6a9b2" class="bulleted-list"><li>Complete daily x-ray check sheet</li></ul><ul id="0f380df2-4897-4754-a372-ea920dbd3ba9" class="bulleted-list"><li>Turn on the x-ray computer – make sure the VPN connection is made</li></ul><ul id="809b860c-f005-4cf4-9a51-ba6434dc578f" class="bulleted-list"><li>X-ray lead coat to be hung in x-ray room/ x-ray ruler put in its proper place</li></ul><ul id="e304caa8-d9a6-4b42-9423-4a807aea0e71" class="bulleted-list"><li>Stock thermometer probes by vital sign machine</li></ul><ul id="52db7d58-cc20-4591-81e5-f13e19c520a0" class="bulleted-list"><li>Clean/organize the office</li></ul><ul id="bb85a8d8-2523-4f06-9621-2c7b47bc1842" class="bulleted-list"><li>Stock toilet paper in bathroom, urine cups, and paper towels in both bathrooms</li></ul><ul id="d710f503-2bbc-4976-970a-56989d44bf34" class="bulleted-list"><li>Check for a tissue box and gloves in every room</li></ul><ul id="d8f1451a-47b4-49a9-ac2f-2c3625fd31b9" class="bulleted-list"><li>Stock supplies in EACH drawer in the exam rooms and in the lab.</li></ul><ul id="daaa67fa-865d-4be0-a507-aa6c9f5a1110" class="bulleted-list"><li>Make sure procedure room is fully stocked at all times.</li></ul><ul id="92bb09d0-f0e1-4403-8681-a5a566ef2849" class="bulleted-list"><li>Wipe down keyboards, phones, computers, exam tables, counter tops and door handles with Lysol wipes</li></ul><ul id="69aa20b3-d62b-4b14-a330-ba7a43157e80" class="bulleted-list"><li>Take the garbage to the dumpster (for Hicksville) if the cleaning people have not already done so</li></ul><h3 id="3557798a-a3dd-4af4-88c0-50e8a413db55" class="">Front desk, 9:30-10:00:</h3><ul id="1e328844-b016-462d-b075-b32e22df2f73" class="bulleted-list"><li>Check Nao Medical e-mail</li></ul><ul id="5b23e1c9-6a41-414d-92af-280e10835d82" class="bulleted-list"><li>Turn off call forwarding</li></ul><ul id="cf8545fa-caeb-4d5f-b4fd-a36b14e348f2" class="bulleted-list"><li>Check voicemail (516-804-4800, 4789#)</li></ul><ul id="569df0b5-5064-49cb-b421-c03ed156463e" class="bulleted-list"><li>Make sure iPads are turned on and fully charged</li></ul><ul id="c8d8a16f-fb9c-4420-9d6b-6112aa55d3b7" class="bulleted-list"><li>Count petty cash - there should be $100 ($200 in Astoria)</li></ul><ul id="300c81f1-307a-4e14-beaf-52918a1d127f" class="bulleted-list"><li>Call to confirm all pending appts on the schedule for the day</li></ul><ul id="7ebea566-7236-434e-ad56-58560e7a562d" class="bulleted-list"><li>Put all appts on schedule for provider on staff for that day </li></ul><ul id="a8b35193-6e37-4ab9-a6e8-fdf97d27b03c" class="bulleted-list"><li>Appropriate staff members of issues with verifying insurances from the day </li></ul><ul id="16349b06-123c-4e9d-8ee3-aa75a3de6ab3" class="bulleted-list"><li>Stock candy, snacks </li></ul><ul id="5eac6484-2e07-4809-8cd2-1cfa22d170c3" class="bulleted-list"><li>Scan all faxes from overnight and during the day in proper chart; labs, x-rays. The doctor review folder should never have anything in it from day to day</li></ul><h2 id="8aa2d8e4-90da-4154-bdb9-9a9c7e09ce83" class="">Throughout the day:</h2><ul id="1350a2de-14ae-48dd-954f-17c2ed4e8aeb" class="bulleted-list"><li>Call backs should be done everyday</li></ul><ul id="5f87d70a-875f-4d2a-89a5-a257913021d1" class="bulleted-list"><li>PTA, CCA and web/text consent forms should be scanned into appropriate patient charts no matter what they are being seen for.</li></ul><ul id="b1b275a7-d40a-4086-aac4-754dd5f0aa3f" class="bulleted-list"><li>Lab test logs should be reconciled, do not let them pile up</li></ul><ul id="e9ea0096-3f03-4805-a60d-12a69de1db5f" class="bulleted-list"><li>Immigration paperwork should be up-to-date and all forms should be filled out by the MA who registered the patient. The majority of the forms should be completed the day the patient initially comes into the office.</li></ul><ul id="b4c53037-de7d-45b6-926c-57076ca5a87a" class="bulleted-list"><li>Check to make sure all x-ray reports are printed and scanned into patient charts</li></ul><ul id="2f2b0d79-f1c5-4155-a4d6-8fccc4699fc8" class="bulleted-list"><li>Make sure all patients have follow up appointments <ul id="213ea511-0a4a-4f10-b019-807e33edf768" class="bulleted-list"><li>1 week for blood work</li></ul><ul id="495483c0-1484-4df6-812c-4ad1bf978bc1" class="bulleted-list"><li>1-2 years for DoT</li></ul><ul id="4e12c70b-3f7d-4c77-b029-c2cadeef3238" class="bulleted-list"><li>As told by provider</li></ul></li></ul><h2 id="71592c39-2149-4ae8-aa6e-5e2e00d2b780" class="">Each Evening </h2><h3 id="9ef7cdfc-a9ff-4b11-9f54-cd1b7ff5695e" class="">Medical assistant:</h3><ul id="39cb885e-cd59-4dc5-91cc-058ad59235d7" class="bulleted-list"><li>Lab room: be sure requisitions are completed and sent out; clean room; call for specimen pick-up, ensure all specimens are labeled and packaged along with the correct requisition.</li></ul><ul id="6a3f74f7-cae4-4243-bce0-9a31fbe2a6d3" class="bulleted-list"><li>Stock up each drawer in exam rooms and Stock the lab fully.</li></ul><ul id="f841219c-109f-49e6-9502-3f59409ccbe9" class="bulleted-list"><li>Note any equipment, materials and/or medications that are low on stock to re-order</li></ul><ul id="123c0169-3ed4-4407-b53d-983b6803a4d9" class="bulleted-list"><li>Switch off <mark class="highlight-red"><strong>ALL</strong></mark><mark class="highlight-red"> </mark>computers</li></ul><ul id="29bc6238-19d8-4394-9c51-fb9c415c552f" class="bulleted-list"><li><mark class="highlight-red"><strong>Shut down the x-ray computer</strong></mark>, not just the monitor - shut it down completely</li></ul><ul id="da7906c5-0447-46ce-976a-a10a5f396091" class="bulleted-list"><li>Garbage (ready based on your facility schedule)</li></ul><ul id="3d6bd793-d51f-4191-ad4b-7fddae444b68" class="bulleted-list"><li>Collect all Rx pads and put in doctors offices (Hicksille)</li></ul><ul id="aa50a7e8-ab05-4678-8451-dd9ca3b13226" class="bulleted-list"><li>X-ray lead coat to be hung up.</li></ul><ul id="be608522-c190-48d2-9baf-84b662b2f92e" class="bulleted-list"><li>Make sure <mark class="highlight-red"><strong>all in-house</strong></mark> are reviewed and results are recorded
+</li></ul><h3 id="c2975b66-4ae9-4fdc-b774-62d1fda50056" class="">Front desk:</h3><ul id="9a08709b-1253-49fc-a0fb-719cb52e01d2" class="bulleted-list"><li>Turn off iPads, air conditioning/heat, music, TV</li></ul><ul id="c2469a56-c124-4366-ade8-86aefc848320" class="bulleted-list"><li>Turn on call forwarding</li></ul><ul id="7f5e7a42-5e4a-475e-b582-a19714d6d92d" class="bulleted-list"><li>Be sure keys are in container at front desk </li></ul><ul id="f10f92f5-160f-448b-bde4-e0fe4c29e06c" class="bulleted-list"><li>Astoria: lock laptops in medicine closet </li></ul><ul id="f287c468-f274-4c76-bddf-8af3b47b22ee" class="bulleted-list"><li>Be sure all patients are checked out of e-clinical works</li></ul><ul id="0f5b3c62-2209-4b35-9456-3a2d5c2a6e15" class="bulleted-list"><li>Make sure all cash and credit cards are totaled up correctly and equal the amount reflected on daily payment sheet and credit card settlement</li></ul><ul id="2bda201f-8668-4764-82cd-7558a253c3ea" class="bulleted-list"><li>Print EBO from ECW for each person working front desk to balance this figure to the one on your daily payment sheet.</li></ul><ul id="f616c575-55ce-47cc-abbb-f45e3aa6f968" class="bulleted-list"><li>Make sure there is $100 ($200 in Astoria) in petty cash and sign off</li></ul><ul id="6aaece18-e03c-46f3-a0b8-4a21c7d9b64c" class="bulleted-list"><li>Everything needs to be shredded in the shred box </li></ul></div></article></body></html>

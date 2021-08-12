@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Work Schedule</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="863736d6-f772-4a30-a02f-efd1bf81b120" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_08.png" style="object-position:center 84.78%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⏰</span></div><h1 class="page-title">Work Schedule</h1></header><div class="page-body"><hr id="f2a595bc-88d1-4e9b-9fa5-fd7654484cd0"/><nav id="7eb06e7f-cfb7-494b-9d0c-71f2d8d0f0d7" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#415489ac-02b6-497c-afb5-c138254a7737">Working Hours</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1dccbeff-506b-46e0-985d-01540b23e39c"><strong>Attendance and Promptness Policies</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b494ef22-94b5-4131-a684-3ea3fb788f4e"><strong>Inclement Weather</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#48e67657-3f9e-42f0-a977-9d6ef9cd58c7"><strong>Breaks and Meal Periods</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2b40812e-6a52-41bd-aa78-1a2ebea8754f"><strong>Recording Your Time</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#931f0878-569d-4b82-bc22-c1f20195e9df"><strong>Nursing Mothers in the Workplace</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0bb12fdb-3fe2-40b4-88a8-3b1184e9613a"><strong>NYC Lactation Room Accommodation Policy</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d9a5e00d-8dd1-4c2b-86f9-4ac814552947"><strong>Temporary Work Schedule Change</strong></a></div></nav><hr id="c2b6ce7d-76ce-48dd-ab9b-07c8d642808b"/><h2 id="415489ac-02b6-497c-afb5-c138254a7737" class="">Working Hours</h2><p id="dc97311c-d2f5-4ff2-a9ee-f8e70ce055cb" class="">Because of the nature of our business, your work schedule may vary depending on your job
+position. Our normal business hours vary on Monday through Friday, from 8:00 a.m. to 9:00
+p.m. On Saturday and Sunday our normal business hours vary from 9:00 a.m. to 5:00 p.m. and
+any other times and days that may be necessary to ensure the success of Nao Medical. Holiday
+hours are generally from 9:00 a.m. to 3:00 p.m., as set forth in our “Holidays” policy which you can <a href="Time%20Off%20Policies%205b64a6b3e8e54610bac25493c504d579.html">find here</a>. Business hours may change seasonally and/or based on need at the sole discretion of management.</p><p id="a2675b5c-05b8-40e7-bec8-8c7edbd74499" class="">Your supervisor will determine your work schedule and communicate it to you. Employees’
+hours may be earlier or later than clinic hours to meet the needs of Nao Medical. Your schedule
+and/or number of hours may be changed at any time, with as much notice to you as possible.
+Employees are responsible for knowing their schedule, transportation to and from work, and
+being available for work when required.</p><h2 id="1dccbeff-506b-46e0-985d-01540b23e39c" class=""><strong>Attendance and Promptness Policies</strong></h2><p id="566a2cc4-9327-4725-8b15-8085f2a8125f" class="">Employees are expected to arrive on time as scheduled, and to notify management as soon as
+possible in the event you are unable to show up for a scheduled shift. Notifying management
+should be done in accordance with the call out procedures indicated in the “<a href="Time%20Off%20Policies%205b64a6b3e8e54610bac25493c504d579.html">Time Off</a>” section
+later in this Handbook. Excessive unexcused tardiness or absence are grounds for corrective
+action. Employees who fail to call out as per policy or show up for a scheduled shift without
+proper notification for two consecutive shifts will be considered to have abandoned their
+position. Three call outs per month may result in termination. For the care and safety of our
+patients, leaving the company’s premises in the middle of a shift without permission from
+management is considered an unexcused absence and subject to corrective action.</p><h2 id="b494ef22-94b5-4131-a684-3ea3fb788f4e" class=""><strong>Inclement Weather</strong></h2><p id="289bd9ee-8cd1-405a-a6dd-0db353a9b75b" class="">In the event of inclement weather, natural disaster, or power outage causing the office to be
+closed or the hours of operation to change, we will attempt to contact each employee with the
+new schedule. The hours non-exempt employees do not work due to the office being closed are
+not paid. The final decision of whether to drive to work must be made by each individual
+employee. Follow standard procedure for notifying management as soon as you know of any
+absence or tardiness due to weather.</p><h2 id="48e67657-3f9e-42f0-a977-9d6ef9cd58c7" class=""><strong>Breaks and Meal Periods</strong></h2><p id="0a6ecec5-f70c-4622-ac86-748e1de0e68f" class="">Employees are permitted to take brief breaks as necessary during the workday for hygiene, to
+use the restroom, or for a quick snack. Employees are expected to keep such breaks to a
+minimum, and only at times that do not disrupt patient care. Taking excessive breaks is not
+allowed and will subject an employee to corrective action. Break periods may not be used to
+cover late arrival or early departure.</p><p id="d0095e15-df43-44ab-a9a3-ea5085d26da0" class="">Non-exempt employees are required to take one unpaid meal break of at least 30 minutes for
+each six-hour work shift. Please clock in and out for lunch, and if you leave the premises, bear in
+mind your meal period includes travel time, so please plan accordingly. Your lunch period will be
+scheduled to accommodate a productive flow of the workday.</p><p id="a3884e58-d287-4c5b-b7eb-816916f0c3be" class="">An employee break area has been provided for your use. All employees are responsible for
+cleaning up after themselves immediately following the use of Nao Medical amenities, including
+kitchen appliances, restroom, break room, utensils, and plates. No food or drink is permitted in
+any clinical areas of the facility. Food should be stored and consumed in the break area, kept out
+of patient view, drinks must be covered near computers or office equipment.</p><h2 id="2b40812e-6a52-41bd-aa78-1a2ebea8754f" class=""><strong>Recording Your Time</strong></h2><p id="d34c630d-a079-482b-a70d-7a2c0c5884e3" class="">Employees are required to keep an accurate record of time worked so that Nao Medical can
+accurately calculate pay and benefits eligibility. Time entries should be made as you start and
+end your work to ensure accuracy. If hours are not recorded properly, you may not be paid in a
+timely manner. Time records are reviewed for accuracy and approval, but it is the responsibility
+of the employee to keep track of their compensable time worked. All changes to time entries
+must be approved by management.</p><p id="45fa08b9-2c01-408f-bef5-b491cb1738f6" class="">Non-exempt employees may not work any time that is not authorized by management. It is a
+violation of our policy for anyone to instruct or encourage another employee to work “off the
+clock.” All time worked must be recorded. Altering, falsifying, and/or tampering with time
+records, or recording time on another employee’s record is prohibited. If anyone directs or
+encourages you to incorrectly report your hours worked, or to alter another employee’s time
+records, please report the incident immediately to management.</p><p id="a7a59e4e-3998-4603-a15d-8171747ee85c" class="">You must be ready to work at the time you clock in, and clock out when your duties are
+complete. “Padding the clock” by attending to personal matters while clocked in, or
+unnecessarily delaying clocking out, is considered a form of fraud and grounds for termination.</p><h2 id="931f0878-569d-4b82-bc22-c1f20195e9df" class=""><strong>Nursing Mothers in the Workplace</strong></h2><p id="b1f41ebd-6de3-4695-b62c-2b02c7f04fcd" class="">Nao Medical provides reasonable break time for an employee to express breast milk for her
+nursing child for up to three (3) years after the child’s birth. This break time, if possible, will run
+concurrently with regular paid or unpaid break times, with reasonable additional unpaid time as
+needed. The timing of breaks will be flexible to best accommodate the nursing mother and her
+work schedule, as long as the breaks do not unduly disrupt Nao Medical’s operations. A private
+area, free from intrusion, that is not a bathroom, will be made available upon request.</p><h3 id="0bb12fdb-3fe2-40b4-88a8-3b1184e9613a" class=""><strong>NYC Lactation Room Accommodation Policy</strong></h3><p id="f8128521-84a0-4b5a-b7c0-1f10165fdace" class="">Nao Medical provides reasonable break time for an employee to express breast milk for her
+nursing child. This break time, if possible, will run concurrently with regular paid or unpaid
+break times, with reasonable additional unpaid time as needed. The timing of breaks will be
+flexible to best accommodate the nursing mother and her work schedule, as long as the breaks
+do not unduly disrupt Nao Medical’s operations. A private room, free from intrusion, that is not
+a bathroom, will be made available.</p><p id="a3c7ef59-8fd0-49c0-9176-193457f33025" class="">This room may be a multipurpose room that is reserved only for lactation during the time an employee needs it. The room should have an outlet, a chair, a surface on which to place a breast pump and other items, and nearby access to a fridge and running water.</p><p id="b1e86000-fa41-4cb4-8e68-f05ba13d6094" class="">Employees who need to use the lactation room should contact your supervisor and/or use the form provided by Nao Medical. Responses to any lactation request will be made as soon as possible, but no later than five (5) days beyond the request.</p><p id="364bb498-a6e1-47b8-92de-491b6cd28c05" class="">If there are any concerns about an employee’s use of the lactation rooms, such as two or more individuals needing to use the room at the same time, maintenance requests, and the like, employees should contact your supervisor using the form provided by Nao Medical when possible. If providing a lactation room poses an undue hardship on Nao Medical, Nao Medical shall engage in cooperative dialogue as required by law.</p><h2 id="d9a5e00d-8dd1-4c2b-86f9-4ac814552947" class=""><strong>Temporary Work Schedule Change</strong></h2><p id="089f3b4f-0491-4071-9e0d-1513e89d02aa" class="">In accordance with the New York City Fair Workweek Law, employees who have successfully
+completed one hundred and twenty (120) days of employment and who work at least eighty
+(80) hours in New York City per calendar year may request a temporary work schedule change.
+Schedule changes can be granted to care for a child or other individual for whom the employee
+is a caregiver, to attend a legal proceeding, or for time that qualifies for use under the New York
+City Earned Safe and Sick Time Act.</p><p id="be72b16d-44a2-48e8-83fa-fa0a82f8334a" class="">Please submit requests to your supervisor. Schedule changes can be granted two (2) times in a
+calendar year for up to one (1) business day per request. Alternatively, a single request for a two
+(2) day schedule change may be granted at management&#x27;s discretion. Employees should submit
+requests in writing when possible, and otherwise may be asked to submit information in writing
+before or after the schedule change. Nao Medical will respond to all requests in writing. Nao Medical may offer unpaid time off as an alternative to a requested schedule change.</p><p id="45ee8446-e5cb-4ced-ae37-abde857feec6" class="">
+</p></div></article></body></html>

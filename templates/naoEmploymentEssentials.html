@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Nao Medical Employment Essentials</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default 
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="277dca4e-7b2d-4f0a-b3e7-1ecb2ab00ac9" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_06.png" style="object-position:center 84.94%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">✅</span></div><h1 class="page-title">Nao Medical Employment Essentials</h1></header><div class="page-body"><hr id="976467a8-e6ea-4c07-af5e-4515a12175ff"/><nav id="db9624c9-4564-4628-ab8a-9fb915f70103" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4919be5d-b358-4d6f-a884-c16794b59247"><strong>Application Materials</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4ff7c023-6e47-4b21-9bfe-b706438b38d2"><strong>Employment Eligibility Verification</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#46dcb2ef-6ea3-401c-9493-be53714b2878"><strong>New Hire Reporting</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6280d771-2b31-4e92-bda8-0b096f61b361"><strong>Getting Acquainted Period</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ca36d402-abab-4aa9-bc1f-2187244ef581"><strong>Regular Employment Classifications</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3e824b75-f7c4-4532-8882-b6c714dd099b"><strong>Maintenance of Personnel Records</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#21c1a3ec-0f96-4a62-b544-2da4f22d3c8f"><strong>Security Access</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f54aab43-54b3-4af9-bfbb-7b58ff9204fa"><strong>Maintenance of Personnel Records</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eedca425-951b-45b4-8220-f8b05a068840"><strong>Parking</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e7607f82-cba4-4d72-a7cc-5e4008da3a75"><strong>Team Meetings</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ca59e47b-da99-4cfd-8575-3fb61934eb07"><strong>Morning Huddles</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d129fe9a-bd8b-4cd2-812c-cc632bdd5493"><strong>Supplies</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#42485b2d-e1b2-478d-b031-03f60d8b1467"><strong>Gifts to </strong>Nao Medical</a></div></nav><hr id="b8c792d4-ef5a-4394-b3bc-065eb918b20f"/><h2 id="4919be5d-b358-4d6f-a884-c16794b59247" class=""><strong>Application Materials</strong></h2><p id="1485be2a-44a4-4e3f-8c2b-ae8a564ffcc3" class="">Nao Medical relies upon the accuracy of information you provided and gathered by us during the hiring process. Any misrepresentation, falsification, or material omission by an applicant or employee may result in exclusion from further consideration for employment, or, if already hired, termination of employment.</p><h2 id="4ff7c023-6e47-4b21-9bfe-b706438b38d2" class=""><strong>Employment Eligibility Verification</strong></h2><p id="ef9e615e-5899-4741-8e94-169b3064151e" class="">Nao Medical complies with the Immigration and Control Act of 1986 by hiring only those individuals who are lawfully authorized to work in the United States. All new employees will be required to complete an Employment Eligibility Verification Form I-9 and present documentation establishing identity and current eligibility to work in the US. All offers of employment and continued employment are contingent upon presentation of proof of eligibility to work. Employees are required to update eligibility documents during employment in the event of expiration. Nao Medical does not discriminate based upon citizenship or national origin.</p><h2 id="46dcb2ef-6ea3-401c-9493-be53714b2878" class=""><strong>New Hire Reporting</strong></h2><p id="c59ba168-a406-4ee3-b5b9-461dc7444649" class="">Nao Medical complies with state and federal law requiring us to report the name, address and
+Social Security number of each newly hired worker within twenty (20) days of hire. These reports are matched by the state agency with child support records at the state and national levels to locate parents who owe child support, and can result in a garnishment of wages.</p><h2 id="6280d771-2b31-4e92-bda8-0b096f61b361" class=""><strong>Getting Acquainted Period</strong></h2><p id="f1172ac6-06ad-4707-bc97-3bf6be64a0d6" class="">Your first ninety (90) days of employment is a “getting acquainted” period. It is not a guarantee
+of employment for this entire period. Rather, this time provides both you and Nao Medical an at-
+will opportunity to consider and assess your work performance and whether you are a fit for our team. During this time you will be assessed on productivity, cooperation, attendance, attitude, punctuality, and quality of work, among other things. Other than required benefits such as Workers’ Compensation, Medicare, and Social Security, you may not be eligible for employee benefits during this period. Note that employees that have completed their getting acquainted period are not eligible to use their New York City Paid Sick Leave until they have successfully completed one hundred and twenty (120) days of employment.</p><p id="da64f7fa-f781-4cc6-b44f-9b9bb7c66599" class="">At the end of the 90-day getting acquainted period we may choose to designate you as a regular
+employee, or we may choose to terminate our employment relationship with you. Additionally, we may extend your 90-day getting acquainted period up to an additional thirty (30) days at our sole discretion.</p><p id="9d8619e1-6515-49ad-bdb4-34b5b1579b75" class="">Once the getting acquainted period has ended, and we have mutually determined that you are
+a good fit for our team, you will become eligible for regular employment. We may also choose
+to review your getting acquainted period with you and offer suggestions or points for improvement.</p><h2 id="ca36d402-abab-4aa9-bc1f-2187244ef581" class=""><strong>Regular Employment Classifications</strong></h2><p id="2dff9a4d-f7ea-4430-b190-adacd5a4f0d0" class="">Positions are classified as full-time, part-time, or Per-Diem, based on the needs of the business, and are subject to change. At no time is an employee guaranteed a full-time or part-time position. Your position determines the average number of hours you can expect to be scheduled each week of employment, as well as eligibility for certain benefits, subject to the terms for each benefit program. Part-time and temporary employees are not eligible for voluntary employment benefits unless otherwise stated in the specific benefit section, or other authorized writing.</p><ul id="4535c546-cef1-453c-aee0-904d0840d428" class="bulleted-list"><li><strong>Full-time </strong>employees are regularly scheduled to work at least 36 hours per week. Unless otherwise stated in a written employment agreement, full-time employees who are not in their introductory status are eligible for regular employment benefits, subject to the terms and conditions of each benefit program.</li></ul><ul id="286d02ea-e289-48e0-bb31-55a391491762" class="bulleted-list"><li><strong>Part-time </strong>employees are regularly scheduled to work, on average, less than 36 hours per week, and other than legally-mandated benefits such as Social Security and Workers’ Compensation insurance, are not eligible for regular employee benefit programs, unless otherwise specifically stated in this handbook or Nao Medical-provided literature.</li></ul><ul id="8b8dba92-a067-408c-8c23-8a4952a33e1f" class="bulleted-list"><li><strong>Per-Diem </strong>employees are not regularly scheduled to work any number of days or hours
+per month. However, generally speaking per-diem employees will work 2 shifts per
+month. Unlike full-time or part-time employees, other than legally mandated benefits
+such as Social Security and Workers’ Compensation insurance, per-diem employees are
+not eligible for regular employee benefit programs.</li></ul><ul id="c214a82b-dd8a-4692-9620-98dc0fe985d3" class="bulleted-list"><li><strong>Remote employees </strong>are employees who work off-site from a location other than any
+Nao Medical site. Remote employees are not eligible for any regular employee benefit
+programs. Remote employees will have their hours clocked using a third-party time
+tracker to ensure the correct recording of work time.</li></ul><p id="e537c89d-bb22-451e-93fe-215b883b00d6" class="">“Regular” employment simply means the employee filling the position has completed the
+getting acquainted period. Classifications are based on the average number of hours worked per
+week during the past six months. Classification changes are not automatic, and must be in
+writing and signed by management to be effective. Part-time and temporary employees who
+change to full time status are required to meet the same waiting periods as a new employee to
+receive benefits.</p><p id="1957b592-fae0-4ce3-b4fd-2265107dd663" class="">Employee positions are also classified as one of the following, according to the Fair Labor
+Standards Act (FLSA) and applicable state equivalents:</p><ul id="ee62ddca-0179-4872-921f-d98e04a1792a" class="bulleted-list"><li><strong>Non-Exempt Employees </strong>are eligible for minimum wage and overtime, and are required by law to keep an accurate record of their time worked.</li></ul><ul id="c85b5b02-9129-4770-b004-ce1e5e90bf29" class="bulleted-list"><li><strong>Exempt Employees </strong>are not eligible for minimum wage and overtime, and recording of time is at the discretion of Nao Medical. Exempt status depends on various factors established by the FLSA and applicable law, including the job duties of the position, as well as the method and amount of pay.</li></ul><h2 id="3e824b75-f7c4-4532-8882-b6c714dd099b" class=""><strong>Maintenance of Personnel Records</strong></h2><p id="83123be5-0b5c-4c4d-a9d0-5e7c55935c8e" class="">Employee records are maintained for each employee and retained for at least six (6) years.
+These files are the property of Nao Medical, and access is restricted. These records may include
+application materials, emergency contact information, performance reviews, corrective action
+records, manager notes, etc. Employees are not permitted to view the contents of any other
+employee’s personnel file, unless legitimately necessary due to the person’s position and
+responsibilities.</p><p id="67812673-4fbd-4f5c-bb0d-74705efd0107" class="">Your personnel file is available to you for review upon request at reasonable intervals, with five
+days’ notice, and under the supervision of management. You may copy the documents in the
+file in accordance with state law, or otherwise with the permission of Nao Medical. If you believe
+any records or information in your file is inaccurate, you may submit a written request to have
+them corrected. Management will either correct the disputed information or explain in writing
+why your request was not granted. Your request, as long as it is factual and directly relevant to
+your performance and/or qualifications, will be kept in your file.</p><p id="93e7e3c7-ce0a-4cab-9bf0-5c54363f4e22" class="">Confidential information such as medical records, Workers’ Compensation documents, pre-
+employment reference letters, legal documents, investigatory materials, and other documents
+which are sensitive in nature will be kept in a separate file, and are not accessible except to
+those persons we specifically authorize on a “need-to-know” basis. I-9 forms for all employees
+are kept together in a single file and should be updated if identifying documents expire. Any
+complaint records will be kept on-file for seven (7) years or more.</p><p id="afe93b9a-917a-4374-9a94-965b62606066" class="">Employees are responsible for notifying management of any changes to contact and/or personal
+information, including name, telephone number(s), personal email address, home address,
+marital status, number of dependents, withholding/deductions, emergency contact
+information, and any other pertinent information.</p><h2 id="21c1a3ec-0f96-4a62-b544-2da4f22d3c8f" class=""><strong>Security Access</strong></h2><p id="281ead3c-0458-4604-b7ca-f81a140ec5c4" class="">Employees who receive security access to the building, internal offices, or company property,
+are responsible for keeping access items such as keys and codes secure. You may only permit
+access to authorized individuals. Lost or stolen keys must be reported to management immediately. Employees are required to return keys upon termination of employment, or otherwise on demand by the employer. Employees who fail to return keys upon demand may be
+required to pay the cost of rekeying the office.</p><h2 id="f54aab43-54b3-4af9-bfbb-7b58ff9204fa" class=""><strong>Maintenance of Personnel Records</strong></h2><p id="71b2d25e-285e-477a-bedf-af7c0332b5bf" class="">Employee records are maintained for each employee and retained for at least six (6) years.
+These files are the property of Nao Medical, and access is restricted. These records may include
+application materials, emergency contact information, performance reviews, corrective action
+records, manager notes, etc. Employees are not permitted to view the contents of any other
+employee’s personnel file, unless legitimately necessary due to the person’s position and
+responsibilities.</p><p id="8e9328cd-04ea-40b1-a04f-148f2772b911" class="">Your personnel file is available to you for review upon request at reasonable intervals, with five
+days’ notice, and under the supervision of management. You may copy the documents in the
+file in accordance with state law, or otherwise with the permission of Nao Medical. If you believe
+any records or information in your file is inaccurate, you may submit a written request to have
+them corrected. Management will either correct the disputed information or explain in writing
+why your request was not granted. Your request, as long as it is factual and directly relevant to
+your performance and/or qualifications, will be kept in your file.</p><p id="b4e730d7-9bae-4f4c-aea4-5f9fb7df050e" class="">Confidential information such as medical records, Workers’ Compensation documents, pre-
+employment reference letters, legal documents, investigatory materials, and other documents
+which are sensitive in nature will be kept in a separate file, and are not accessible except to
+those persons we specifically authorize on a “need-to-know” basis. I-9 forms for all employees
+are kept together in a single file and should be updated if identifying documents expire. Any
+complaint records will be kept on-file for seven (7) years or more.</p><p id="a564804b-ce4a-4a17-86a6-a4db2b950c99" class=""><strong><em>Employees are responsible for notifying management of any changes</em></strong><em> </em>to contact and/or personal information, including name, telephone number(s), personal email address, home address, marital status, number of dependents, withholding/deductions, emergency contact information, and any other pertinent information. This information should be updated immediately on the Bamboo and Paycom platforms.</p><h2 id="eedca425-951b-45b4-8220-f8b05a068840" class=""><strong>Parking</strong></h2><p id="4e813b85-3bff-41b4-b29c-6a4144a1dc26" class="">If provided, employee parking is available on a first-come, first-served basis away from the main
+entrance of the building. If employees wish to park close to Nao Medical, they are responsible
+for knowing that location’s parking requirements. Employees always park their vehicle at their
+own risk and must observe all parking laws. Parking closest to the main entrance should be left
+open to allow our patients easy access to our clinic</p><h2 id="e7607f82-cba4-4d72-a7cc-5e4008da3a75" class=""><strong>Team Meetings</strong></h2><p id="f561b295-584d-4baa-a16f-b7bdf62d8687" class="">The goal of team meetings is to maintain open communication between management and all
+team members, to motivate our team, and to provide an uninterrupted time when the entire
+team can get together to problem solve, set goals, modify office policy or procedures, and
+brainstorm ideas for improved patient care. The input of each team member is very important
+to the growth of our office. Team meetings will be held approximately once every six weeks, or
+as needed.</p><p id="8abd446f-c90c-42eb-a778-7a5f680859a8" class="">These meetings should be positive and constructive. If you see a problem in the office, please
+bring 2 to 3 suggestions for solving the problem. At least one of the suggestions should not
+involve spending money. Apply active listening in problem solving and look only to the past to
+see how we can improve going forward. Finding fault or placing blame is rarely productive
+communication.</p><p id="845fc1f3-f253-49c7-939d-4e1aeea3bf01" class="">Attendance at team meetings is mandatory. Employees that miss two (2) or more team
+meetings may be ineligible for raises or other Nao Medical-provided additional benefits.</p><h2 id="ca59e47b-da99-4cfd-8575-3fb61934eb07" class=""><strong>Morning Huddles</strong></h2><p id="30425b3e-4e2f-41ba-bfc5-92f8c2df45b7" class="">Huddles are held 15 minutes before the first patient arrives in the morning and last about 10 minutes. Please note that some locations have morning huddles at 9:00 a.m. Generally, morning huddles will occur at or before 7:55 a.m. on weekdays and 8:55 a.m. on weekends and holidays. This time is used to review our vision and the day’s schedule, and to communicate potential problems. Each team member must be on time for this meeting.</p><h2 id="d129fe9a-bd8b-4cd2-812c-cc632bdd5493" class=""><strong>Supplies</strong></h2><p id="a09378a5-e872-4de2-b48c-e12f8854f60c" class="">Personal use of office and medical supplies is not permitted without express permission by Nao Medical. Medical products offered in our office can be purchased for home use from the office
+at Nao Medical&#x27;s cost.</p><h2 id="42485b2d-e1b2-478d-b031-03f60d8b1467" class=""><strong>Gifts to </strong>Nao Medical</h2><p id="cd059d97-9950-413c-ad65-3649b0e5b86b" class="">Promotional items, gifts received by Nao Medical, “free gifts” that are received with supply
+orders, etc., shall be the property of Nao Medical, and will be shared or distributed at the sole
+discretion of management.</p></div></article></body></html>

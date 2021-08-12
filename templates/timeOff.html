@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Time Off Policies</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default 
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b64a6b3-e8e5-4610-bac2-5493c504d579" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_03.png" style="object-position:center 85.16%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌴</span></div><h1 class="page-title">Time Off Policies</h1></header><div class="page-body"><nav id="c4cfd132-a819-40ee-9639-9668dee528f7" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#44d7b62a-754c-4f0a-9279-4dc044a06a52"><strong>Holidays</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4a0765ce-067b-41c4-a3fa-7f5cc5890d01"><strong>Vacation Policy</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c8441875-efb9-41b8-af1c-634d264425f3"><strong>Eligibility </strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bc2828c9-5c4b-4b93-9453-d456fec7a1cb"><strong>Amount of Vacation</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#38720a3a-e331-4be7-beaf-b7b9265e26b5"><strong>Payment of Vacation</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5cd630a1-ddf3-4870-9146-5f771a2816eb">Nao Medical Administration</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8e0ef812-0df8-4858-9e8e-24579bfacf07"><strong>Requesting Time Off</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f899197f-fcd6-467a-baa8-28f041a53b60">Scheduling Time Off</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e2856ee5-39ce-4316-83b2-abaa231120ba">Limits and Minimums</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#68284817-7e9b-4da0-8548-733bd653b35b"><strong>Paid Sick Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f55de1c2-bb2e-4feb-86da-801dd3bc8993"><strong>Family Leave of Absence</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2f748d7f-603c-4dd8-82b1-6dda085bfbc2">Pay During Leave</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ad1c9673-27ec-4089-95c2-ebfff9ca58a6">Eligibility</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3762cfc7-7489-4d02-ab9c-db60d2c0d402">Qualifying Reasons for Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1a505330-a52e-4930-b09e-9856e9149676">Family Leave and the FMLA </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9a3d8cbb-83c2-47d2-816e-ec2476308d09">How to Request Family Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#883279de-ecfc-4dfe-b823-57b33897747e">Payment during Family Leave </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6dd2812d-b51f-42f9-997e-3cd4f2ea50bf">Other Benefits During Family Leave</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c9a4c154-165f-48e8-a6cf-99c624f7ec5c">Health Insurance </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bbbe1b53-6f32-4129-9e61-75deb3d05f44"><strong>Time Off Benefits</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#62d10538-20fc-45b9-8601-63ad5bc2a96f">Prohibition Against Discrimination or Retaliation </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bb20c550-e01b-4b61-a6c7-b67c499b4980"><strong>Medical Leave of Absence</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#69ce022a-6e98-4036-beb3-7584a9947824">Length of Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e4316ce-aece-4478-887f-b364d74468f9">Pay During Leave</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#78d16650-a96c-4d96-befb-8b682ed81001">How to Request Medical Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0e6af336-068c-464f-b22f-e6569331b64c">Benefits During Medical Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2e231210-6122-483a-bec8-cce36a57c973">Eligibility  </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b633a21a-3c30-4e5f-943b-507be9ca35bf"><strong>Reinstatement after Family or Medical Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a1fdf94b-7856-4e28-bb28-6a035c125ce3">Return from Family Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#db1503c1-18bd-4e31-8051-c4bc78e89a3c">Return from Medical Leave </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0ab7d2af-e832-423b-9a33-b7ed31f93646"><strong>Family and Medical Leave Act (FMLA)</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#af0056f0-97ff-4be3-952d-380eb089351e">General Provisions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bf1135e2-32bd-45a7-a565-6fcee5b3a202"><strong>Eligibility</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0f15e624-abce-4946-a641-91849f2bfee4">What is considered a serious health condition? </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3102721d-8192-4127-bdf2-cdd571ac066c">Pregnancy and Childbirth </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#99fbd9ff-2c40-44b0-9dd4-5712b20840f1">Bonding Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#45aa10bb-d9ef-4036-884c-c08d5f0055df">Military Family Leave </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f48d3f09-9c9a-4e94-b363-50ef242699e5"><strong>How a Leave of Absence Works</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e2d1b516-753c-4460-b315-e31e421ea147">Pay and Benefits </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0aab8186-f3e5-479a-ba11-6aa77c921900">Intermittent and Reduced Schedule Leave<strong> </strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#70de42e6-2171-4419-9577-e28453f24de9">Requests for Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3cd8be6f-8ad8-411a-a4f9-20813f9c2151">Medical Certification  </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6d41d289-f442-4654-b722-a7a4a1f4da7b">Reporting While on Leave </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2b74494c-0e72-459b-8c84-ab5870ccca1e"><strong>Returning to Work</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#44e11a2c-c402-4744-b7d4-199c91dee089"><strong>Bereavement Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#207c3b3e-90fb-4517-9592-84817b73cd4a"><strong>Election Day</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d51cbecc-5a34-41d3-b7c4-eca802a575ea"><strong>Jury Duty</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b64245cf-51b6-4ca9-8fe7-d43708253e9f"><strong>Witness Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0909e335-5b45-46d5-9c8e-a59622111db4"><strong>Crime Victim Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#89301f7b-d345-48cb-92dd-13885ec83fed"><strong>Domestic Violence Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#793d3572-b3b5-46e7-b7c4-cc58923b95b0">How to Request Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#97c7eb15-cb01-4621-8a8c-2101a57f0597">Other Benefits During Domestic Violence Leave </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b98159e4-2e72-4ae4-80da-e868e5f747b6">Prohibition Against Discrimination or Retaliation </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#aa677069-5d04-475d-9a85-7e245c9f8e63">Confidentiality </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fde71f66-e86e-41bb-80a4-2fd5a53554a3"><strong>Blood &amp; Bone Marrow Donation Leave</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cb7a5f85-a1bc-47f4-8a72-19f194b79d69">Blood Donation </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a2c64953-5d2a-4a51-a652-1c4497c5892f">Bone Marrow Donation </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#431b2fa7-1fee-4472-ae74-cd90a441c335"><strong>Military Leave of Absence</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2af2c4dc-107c-4f59-ba17-8522557523bb"><strong>Required Documentation on Application for Reemployment </strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e2367ac8-fd22-407e-8ccb-963ddc625bdc"><strong>Military Spouse Leave</strong></a></div></nav><h2 id="44d7b62a-754c-4f0a-9279-4dc044a06a52" class=""><strong>Holidays</strong></h2><p id="15c80ed9-d28b-493b-8777-d12bd330f491" class="">Nao Medical normally observes the following holidays and will be open alternative hours,
+generally 9:00 a.m. to 3:00 p.m.:</p><ul id="52d15ffb-0310-4b71-8d6a-acdf664051bf" class="bulleted-list"><li>New Year’s Day</li></ul><ul id="9481fd08-ccee-4f1d-ba9b-7fd9792ac511" class="bulleted-list"><li>Memorial Day</li></ul><ul id="3b7a9757-2d7a-4a50-acaa-74627294ca21" class="bulleted-list"><li>Independence Day</li></ul><ul id="d0a681ed-19da-431a-8059-fa9646abf0e9" class="bulleted-list"><li>Labor Day</li></ul><ul id="25a6baa3-e1d3-4e50-b7f6-fe59dc817d7b" class="bulleted-list"><li>Thanksgiving Day</li></ul><ul id="1544c158-f26c-4f99-8121-6469a168b4c6" class="bulleted-list"><li>Christmas Day</li></ul><p id="1acbd9ea-1e98-4588-a0c8-c85b15202157" class="">As Nao Medical remains open during holidays, employees may be required to work on holidays. Employees will be compensated at their regular rate of pay for hours and one (1) additional hour of pay for the day worked on a holiday. Employees that wish to take time off for the holiday may request the use of personal days or request unpaid time off, as set forth below. Employees that utilize personal time or vacation time will receive six (6) hours of pay for the day of the holiday.</p><p id="851bf809-c5e2-4b57-80c1-5c4b1a761dd0" class="">Exempt employees that do not work on holidays will be compensated for holidays if required by law or if Nao Medical has provided written notice, either through a contract or other writing, of eligibility for holiday pay.</p><p id="25facce6-c958-4b25-9d9e-ba970fb93b22" class="">Employees who want to take holidays that are not holidays observed by Nao Medical can use accrued paid time off, if available, or can take unpaid time off. Time off will include a reasonable time prior and subsequent to the observance for travel. Employees must provide reasonable advance notice, using the procedures set out below in &quot;Taking Time Off&quot;. Employees will be allowed to make up missed time upon request, and if practical.</p><h2 id="4a0765ce-067b-41c4-a3fa-7f5cc5890d01" class=""><strong>Vacation Policy</strong></h2><p id="9804343b-c37f-4649-99e8-1ecc5c9c8932" class="">We all need time away from work to recharge, rest, take care of personal errands, and spend time with family and friends. Nao Medical’s vacation policy is designed to provide eligible employees with an opportunity for time away from work without the loss of pay.</p><h3 id="c8441875-efb9-41b8-af1c-634d264425f3" class=""><strong>Eligibility </strong></h3><p id="f01b56e4-bb8c-4ba4-819f-4b95cf8d0efd" class="">To be eligible, you must be classified as a regular employee. Temporary and per-diem
+employees are not eligible for vacation.</p><h3 id="bc2828c9-5c4b-4b93-9453-d456fec7a1cb" class=""><strong>Amount of Vacation</strong></h3><p id="9f098680-d49c-4d6b-9bcd-5f60ede842eb" class="">Exempt employees will begin with a bank of eighty (80) hours, or two (2) weeks of vacation
+time.</p><p id="06255135-cdb4-4444-9275-41d25d380f9b" class="block-color-teal_background"><em><strong>At time of hire: 10 days or 80 hours per year.</strong></em></p><p id="80976987-800c-436c-9b8f-00e3257cad01" class="block-color-teal_background"><strong>Exempt managers vacation days will then go as follows:</strong></p><ul id="f2d27a77-1a96-4298-87c5-6268e3420ee0" class="block-color-teal_background bulleted-list"><li>After 3 years - 12 vacation days - 120 hours</li></ul><ul id="695c7980-8495-4f48-81e1-80aa2c9a1312" class="block-color-teal_background bulleted-list"><li>After 5 years - 15 vacation days - 136 hours</li></ul><ul id="23ce6224-b02d-4544-a830-3263ff89d6bb" class="block-color-teal_background bulleted-list"><li>After 10 years - 20 vacation days - 160 hours</li></ul><p id="743c4a29-43aa-4cd7-b9e2-58aee6426a37" class="block-color-teal_background"><strong>Exempt providers will accrue vacation time. Full-time providers may accrue up to two (2)
+weeks of vacation on a prorated basis annually. These employees will accrue one (1) hour for
+every twenty (20) hours worked.</strong></p><p id="d74d49fc-dcde-462c-888c-13066a79a615" class="block-color-teal_background">All non-exempt hourly employees who work full time will be awarded twenty-four (24) hours of
+vacation time.</p><p id="d48779b4-b900-46fd-b651-91c7201d9cd3" class="">
+</p><p id="c4e92eb9-d409-4a85-9982-c2a2378cda80" class="block-color-blue_background"><em><strong>At time of hire: 3 days or 24 hours per year.</strong></em></p><p id="3d2962ca-dc67-4f3c-83d2-eadbb39845e3" class="block-color-blue_background"><strong>Non managerial Non-Exempt Hourly Employees vacation days will go as follows:</strong></p><ul id="8ced8f0b-95a3-4db3-9174-7bf46d7e79aa" class="block-color-blue_background bulleted-list"><li>After 1 year - 5 vacation days - 40 hours</li></ul><ul id="f6e41907-3bdf-4bd7-b4a5-1191d2dd1066" class="block-color-blue_background bulleted-list"><li>After 3 years - 7 vacation days - 56 hours</li></ul><ul id="289a23bf-c374-4488-b5e5-f8d63c4a45a7" class="block-color-blue_background bulleted-list"><li>After 5 years - 10 vacation days - 80 hours</li></ul><ul id="a130017b-26a3-411c-a753-0649b63ba1f7" class="block-color-blue_background bulleted-list"><li>After 10 years - 12 vacation days - 96 hours</li></ul><p id="1e137fba-c201-4b4b-a949-59eedc1e9646" class="block-color-blue_background">Vacation must be taken during the benefit year and cannot be rolled over into the following
+benefit year. Unused vacation will be forfeited at the end of the benefit year. Your benefit year is
+based on your date of hire.</p><p id="2f785fd2-a271-43af-920b-e4d770b35dd8" class="block-color-blue_background">No vacation time is awarded to part time employees.</p><h3 id="38720a3a-e331-4be7-beaf-b7b9265e26b5" class=""><strong>Payment of Vacation</strong></h3><p id="f27a7027-2840-436c-9e6f-37bec329dfef" class="">Vacation is paid at the employee’s normal hourly rate. Vacation pay is a benefit and not hours worked, and therefore is not eligible for any bonus or overtime consideration.</p><h3 id="5cd630a1-ddf3-4870-9146-5f771a2816eb" class="">Nao Medical Administration</h3><p id="05e094a3-0808-42ca-99d0-f2a1792d0c67" class="">Your available vacation time will be listed in the <a href="https://www.paycomonline.net/v4/ee/web.php/app/login">time management system</a>. For exempt employees with unused vacation time at the time of separation from employment, such amounts shall not be forfeited. Non-exempt employees with unused vacation time will be paid for unused vacation upon separation of employment if (1) Nao Medical terminates your employment or (2) the employee provides at least two weeks advance written notice of resignation. If either of these conditions’ precedent is not met, Nao Medical will not compensate employees for unused vacation upon separation.</p><h2 id="8e0ef812-0df8-4858-9e8e-24579bfacf07" class=""><strong>Requesting Time Off</strong></h2><p id="b96eeb8b-3834-433b-992d-f3d51262383a" class="">Anytime you need to take time away from work, we ask for your cooperation to ensure that your absence does not unduly disrupt Nao Medical’s operations or unnecessarily burden your coworkers. To that end, we ask that you schedule your time off to coordinate with other business closures whenever possible, and to follow the policies below to properly request time off.</p><p id="d6410a2d-16ac-486a-be8d-1ae2e917d278" class="">If your absence is covered by your sick leave benefits, please refer to the rules for using sick leave in that policy. Otherwise, you are expected to follow the following procedures when taking or requesting time off.</p><h3 id="f899197f-fcd6-467a-baa8-28f041a53b60" class="">Scheduling Time Off</h3><p id="361464ec-619c-4a4d-a491-359f1826c132" class="">For planned absences, you may request time off by submitting your request through <a href="https://www.paycomonline.net/v4/ee/web.php/app/login">Paycom</a> at least thirty (30) days prior to the requested time off. Requests will be considered in the order received, and otherwise based on seniority. Your requested time off may not be permitted during particularly busy periods of the year. For Providers, Nao Medical may deny requests in the month of December unless you provide at least 90 days advance notice and must find your own suitable coverage.</p><h3 id="e2856ee5-39ce-4316-83b2-abaa231120ba" class="">Limits and Minimums</h3><p id="6d94f5eb-b90a-4b96-a6b1-116fe91830b9" class="">Time off may be requested in minimums of four (4) hour increments. You may not schedule more than fourteen (14) consecutive calendar days of vacation. </p><p id="b7d5909d-1bb3-4915-b655-09b33b6ee8b7" class="">Accrued paid time off benefits must be used before unpaid time off may be taken. In other words, you may not take unpaid days to “save up” for a later vacation. Taking excessive unpaid time off, unless part of an approved leave, may subject employees to corrective action.</p><h2 id="68284817-7e9b-4da0-8548-733bd653b35b" class=""><strong>Paid Sick Leave</strong></h2><p id="f1513758-197c-4bfa-b5b2-3ddf7cfa2b40" class="">Pursuant to the New York City Earned Sick Time Act, Nao Medical offers fifty-six (56) hours of paid sick days to all full-time, part-time, temporary, and seasonal employees who work at least eighty or more hours in New York City during a calendar year. Sick leave can be used to care for yourself or for a sick family member who (1) needs a medical diagnosis; (2) requires care or treatment of a mental or physical illness; (3) has an injury or health condition; or (4) needs preventative medical care.</p><p id="6e566fc4-951a-4847-9eb9-fe1dcf68eef5" class="">It may also be used to obtain legal or social services if you or a family member is a victim or a threatened victim of a sexual offense, domestic violence, stalking or human trafficking. Family member is defined broadly to include any member of your immediate family, or any other individual related by blood or affinity whose close association with you is the equivalent of a family relationship. </p><p id="f33d03fc-ab6d-4b7c-84c2-3a9529a541f9" class="">Eligible employees begin accruing sick days upon commencement of employment, but sick days are not available for use until completion of 120 days of employment. Sick days are accrued at the rate of 1 hour per every 30 hours worked, up to the maximum of 56 hours. Employees may use sick leave in increments of one (1) hour.</p><p id="622e6162-132d-4d84-90cc-aa5b828cacd5" class="">If you have unused sick leave at the end of the year, such amounts are rolled over into the
+subsequent year. However, once the maximum (56 hours) is reached, you cease to accrue
+additional sick days, and no more than 56 hours of paid sick time is paid per year.</p><p id="89bc8b88-69b2-4b18-ae26-c25904defddf" class="">Employees must provide reasonable advance notice, up to seven days, if the need for leave is
+foreseeable, but otherwise must notify their immediate supervisor as soon as possible, but no
+later than one (1) hour before the scheduled start time. Employees who are out of the office for
+more than three (3) consecutive days may be required to provide a doctor’s note.</p><h2 id="f55de1c2-bb2e-4feb-86da-801dd3bc8993" class=""><strong>Family Leave of Absence</strong></h2><p id="50b00772-5829-404f-95d6-c863b5d5f652" class="">In accordance with New York law, effective as of January 1, 2021, Nao Medical permits eligible
+employees to take a Family Leave of Absence (“Family Leave”). The amount of leave that is
+available within a consecutive 52-week period is based upon the date on which Family Leave
+commences, as detailed below:<div class="indented"><p id="49d6b476-2fdf-42c1-bd73-d77247899fc9" class=""><strong>Date Family Leave Begins:  </strong>January 1, 2021 and beyond </p><p id="fe011ceb-702b-497d-9f86-8d90a9f597d0" class=""><strong>Amount of Leave Available: </strong>12 weeks</p></div></p><p id="82418420-7fb5-489a-ad4d-b368a9e99fe4" class="">When taking leave incrementally, rather than in full week periods, the number of days an employee is eligible to take as Family Leave will be calculated based on the average number of days the employee works per week. Family Leave and personal medical leave have separate purposes and do not run concurrently.</p><h3 id="2f748d7f-603c-4dd8-82b1-6dda085bfbc2" class="">Pay During Leave</h3><p id="53aa9270-f200-466c-9ddf-c6e041c06678" class="">Employees are able to seek pay through the insurance benefit program during leave. Employees must submit the Request for Paid Family Leave form (below) to Nao Medical’s disability insurance carrier or designated third-party administrator. Benefit determinations and payments are issued through Nao Medical’s insurance carrier. Please see the separate materials provided by the carrier for more information.</p><figure id="95aeeb83-216b-4ac5-a3d4-d8efa1c5f189"><div class="block-color-yellow_background source"><a href="https://www.notion.so/8b1a994018504ddb8d11c1932e77eebe">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8b1a9940-1850-4ddb-8d11-c1932e77eebe/PFL_FORMS.pdf</a></div></figure><p id="03fe7a0b-be32-4359-89d3-c957386e2804" class="">Paid Family Leave insurance benefits provide employees with a percentage of their regular pay during a leave. Employees may request to have accrued paid time off benefits applied to their leave in order to make up for the difference in pay.</p><p id="e293e599-5146-49be-b954-4bb9f5cb55de" class="">If your Family Leave also qualifies for and is designated as FMLA leave, as described in the Family and Medical Leave (“FMLA”) section below, any accrued vacation or sick time that is available to you will be applied concurrently with your leave. Otherwise, Paid Family Leave insurance benefits do not apply, Family Leave is unpaid unless the employee elects to have accrued paid time off benefits applied to their absence.</p><h3 id="ad1c9673-27ec-4089-95c2-ebfff9ca58a6" class="">Eligibility</h3><p id="c77ad5e2-9d0b-471d-baa9-7dd790e3b4e3" class="">Employees whose regular employment schedule is twenty (20) or more hours per week are eligible to take Family Leave if they have been employed for at least twenty-six (26) consecutive work weeks prior to the first full day of leave.</p><p id="853c9bcf-11b5-48f7-9884-11678761453c" class="">Employees whose regular employment schedule is less than twenty (20) hours per week are eligible to take Family Leave if they have worked at least one hundred and seventy-five (175) days prior to the first full day of leave.</p><h3 id="3762cfc7-7489-4d02-ab9c-db60d2c0d402" class="">Qualifying Reasons for Leave </h3><p id="71f355dd-c3e4-4d6b-916c-af77cf358918" class="">Employees may request leave for any of the following reasons:</p><ol type="1" id="32fba8da-073c-479d-8a34-db83682c5261" class="numbered-list" start="1"><li>To care for a family member with a serious health condition;</li></ol><ol type="1" id="07fb74a4-c73f-41f2-b764-eabaa825d9da" class="numbered-list" start="2"><li>To bond with a newborn or newly placed adoptive or foster child; or</li></ol><ol type="1" id="e21e6dfe-8fdd-418a-a7c9-2b7d41ef24bd" class="numbered-list" start="3"><li>Address exigencies arising from a family member being called to active military service.</li></ol><p id="1ee61d88-afed-4f76-a876-78039cffcd36" class="">For the purposes of this policy, a serious health condition includes an illness, injury, impairment, or physical or mental condition that involves: inpatient care in a hospital, hospice, or residential healthcare facility; or continuing treatment or continuing supervision by a healthcare provider. </p><h3 id="1a505330-a52e-4930-b09e-9856e9149676" class="">Family Leave and the FMLA </h3><p id="4f53ad6b-5904-4ee0-b848-31c69fe905f3" class="">If your time off for Family Leave also qualifies for FMLA leave, as described in the Family and Medical Leave (“FMLA”) section below, Nao Medical will designate the time off as both Family Leave and FMLA. In this case, the time off will count against both Family Leave and FMLA leave concurrently. Employees will be notified of this designation in writing. </p><p id="bbfb864e-bf91-4e9a-af8d-bbee8358439d" class="">For example, an employee requests to use six (6) weeks of Family Leave to care for the serious health condition of a family member. This request not only meets the qualifications for Family Leave, but it also meets the qualifications for FMLA leave. Therefore, Nao Medical will designate the six (6) weeks as counting against both Family Leave and FMLA leave, concurrently.</p><h3 id="9a3d8cbb-83c2-47d2-816e-ec2476308d09" class="">How to Request Family Leave </h3><p id="69988928-1a24-4d63-b688-718f9efd6c13" class="">Employees who wish to request Family Leave may submit a Request for Paid Family Leave form to management. If leave is foreseeable, you must provide at least thirty (30) days advance notice before leave is to begin. Examples of a foreseeable leave are the expected birth or placement of a child, planned medical treatment for a family member, or known military exigency. If thirty (30) days advance notice is not practicable for reasons such as lack of knowledge, change in circumstances, or a medical emergency, notice must be given as soon as practicable.</p><p id="fe25b38f-1d2f-46e2-94b1-79fce81c7101" class="">Leave requests must include the anticipated timing and duration of leave, and the employee must identify the type of family leave being requested. Medical details will not be required; however, Nao Medical may require appropriate supporting documentation and/or certification in order to verify the need for leave.</p><h3 id="883279de-ecfc-4dfe-b823-57b33897747e" class="">Payment during Family Leave </h3><p id="26f32d76-4de5-4b2e-a961-7a39831d254a" class="">Employees seeking payment for Family Leave must submit the Request for Paid Family Leave form to Nao Medical’s disability insurance carrier or designated third-party administrator. Benefit determinations and payments are issued through Nao Medical’s insurance carrier. Please see the separate materials provided by the carrier for more information.</p><h2 id="6dd2812d-b51f-42f9-997e-3cd4f2ea50bf" class="">Other Benefits During Family Leave</h2><h3 id="c9a4c154-165f-48e8-a6cf-99c624f7ec5c" class="">Health Insurance </h3><p id="e9625271-178d-46e1-94cd-cfeb872c5ec5" class="">Any group health insurance benefit will be continued during Family Leave, however, employees are required to continue paying their portion of premium contributions during leave, if applicable. If premiums are raised or lowered during PFL, the new rates will apply. If an employee is more than thirty (30) days late in payment of their portion of an insurance premium, insurance coverage may be discontinued upon 15 days’ written notice to the employee. If an employee chooses to allow coverage to lapse during leave, upon the employee’s return, the employee will be reinstated to the health plan on the same terms and conditions the employee had prior to the leave dates.</p><h3 id="bbbe1b53-6f32-4129-9e61-75deb3d05f44" class=""><strong>Time Off Benefits</strong></h3><p id="5cc26338-b962-449f-a3fd-48c887808e38" class="">Accrued paid time off benefits are not paid out during Family Leave unless requested by the employee. Paid time off benefits do not accrue during leave.</p><h3 id="62d10538-20fc-45b9-8601-63ad5bc2a96f" class="">Prohibition Against Discrimination or Retaliation </h3><p id="14ec523e-2e34-48ae-8aec-73844970bea7" class="">Nao Medical strictly prohibits any discrimination or retaliation against any employee for exercising Family Leave rights.</p><h2 id="bb20c550-e01b-4b61-a6c7-b67c499b4980" class=""><strong>Medical Leave of Absence</strong></h2><p id="7b007bcb-4085-48f0-bc12-8232b6c750e4" class="">Nao Medical permits eligible employees to take excused time off from work as an unpaid leave
+of absence to attend to personal medical needs. Personal medical leave and Family Leave have
+separate purposes and do not run concurrently.</p><h3 id="69ce022a-6e98-4036-beb3-7584a9947824" class="">Length of Leave </h3><p id="9c491c67-f388-4007-a53a-e5315f69c41b" class="">Leaves must have a specific duration and return-to-work date approved at the time the leave is granted. Employees may request up to six workweeks of unpaid leave in one (1) twelve-month period. Extensions for up to thirty (30) days may be granted upon request at the discretion of Nao Medical. Requests for part-time or light duty will also be considered.</p><h3 id="9e4316ce-aece-4478-887f-b364d74468f9" class="">Pay During Leave</h3><p id="e8a23f1b-a2c7-4b1f-881b-513387685129" class="">Medical leaves are unpaid. However, Nao Medical will pay out any accrued paid time off benefits concurrently with an approved medical leave. Employees may apply for pay during leave through Nao Medical’s disability insurance benefit policy. Benefit determinations and payments are issued through Nao Medical’s insurance carrier. Please see the separate materials provided by the carrier for more information.</p><h3 id="78d16650-a96c-4d96-befb-8b682ed81001" class="">How to Request Medical Leave </h3><p id="3982cb98-6002-4fa0-a322-d7e6f8877945" class="">All leaves of absence must be pre-approved by management. Employees anticipating a leave of absence must submit a request to management no less than thirty (30) days prior to the requested start of leave. When leave is not foreseeable, employees are required to provide as much notice as is practical.</p><p id="0ed2becc-e41b-415e-b0a9-77f0924c4595" class="">Employees on leave are expected to comply with applicable company policies, such as
+confidentiality and conflict-of-interest policies. Failure to comply with applicable policies may
+lead to discipline, including discharge, during or upon return from any leave. Accepting outside
+or supplemental employment while on a leave will result in the employee’s discharge.</p><h3 id="0e6af336-068c-464f-b22f-e6569331b64c" class="">Benefits During Medical Leave </h3><p id="1e7a07e7-3eac-4e16-8da9-7efb84ad1c5d" class="">Benefits such as sick leave, vacation, and seniority do not accrue during unpaid leave. Any employer-sponsored insurance benefits (i.e., healthcare premiums) will be paid by Nao Medical until the end of the month in which the leave begins, and thereafter, must be continued at the sole expense of the employee in order to remain in force. You may pay any such premiums through increased payroll deductions before your leave begins, or, if you prefer, through separate payments made by you to Nao Medical every payroll period.</p><h3 id="2e231210-6122-483a-bec8-cce36a57c973" class="">Eligibility  </h3><p id="c558141a-f48f-41b8-984f-19ee2a1016b6" class="">To be eligible to take a medical leave, you must be a full-time regular employee, have completed at least one year of continuous employment, and be meeting performance and attendance standards. Medical leaves may require a doctor’s certification as to the inability to continue working. Nao Medical reserves the right to require an examination by a physician of its choice if there is a question regarding the employee’s physical ability to start or remain on a medical leave status. Personal leaves of absence are granted at the sole discretion of management for reasons acceptable to Nao Medical and depending on our staffing needs.</p><h3 id="b633a21a-3c30-4e5f-943b-507be9ca35bf" class=""><strong>Reinstatement after Family or Medical Leave</strong></h3><p id="21d44ea8-2258-4740-b875-9c2f33cbb10f" class="">Employees on leave are expected to keep Nao Medical advised as to their status and their intent to return to work. Failure to return to work on the specified date without an approved extension will be considered job abandonment and treated as a voluntary resignation. </p><p id="b153a4fa-dd32-4f62-b588-f92c64d2551a" class="">To resume expected job duties after a family or medical leave of absence, an employee returning to work may be required to provide a written release from a licensed physician listing any restrictions. All medical information will be maintained in confidence.</p><h3 id="a1fdf94b-7856-4e28-bb28-6a035c125ce3" class="">Return from Family Leave </h3><p id="7ea950c9-6a8a-4903-84ef-7bedf0356f31" class="">Employees returning to work after an approved Family Leave, as defined in the Family Leave policy, will be reinstated to their previous position and/or job status.</p><h3 id="db1503c1-18bd-4e31-8051-c4bc78e89a3c" class="">Return from Medical Leave </h3><p id="6c4c59b2-bd17-40ba-9e4f-03408adf8162" class="">An employee returning to work on the approved date medical leave ends, and who otherwise complies with the leave of absence and reinstatement policies, will be reinstated to their previous job status or to an open position comparable in status and pay and for which the employee is qualified. However, employees on leave have no greater right to employment than if they had been continuously at work. Changes in hours, schedules, duties, jobs, benefits, pay, and the like may occur because of business needs, or for failure to comply with Nao Medical’s leave policy. Furthermore, employees on leave are subject to any layoff or reduction in force as permitted by applicable law.</p><h2 id="0ab7d2af-e832-423b-9a33-b7ed31f93646" class=""><strong>Family and Medical Leave Act (FMLA)</strong></h2><p id="42387e17-4b1e-40e6-9162-5db0a4df6a30" class="">Nao Medical will provide leaves of absence to eligible employees under the Family and Medical Leave Act (FMLA). This policy is intended to provide a general description of employees’ rights under the law. In the event of any conflict between this policy, and the applicable law, employees are afforded all rights under the law. Where state law offers greater employee benefits than federal, state law will apply.</p><p id="5e6eb4cf-162e-4281-a1c0-ffae27e4edbc" class="">If the FMLA does not apply to you, you may still qualify for non-FMLA leave under the leave policies above. Please see management with any questions about your eligibility or any of these policies.</p><h3 id="af0056f0-97ff-4be3-952d-380eb089351e" class="">General Provisions</h3><p id="dbd89084-635c-4d58-b744-a965f3f52433" class="">Nao Medical grants up to twelve (12) weeks (or up to 26 weeks of military caregiver leave) during a twelve month period to eligible employees. This policy only applies if Nao Medical has at least fifty (50) employees within seventy-five (75) miles of your worksite. This employee count must be maintained for twenty (20) or more weeks in the current or preceding year for the FMLA to apply.</p><h3 id="bf1135e2-32bd-45a7-a565-6fcee5b3a202" class=""><strong>Eligibility</strong></h3><p id="a54f201b-fc21-44b9-bd13-b9f875c0516e" class="">To be eligible, an employee must have worked for Nao Medical for at least twelve (12) months total, have worked at least 1,250 hours during the twelve (12) months preceding the requested leave, and at least one of the following Qualified Reasons below must be met.</p><p id="3d891940-f4b9-4983-85f4-4a7580c27f62" class=""><strong>Qualified Reasons for FMLA Leave:</strong></p><ol type="1" id="a23db967-a04d-4722-bd11-4e70e4eadc1e" class="numbered-list" start="1"><li>The birth or placement of a child for adoption or foster care (“bonding leave”);</li></ol><ol type="1" id="69cbb423-aef9-4c17-946f-5ab603ebc5ce" class="numbered-list" start="2"><li>To care for your spouse, domestic partner, child, or parent with a serious health condition;</li></ol><ol type="1" id="4eb2f1cc-6b3c-4ad7-b27f-012b868881b3" class="numbered-list" start="3"><li>For your own serious health condition;</li></ol><ol type="1" id="5898d9c8-15a4-4137-ad24-ad4acf623880" class="numbered-list" start="4"><li>Qualifying military exigency; or</li></ol><ol type="1" id="88e89724-65f4-41e4-9d46-48714c9aa8a2" class="numbered-list" start="5"><li>To care for a spouse, child, parent or next of kin who is a covered service member or veteran recovering from a serious injury or illness incurred in the line of duty.</li></ol><h3 id="0f15e624-abce-4946-a641-91849f2bfee4" class="">What is considered a serious health condition? </h3><p id="1b13dd35-d844-4503-8419-bcafe75a0f50" class="">A serious health condition includes an illness, injury, impairment, or physical or mental condition that requires inpatient care or continuing care by a licensed healthcare provider. It covers illnesses of a serious and long term nature that result in lengthy or many intermittent absences. Medical certification may be required to determine if the condition constitutes a serious health condition.</p><h3 id="3102721d-8192-4127-bdf2-cdd571ac066c" class="">Pregnancy and Childbirth </h3><p id="d6eda57c-02dc-42dc-bf30-e616fdbe753a" class="">Women who are pregnant may take FMLA leave intermittently for prenatal appointments, morning sickness, or any pregnancy related conditions. Time away must be coordinated so as to lessen the disruption to the workplace. Women who become incapacitated due to pregnancy or complications from childbirth, or who are unable to perform one or more essential functions of their job, may take FMLA leave upon medical certification of need. If your doctor certifies you able to return to work prior to giving birth, you will be reinstated in the interim. FMLA leave can be taken before or after birth, but note that the total leave available for the birth of a child is twelve (12) weeks, so use your time wisely to the extent you can plan.</p><h3 id="99fbd9ff-2c40-44b0-9dd4-5712b20840f1" class="">Bonding Leave </h3><p id="a0c18034-31ae-4d0e-8de3-af0407cedebc" class="">Bonding leave is available to both men and women to be with their newborn child, and no medical certification is required. Bonding leave must be completed within twelve (12) months of the birth or placement of the child. If both parents work for Nao Medical, the parents are limited to a combined total of twelve (12) weeks of leave, unless the child has a serious health condition requiring caretaking. Intermittent time off for bonding leave is granted only with the permission of Nao Medical.</p><h3 id="45aa10bb-d9ef-4036-884c-c08d5f0055df" class="">Military Family Leave </h3><p id="ed03b7c0-fa1f-4892-9fc2-ce1827516289" class="">There are two types of Military Family Leave available to you if the FMLA eligibility requirements are met:</p><ol type="1" id="bce01d2c-d33b-4219-92c2-bd077ece3848" class="numbered-list" start="1"><li><em>Qualifying exigency leave</em>. Any qualifying exigency arising out of your spouse, child, or parent being on covered active duty in the armed forces, or your spouse, child, or parent being notified of an impending call or order to cover active duty. Qualifying exigencies may include short-notice deployment (up to 7 days of leave), attending military events, arranging for alternative childcare, addressing financial and legal arrangements, periods of rest and recuperation (up to 5 days of leave), attending counseling sessions, and attending post-deployment activities.</li></ol><ol type="1" id="b8f747e1-4e93-4892-aeeb-b2927d7b26e4" class="numbered-list" start="2"><li><em>Leave to care for a covered service member</em>. You may be eligible to take up to 26 weeks of leave if you are the spouse, child, parent, or next of kin caring for a covered military service member or veteran recovering from an injury or illness.</li></ol><p id="42c544a7-539d-4e9e-88c6-e98d6cd9379b" class="">Military Family leaves require certification of need within fifteen (15) days of request on forms to be provided by management. Please see management for additional details on military family leave eligibility.</p><h2 id="f48d3f09-9c9a-4e94-b363-50ef242699e5" class=""><strong>How a Leave of Absence Works</strong></h2><h3 id="e2d1b516-753c-4460-b315-e31e421ea147" class="">Pay and Benefits </h3><p id="ab69c036-9727-4c04-943c-ec9f768fd4fe" class="">FMLA leave is unpaid. However, depending on the circumstances and nature of your leave, you may be eligible for short or long-term disability benefits and/or Workers’ Compensation benefits under those plans. If no such plan applies, eligible employees will be required to substitute and exhaust any accrued paid time off (e.g. vacation or sick leave) for unpaid leave (such that part of your approved leave is paid from accrued benefits).</p><p id="ee3c94a2-e451-4e4e-a971-a76dd0a99045" class="">In no case can the substitution of paid leave time for unpaid leave time result in your receipt of more than 100 percent of your salary, or be used to extend your leave beyond what is approved. Employees are not eligible for unemployment benefits during a leave of absence.</p><p id="8f9742ed-1c2a-470f-b7a2-3272e0c44685" class="">While an employee is on leave, Nao Medical will continue the employee&#x27;s health benefits during the leave period at the same level and under the same conditions as if the employee had continued to work. Employees are responsible to pay their share of any premiums, either by deduction from paid time off benefits, or in person or by mail for unpaid leave. If your leave is unpaid, you must timely pay your portion of the premium directly to Nao Medical. The payment must be received by the 15th day of each month. If the payment is more than thirty (30) days late, the employee&#x27;s healthcare coverage may be dropped for the duration of the leave.</p><p id="4a27c12f-585d-4c97-a25e-34f78ce6d656" class="">If the employee chooses not to return to work for reasons other than a continued serious health condition or a circumstance beyond the employee&#x27;s control, Nao Medical may require the employee to reimburse the company the amount it paid for the employee&#x27;s health insurance premium during the leave period.</p><h3 id="0aab8186-f3e5-479a-ba11-6aa77c921900" class="">Intermittent and Reduced Schedule Leave<strong> </strong></h3><p id="145954ea-e98d-44db-96a1-a43ccf1e9a8f" class="">Other than for bonding leave which requires management’s agreement, qualified employees may use leave on an intermittent or reduced schedule basis, when medically necessary, rather than as a full block of time. Employees are required to make reasonable efforts to schedule leave for planned medical treatment so as to not disrupt Nao Medical operations. Nao Medical may temporarily transfer you to an available alternative position that better accommodates this type of leave, with equivalent pay and benefits.</p><h3 id="70de42e6-2171-4419-9577-e28453f24de9" class="">Requests for Leave </h3><p id="9498e76a-2b57-4d34-9e97-f41185676ee8" class="">Employees must give Nao Medical at least thirty (30) days advance written notice of the need for leave, when the leave is foreseeable, and otherwise, as soon as practicable. If formal written notice is not practical at the time the need for leave determined, employees must contact management as soon as practical and provide sufficient information regarding the need for leave to support a FMLA request. Whenever possible, requests for leave should be submitted to management using Nao Medical’s provided forms.</p><p id="77b94063-ff77-4126-9a62-1bb1a1e49f71" class="">We will notify employees within five (5) business days of a request whether the employee is
+eligible and approved for leave or, if ineligible, the reason for ineligibility.</p><h3 id="3cd8be6f-8ad8-411a-a4f9-20813f9c2151" class="">Medical Certification  </h3><p id="f99445d5-b0ea-4ca4-b6fb-7558a631aa61" class="">If requesting leave because of your own or a family member’s serious health condition, you will be required to provide appropriate medical certification at your cost. Medical certification forms are available from management. Certification does not require you to provide medical records or a release, but you must provide sufficient medical facts to establish a qualifying condition. Within five (5) days of your request for leave, we will notify you if medical certification is necessary. Certifications must be returned no more than fifteen (15) days after requested. If you provide at least thirty (30) days’ notice of medical leave, you should also provide the medical certification before leave begins.</p><p id="ecf7e38a-eb65-4779-87d0-77afd42eea5d" class="">Failure to provide requested medical certification in a complete and timely manner may result in denial or delay of leave. Nao Medical, at its expense, may require an examination by a second healthcare provider designated by Nao Medical, if we have a question regarding the validity of the medical certification you initially provide. Nao Medical also may require subsequent medical recertification as necessary, which must be provided within fifteen (15) days.</p><p id="5bef40a1-140b-4461-8d3a-58d2d824d412" class="">You may also be required to provide a fitness for duty certification upon return to work or during intermittent leave. Employees whose return to work poses a direct threat to the health or safety of the employee or others will not be reinstated.</p><h3 id="6d41d289-f442-4654-b722-a7a4a1f4da7b" class="">Reporting While on Leave </h3><p id="9faefebb-a74a-4cab-b775-1e90b1357aa9" class="">If you take leave because of your own serious health condition or to care for a family provider, you must contact management periodically during a leave regarding your status and intention to return to work. In addition, you must give notice as soon as is practicable (within two business days, if feasible) if the dates of the leave change.</p><h2 id="2b74494c-0e72-459b-8c84-ab5870ccca1e" class=""><strong>Returning to Work</strong></h2><p id="eea7b81e-bcd0-4e0d-a896-4214510b0bfc" class="">Employees returning after a leave due to the employee’s own serious medical condition will be required to provide a fitness for duty clearance from the healthcare provider. An employee returning to work on the approved date when the leave of absence ends will be reinstated to his or her previous job status if available, or to an open position comparable in status and pay for which the employee is qualified, with no break in service. Certain key employees may be exempt from this requirement and not be returned to the same or similar position, if doing so would cause substantial economic injury to Nao Medical.</p><p id="1afa58e1-f0e9-4b41-9a0d-bd398e75d342" class="">Employees on leave have no greater right to employment than if they had been continuously at work. Changes in hours, schedules, duties, jobs, benefits, pay, and the like may occur because of business needs. Furthermore, employees on leave are subject to any layoff or reduction in force as permitted by applicable law.</p><h2 id="44e11a2c-c402-4744-b7d4-199c91dee089" class=""><strong>Bereavement Leave</strong></h2><p id="98319de0-c20d-47ef-a4ad-857ec02793c2" class="">You are awarded 16 hours of bereavement leave per calendar year. Bereavement covers immediate family members such as spouse, parents, sisters, brothers, children, grandparents or grandchildren. After your bereavement leave is exhausted, you can take any available vacation
+time that is needed.</p><h2 id="207c3b3e-90fb-4517-9592-84817b73cd4a" class=""><strong>Election Day</strong></h2><p id="15632ded-57e4-4788-a0b8-7ce27f015c01" class="">You are encouraged to vote. We ask that you make every attempt to vote by mail, or outside
+normal business hours. If you are unable to do so, you may request extra time off to vote (up to
+three (2) hours without loss of pay at the beginning or end of the shift), with at least two (2)
+days advance notice. You may be required to make up missed time.</p><h2 id="d51cbecc-5a34-41d3-b7c4-eca802a575ea" class=""><strong>Jury Duty</strong></h2><p id="82b63c4f-6283-41c8-b2a6-b241412e1508" class="">Employees will be allowed the necessary time off to serve jury duty. If Nao Medical’s employee count exceeds ten (10) employees, you will receive your regular rate of pay up to $40.00 per day for the first three days of jury duty; thereafter, you will not be compensated for jury duty unless otherwise required by law. When Nao Medical’s employee count is less than ten (10) employees, jury time off will be unpaid.</p><p id="09725711-352f-4404-a066-cb11a1a9a1bf" class="">You are expected to report to work whenever the court schedule permits and should call in if you are released from duty during your regular work schedule to see if you are needed. Please provide management with the notification of your jury duty or summons as soon as possible so that arrangements may be made to accommodate your absence. Upon your return to work after jury duty, you must show proof of length of service.</p><h2 id="b64245cf-51b6-4ca9-8fe7-d43708253e9f" class=""><strong>Witness Leave</strong></h2><p id="d0ce4a96-7f24-43f3-8860-bfab174ee4a8" class="">Employees are given the necessary time off without pay to attend or participate in a court proceeding when subpoenaed in accordance with law. We ask that you notify management of the need to take witness leave as far in advance as is possible. Exempt employees may be provided time off with pay when necessary to comply with state and federal wage and hour laws.</p><h2 id="0909e335-5b45-46d5-9c8e-a59622111db4" class=""><strong>Crime Victim Leave</strong></h2><p id="d689d558-35e5-4390-ac84-c7f46230cf53" class="">Crime Victims defined as one who has suffered physical, psychological, or economic harm as a direct result of a felony or of assault and battery, stalking, sexual battery, attempted sexual battery, maiming, or driving while intoxicated. A victim of a crime may request reasonable time off without pay in order to attend to criminal proceedings and obtain an order of protection associated with his or her crime victim status. Leave time and reinstatement will be granted for qualified requests made by employees and in some cases next of kin or “good Samaritans” of crime victims may be eligible to request time off to attend court proceedings. Employees may be required to provide proof of proceedings.</p><h2 id="89301f7b-d345-48cb-92dd-13885ec83fed" class=""><strong>Domestic Violence Leave</strong></h2><p id="401b218b-c1a3-47bd-9928-90fc9c7e541b" class="">Employees who are victims of domestic violence will be reasonably accommodated by Nao Medical. Employees will be provided a reasonable amount of time off to:</p><ol type="1" id="51e0cc25-5b7f-4e8d-97f7-823ef4264242" class="numbered-list" start="1"><li>Seek medical attention for injuries caused by domestic violence;</li></ol><ol type="1" id="4f8998c7-4559-4dc2-98ae-0da76dfb217c" class="numbered-list" start="2"><li>Obtain services from a domestic violence shelter, program, or rape crisis center as a result of domestic violence;</li></ol><ol type="1" id="8af81948-bd71-483d-b4a9-7c5af74651ef" class="numbered-list" start="3"><li>Obtain psychological counseling related to domestic violence, including for a child who is a victim of domestic violence;</li></ol><ol type="1" id="38ef7a83-64e0-4ce5-84af-3b55393d11b3" class="numbered-list" start="4"><li>Participate in safety planning relating to domestic violence; and</li></ol><ol type="1" id="31d08e8f-7c8d-4e5a-959b-9e6f0dc020d2" class="numbered-list" start="5"><li>Obtain legal services or participate in legal processes relating to an incident of domestic violence.</li></ol><h3 id="793d3572-b3b5-46e7-b7c4-cc58923b95b0" class="">How to Request Leave </h3><p id="91239ceb-447a-4d93-a8bd-7a18a44302b4" class="">Employees must provide reasonable advance notice of their need to take time off. If advance notice is not feasible, employees must provide certification of the need for time off within a week after the absence takes place. Adequate certification may consist of a police report, court order, or documentation from a medical professional, advocate, or counselor. Domestic violence leave may run concurrently with medical leave.</p><h3 id="97c7eb15-cb01-4621-8a8c-2101a57f0597" class="">Other Benefits During Domestic Violence Leave </h3><p id="f8d28f31-a102-42b3-afe2-0a0694adb907" class=""><em>Health Insurance</em>: Any group health insurance benefit will be continued during your leave;
+however, employees are required to continue paying their portion of premium contributions
+during leave, if applicable.</p><p id="25655790-80e0-4670-b545-ee3f6219ab29" class=""><em>Time Off Benefits</em>: Employees are required to use any available paid time off during a domestic
+violence; otherwise, time off is unpaid.</p><h3 id="b98159e4-2e72-4ae4-80da-e868e5f747b6" class="">Prohibition Against Discrimination or Retaliation </h3><p id="212e35d4-c680-4494-b698-78d14da26b02" class="">Nao Medical strictly prohibits any discrimination or retaliation against any employee for exercising domestic violence accommodation rights.</p><h3 id="aa677069-5d04-475d-9a85-7e245c9f8e63" class="">Confidentiality </h3><p id="1811ee27-b677-4bd7-8f64-94eaa8e3bdfe" class="">Nao Medical will maintain the confidentiality of any information regarding an employee&#x27;s status as a victim of domestic violence to the extent allowed by law.</p><h2 id="fde71f66-e86e-41bb-80a4-2fd5a53554a3" class=""><strong>Blood &amp; Bone Marrow Donation Leave</strong></h2><p id="5816fc08-c7a3-44fb-9f3d-43e0d6170d37" class="">Employees working an average of at least twenty (20) hours per week are eligible to take unpaid
+time off to donate blood or blood marrow. In lieu of unpaid time off, you may choose to use any
+available paid time off benefits for these purposes. If you need time off under this policy, please
+notify your supervisor as soon as possible; preferably no less than 24 hours prior to the day of
+the donation.</p><h3 id="cb7a5f85-a1bc-47f4-8a72-19f194b79d69" class="">Blood Donation </h3><p id="2c7fcbe7-2f42-4566-ba67-b6e35356be41" class="">Blood donation leave is available up to one (1) time per calendar year when donating blood at an off-premises location, such as a blood bank or hospital. If Nao Medical sponsors a blood drive, blood donation leave is available up to two (2) times per calendar year.</p><p id="23f0747b-9f1b-445d-afdc-eba22753b157" class="">Nao Medical may require you to provide proof of blood donation or other sufficient proof that the requested time off was used for the purposes outlined under this policy.</p><h3 id="a2c64953-5d2a-4a51-a652-1c4497c5892f" class="">Bone Marrow Donation </h3><p id="2ac20e68-bf88-4dfb-82d3-8b00da566f47" class="">Bone marrow donation leave is available any time an employee donates bone marrow or needs time to recover from donation. The amount of required leave will be determined by the employee’s physician; however, the maximum amount of leave time is twenty-four (24) work hours per donation event.</p><p id="78ce7030-f2d6-43a8-83e3-1665ce9c0b38" class="">Nao Medical prohibits retaliation or discrimination against an employee for using leave under this policy.</p><h2 id="431b2fa7-1fee-4472-ae74-cd90a441c335" class=""><strong>Military Leave of Absence</strong></h2><p id="783149fd-a0cd-4971-9229-6dc5a185c70b" class="">Nao Medical is committed to protecting the rights of members of the Uniformed Services of the United States, including the Armed Forces, National Guard, commissioned Corps of the PHS, or any other category designated by law. No employee will be subjected to any form of discrimination or retaliation on the basis of that person’s membership or obligation for service in the Uniformed Services, or a result of exercising rights under the Uniformed Services Employment and Reemployment Rights Act (USERRA).</p><p id="5ddf98ed-f27f-4af1-be79-14ea188fccc7" class="">Employees going on military leave must notify Nao Medical as soon as possible after you receive military orders, furnish Nao Medical with any official papers you receive regarding your orders, and provide Nao MedicalNao Medical with any required documentation for re-employment upon completion of service. Military leave will be granted up to a maximum of five (5) years of actual service time, and employees will be entitled to reinstatement upon return, provided you apply for re-employment (written or verbal) within the applicable time limits of returning, and the discharge was honorable, as required by law. Reinstatement will be made by the employer as soon as practical.</p><p id="7a1847d7-1686-46b0-98df-7bb574d062f4" class="">Health benefits may be continued during a military leave, as long as the employee continues to pay the employee’s portion of the premiums, if any. Seniority rights continue to accrue during a leave, but accrual of paid time off is suspended during a leave. You may use any accrued paid time off during a leave. Otherwise, military leave is unpaid.</p><h3 id="2af2c4dc-107c-4f59-ba17-8522557523bb" class=""><strong>Required Documentation on Application for Reemployment </strong></h3><p id="a09526f6-1e20-4acd-a8a7-c2af14d155fd" class="">Employees will be reemployed in the job position he or she would have attained with reasonable certainty if not for the absence. Application for reemployment must be submitted for leaves exceeding thirty (30) days. Please ask management for further details on required documentation of leave, timing of reemployment (which depends on the length of leave), benefits, or other details regarding leave or eligibility for reinstatement.</p><p id="44fba564-1585-4045-9104-95eaf1f50fda" class="">Employees returning from Military leave will not be terminated for any reason other than cause for up to 12 months following reinstatement.</p><h3 id="e2367ac8-fd22-407e-8ccb-963ddc625bdc" class=""><strong>Military Spouse Leave</strong></h3><p id="d2e136c8-0e89-4be4-9341-0abeda5c19c5" class="">Employees working an average of at least twenty (20) hours per week are eligible to take up to ten (10) days of unpaid time off to address necessities arising from a spouse’s deployment as a member of the armed forces (active duty, national guard, or reservist). Please notify your supervisor as soon as your need for leave is known.</p></div></article></body></html>

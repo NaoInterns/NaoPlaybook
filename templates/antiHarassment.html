@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Anti-Harassment Policies</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="48391122-30c3-41a6-bc51-b112539ca43c" class="page sans"><header><img class="page-cover-image" src="../static/Nao_Banner_04.png" style="object-position:center 84.14%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🚫</span></div><h1 class="page-title">Anti-Harassment Policies</h1></header><div class="page-body"><nav id="392f82fb-8e1a-4cb2-b0f6-f11e1d18a284" class="block-color-teal table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#02f54bfa-e4a4-4951-b191-bd8c381aec54"><strong>Equal Employment Opportunity</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#27ef3223-c19f-41bb-9069-b5e9f8924b83"><strong>Duty to Report and Prohibition Against Retaliation</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a20ea979-862f-4113-bf67-a88dfce6102d"><strong>Definition of Workplace Harassment</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eaa67235-c590-4987-bbd1-a1fb9931c4fc"><strong>Definition of Sexual Harassment</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#899d696c-671b-41d8-91bf-f7dd67778805"><strong>Harassment By Others</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#55c3563d-3386-4902-ac7d-d87a610b67be"><strong>Employees with Disabilities</strong></a></div></nav><h2 id="02f54bfa-e4a4-4951-b191-bd8c381aec54" class=""><strong>Equal Employment Opportunity</strong></h2><p id="16fe5a09-a040-485d-8c97-f2aa5b336726" class="">Nao Medical is an equal opportunity employer. This means that Nao Medical will base its
+employment decisions on merit, qualifications, competence and business needs as determined
+by management, and without regard to an employee’s protected category, or an employee’s
+association with a person in a protected category.</p><p id="1fff3e3e-3702-4627-9fee-993424934c3b" class="">Protected categories include: age (18 or older), race (including traits associated with race such
+as hair texture and protective hairstyles), color, religion (including religious clothing, attire and
+facial hair), national origin, citizenship status, sex (including gender, gender identity, and gender
+expression), sexual orientation, pregnancy, disability, current or prior uniformed service (to
+include the reserves, guard, and any other component as defined by law), marital status,
+genetic information, domestic violence victim status, caregiver status, credit history, partnership
+status, an employee’s sexual and reproductive health decisions, or any other legally protected
+category.</p><p id="4f345b64-2dd6-4d8c-a32d-a0eb67a2af27" class=""><em>The protections of this policy apply to employees and non-employees, to include unpaid interns, contractors, and other persons conducting business in our workplace.</em></p><p id="d52fdf17-b7af-41a5-8040-0eddcdc9475b" class=""><em>The New York Human Rights Law makes it unlawful to, based upon any protected category, refuse to hire, employ, bar from employment, or discharge from employment, any individual or to discriminate against such individual in compensation or in terms, conditions, or privileges of employment.</em></p><p id="4636dd99-beca-4d8a-ab01-56b9c0f4ea7c" class=""><em>Federal laws, to include the Civil Rights Act of 1964 and the Pregnancy Discrimination Act, protect individuals form workplace harassment and discrimination. These laws are enforced through the federal Equal Employment Opportunity (EEOC).</em></p><p id="545cf984-9ac7-4f7e-a478-1adb8629f232" class=""><em>New York state law protects individuals from discrimination and retaliation on the basis of reproductive health decisions, and employees can seek remedies for violations in civil court. Remedies may include damages, injunctive relief, and/or reinstatement.</em></p><p id="4249e049-1ac1-4de6-9994-76d0c55ea253" class=""><em>Many cities and counties also have their own local laws that are meant to protect employees from workplace misconduct.</em></p><p id="32cc2b6e-c203-40e7-ba25-3c42a341e974" class="">Accordingly, Nao Medical strictly prohibits all forms of unlawful harassment, including
+discrimination or retaliation based on any protected category listed above. Any employee, (e.g.
+supervisor, manager, or co-worker), or non-employee third parties (i.e. intern, independent
+contractor, vendor) found to be engaging in unlawful discrimination, harassment, or retaliation,
+will be subject to corrective action, up to and including termination of employment or other
+appropriate remedial action.</p><h2 id="27ef3223-c19f-41bb-9069-b5e9f8924b83" class=""><strong>Duty to Report and Prohibition Against Retaliation</strong></h2><p id="efa67117-1584-4eec-a999-81cc2a84c7f5" class="">Employees are encouraged to inform a harasser directly that the conduct is unwelcome and
+must stop. However, Nao Medical cannot address issues if we do not know about them. If you
+feel that you have experienced or witnessed unlawful discrimination, harassment, or retaliation,
+you must report such conduct to a member of management immediately, utilizing the
+procedures set forth in the Employee Concern Reporting Policy outlined at the end of this
+handbook.</p><p id="a40e353b-12f2-4a33-a724-ff64d5b830da" class="">All managers and supervisors are required to report any complaints, observations of, or
+knowledge of unlawful discrimination or harassment to the owners of Nao Medical. Knowingly
+allowing such behavior to continue can be expected to result in corrective action, and
+knowledge can create liability for Nao Medical.</p><p id="ad9601c6-691c-4e28-8427-5c4c0b65e970" class="">In addition to harassment, employees are encouraged to report any unlawful employment
+practice, and to cooperate in any investigations of the same. It is against the law and against
+Practice policy to retaliate in any way against any employee who reports a violation of this
+policy, files a complaint, encourages another individual to report a violation, assists in a
+complaint investigation, or otherwise opposes an unlawful employment practice. If you believe
+that you have suffered unlawful retaliation in violation of this policy, please follow the Employee
+Concern Reporting Policy.</p><p id="ad20f0f6-a640-479a-afca-fda6b1877862" class="">Nao Medical will take reasonable steps to investigate all concerns in a fair, timely, and thorough
+manner that ensures due process for all parties involved, to document progress, to take
+appropriate remedial action (if misconduct is found), and to communicate a resolution in
+writing. Confidentiality will be kept by Nao Medical, to the extent possible.</p><h2 id="a20ea979-862f-4113-bf67-a88dfce6102d" class=""><strong>Definition of Workplace Harassment</strong></h2><p id="b53c1b84-b4bc-4b72-9d4e-1b1a2f04df20" class="">Harassment is unwelcome verbal or physical conduct that denigrates or shows hostility or
+aversion toward an individual because of the individual&#x27;s protected category (see list above).
+Harassment becomes unlawful when enduring the conduct becomes a condition of continued
+employment, or when the conduct is severe or pervasive enough to create a working
+environment that a reasonable person would consider intimidating, hostile, or abusive. Petty
+slights, annoyances, and minor isolated incidents would not typically rise to the level of
+illegality. Harassing conduct may include, but is not limited to the following:</p><ul id="c1816269-29a4-4223-97f9-b67b7893f72f" class="bulleted-list"><li>Communications such as offensive jokes, insults, slurs, epithets, ridicule, mockery, or
+name-calling, and physical threats, assaults, intimidation, or hostile acts, which relate to
+or are based on any protected category; and/or</li></ul><ul id="1dd9849c-5537-4f27-8d5d-2cc6e0a0e8fd" class="bulleted-list"><li>Displays of any kind, whether electronic or in hard-copy form, of objects, pictures,
+writings, recordings, or videos that are vulgar or sexually suggestive, or that are offensive
+or degrading to a person or group of persons based on any protected category.</li></ul><p id="c07c9544-4fd0-40b7-adc6-f94259631f7d" class="">A harasser may be by a supervisor, co-worker, or non-employee. A victim need not be the
+person harassed, but can be anyone affected by the offensive conduct.</p><h2 id="eaa67235-c590-4987-bbd1-a1fb9931c4fc" class=""><strong>Definition of Sexual Harassment</strong></h2><p id="fb8344bc-b893-4eae-a46e-11d3d4bb7097" class="">Sexual harassment is a type of workplace harassment, and is considered a form of employee
+misconduct. Sexual harassment is defined as unwanted sexual advances, such as requests for
+sexual favors, or other unwelcome verbal or physical conduct that is of a sexual nature or taken
+against an individual because of that individual’s sex (to include gender, gender identity, gender
+expression, sexual orientation, transgender status, and pregnancy). Sexual harassment is
+unlawful when such conduct is made a condition of continued employment, or unreasonably
+interferes with the employee’s work performance or creates a sexually hostile, intimidating or
+offensive work environment. Sexual harassment can occur between individuals regardless of
+each person’s sex, gender, or sexual orientation. Examples of sexual harassment include, but are
+not limited to:</p><ul id="1a404b0e-5fa4-449a-a003-55b48aeeb0c7" class="bulleted-list"><li>Requesting sexual favors in exchange for favorable reviews, assignments, promotions,
+continued employment or promises of the same;</li></ul><ul id="e5c9f3bd-8100-4120-b24a-c7ef89b5af78" class="bulleted-list"><li>Comments or questions about an individual&#x27;s body, sexual preference, sexual prowess,
+or sexual deficiencies; and the use of sexually degrading or vulgar words to describe an
+individual;</li></ul><ul id="75d58ecd-b5d0-43a8-a0d8-ecac9e3810f5" class="bulleted-list"><li>Sending sexually explicit, suggestive, or offensive communications via electronic means,
+such as email, text, or social media;</li></ul><ul id="850ef0d0-f026-4436-a976-eab10c832ee6" class="bulleted-list"><li>Touching, leering, whistling at or brushing against the body, or sexually suggestive,
+insulting, or obscene comments or gestures;</li></ul><ul id="08eb2e3d-ab3f-4db0-b06d-d287ce9ecc4f" class="bulleted-list"><li>Display or communication of any kind, whether electronic or in hard-copy form, of objects, pictures, writings, recordings, or videos that are vulgar or sexually suggestive or that are offensive in a sexual manner; and</li></ul><ul id="0991eb8a-8e8e-4dc8-a92b-198de6def522" class="bulleted-list"><li>Hostile actions taken because of someone’s sex, such as: (1) interfering with, destroying or damaging a person’s workstation, tools or equipment, or otherwise interfering with the individual’s ability to perform the job; (2) sabotaging an individual’s work; (3) bullying, yelling, name-calling.</li></ul><p id="a726a515-62cb-4120-a259-a1257fa8d785" class="">Nao Medical recognizes that sometimes it can be difficult to know what constitutes sexual
+harassment, since people and their perceptions and sensibilities are different and can change.
+Comments, jokes or personal advances that you may perceive as innocent or funny may be
+offensive to a coworker. You should know that even innocent intentions do not excuse actions
+that are unwelcome and that are reasonably perceived as threatening or offensive.</p><p id="bf125623-81bf-404c-af2d-be9f75dd641c" class="">Therefore, Nao Medical encourages you to avoid misunderstandings by acting professionally,
+treating others with respect, and avoiding conduct that others could misinterpret either as
+welcoming of inappropriate conduct or as being inappropriate conduct.</p><h2 id="899d696c-671b-41d8-91bf-f7dd67778805" class=""><strong>Harassment By Others</strong></h2><p id="bf48c347-4d07-4015-a82e-4bd04f4f3c6a" class="">Harassment by third parties, like patients or visitors, is also prohibited when directed against
+our employees. If any employee feels uncomfortable, threatened or harassed by a patient or
+visitor to our office, that employee should immediately report the situation so that appropriate
+action can be undertaken. Remedies for these types of situations may include but are not
+limited to asking the person to refrain from the offensive behavior, removing the employee from
+direct interaction with the person, and/or asking the person not to return.</p><h2 id="55c3563d-3386-4902-ac7d-d87a610b67be" class=""><strong>Employees with Disabilities</strong></h2><p id="8c2d8486-9d8a-426a-a345-2c5eb2328984" class="">Nao Medical complies with applicable state and federal laws that provide for nondiscrimination
+in the terms and conditions of employment and the provision of reasonable accommodations
+for qualified individuals with disabilities. You may be a qualified individual with a disability if you
+have a qualifying physical or mental disability or medical condition and can perform the
+essential functions of your job with or without a reasonable accommodation.</p><p id="42870d5d-6726-48a4-b30e-582a768455a2" class="">If you feel you are a qualified individual with a disability and need an accommodation to
+perform your job, you should make such an accommodation request to management. Likewise,
+if management becomes aware of the need for an accommodation by observation or from a
+third party, we may initiate an interactive process with you to determine if a reasonable
+accommodation is needed and/or can be made.</p><p id="89d03fd4-c982-4167-8910-31b02e2bdd32" class="">During the interactive process, management will work with you to seek a reasonable
+accommodation that enables you to perform the essential functions of your job, as long as such
+accommodation does not pose an undue hardship on Nao Medical. After proper assessment,
+management will advise you of our decision on your accommodation request.</p><p id="9a47c1b4-89c1-46b6-896f-a74914fbbf97" class="">All medical-related information is maintained in separate confidential files and will be kept
+confidential to the extent possible. While Nao Medical strives to allow only those persons with a need to know the purpose to be apprised of any medical or other information concerning your
+accommodation request, it should be noted that some disabilities or accommodations may be
+apparent to other team members.</p></div></article></body></html>

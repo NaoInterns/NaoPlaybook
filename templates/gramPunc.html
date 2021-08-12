@@ -1,0 +1,635 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Grammar &amp; Punctuation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default 
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="387c9122-e984-4147-9cbd-0057c12f6d96" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✍️</span></div><h1 class="page-title">Grammar &amp; Punctuation</h1></header><div class="page-body"><h3 id="8b55aa14-4cfa-46a1-93a3-6d58cb31c2f9" class="">Active Voice</h3><ul id="44dab47b-4298-4885-b88e-ec1ba478a001" class="bulleted-list"><li>Always use <a href="https://owl.purdue.edu/owl/general_writing/academic_writing/active_and_passive_voice/active_versus_passive_voice.html">active voice</a> over passive voice.</li></ul><h3 id="48fb22ec-44a9-40d2-9d75-af03ec19a9c2" class="">Acronyms</h3><ul id="3973e28b-04e7-4dcd-b202-9a928d325a47" class="bulleted-list"><li>Always spell out acronyms word-for-word the first time they&#x27;re used.</li></ul><ul id="b6b22bd5-2ec5-4e9f-9581-490d956dbfd6" class="bulleted-list"><li>First use: Automatic Teller Machine</li></ul><ul id="2360759f-70a9-463b-be33-dd4f38cf9770" class="bulleted-list"><li>Second use: ATM</li></ul><ul id="471dfb57-c96c-4966-b1f4-97dd870cae7e" class="bulleted-list"><li>No need for a parenthetical.</li></ul><h3 id="3e8d101a-5add-41a6-832b-f142c19d557a" class=""><strong>Colons</strong></h3><ul id="64feb3ad-4ea9-4744-8d54-e1c8ab6a0c2c" class="bulleted-list"><li>Complete sentences following a colon are capped; incomplete sentences following a colon are not capped.</li></ul><ul id="670706b6-e95c-4cca-b33c-8ac9912ce582" class="bulleted-list"><li>In US stories, generally avoid using colons to introduce quotes that are fewer than two sentences long.</li></ul><h3 id="3fd0ee7f-ffbb-4dbd-8601-5798ed2ac3c0" class=""><strong>Commas</strong></h3><ul id="a697f681-6032-4679-bcc6-2c2558dffce0" class="bulleted-list"><li>Nao Medical uses the serial (aka Oxford) comma, e.g., We picked up cyan, magenta, yellow, and black balloons for the party.</li></ul><ul id="4fe69049-62ce-4fe6-9f24-52a5b0189774" class="bulleted-list"><li>With <em>too</em>:</li></ul><ul id="7b8b1f45-745e-4b21-8729-98843928c026" class="bulleted-list"><li>When <em>too</em>  is used in the sense of &quot;in addition,&quot; use a comma, e.g., <em>I ate a slice of pie and three cookies, too</em>, but omit the comma when <em>too</em>  refers to the subject of the sentence, e.g., <em>Oh, you like cats? I like cats too</em>.</li></ul><ul id="3d35a15b-c06f-4bc4-9603-8f6a836fa5d1" class="bulleted-list"><li>Also use commas with <em>too </em>when you want to emphasize an abrupt change of thought: <em>He didn&#x27;t know at first what hit him, but then, too, he hadn&#x27;t ever walked in a field strewn with garden rakes.</em> (from <em>Chicago Manual of Style</em>) </li></ul><ul id="cc1fa8bc-9add-4895-abea-e6a74c25e262" class="bulleted-list"><li>No commas before <em>Jr</em>. or <em>Sr</em> in names.</li></ul><ul id="83e3b733-af16-46bb-a467-0f3d123aed1d" class="bulleted-list"><li>To create a list within a sentence, use numbers or lowercase letters and right-facing parenthesis and separate items with a comma, e.g., When I grow up, I want to own a farm that has a) acres and acres of land, b) goats of all shapes and sizes, and c) a pack of huskies for dogsledding.</li></ul><ul id="e5728c34-9c37-4a5d-b95f-31d7f9c5239d" class="bulleted-list"><li>Do not use a comma between words repeated for emphasis, e.g., <em>It&#x27;s what makes her her</em>, not <em>It&#x27;s what makes her, her.</em></li></ul><h3 id="a6081cf1-f385-4270-a741-322629024182" class="">Contractions</h3><ul id="bcaf3e97-04c4-44e9-8518-9fac95396908" class="bulleted-list"><li>Contractions are encouraged. They add a friendly, informal tone.</li></ul><h3 id="a6e42948-1830-418e-bf07-971495bab520" class=""><strong>Ellipses</strong></h3><ul id="25fcc967-61e6-46fc-b16d-d2d2fec63cf6" class="bulleted-list"><li>For ellipses, use three dots in a row, no spaces between each dot: …</li></ul><ul id="6363ba13-955a-4f9d-897e-48892f60f7de" class="bulleted-list"><li>If ellipses are used to indicate a mid-sentence pause, don&#x27;t use a space on either side, e.g., We could go there...or not. If ellipses are used to indicate a trailing off in thought or a long pause before a full sentence, insert a space before the next sentence, e.g., I don&#x27;t know… Certainly, I don&#x27;t think it will be good.</li></ul><ul id="22580778-985b-47d2-b4ca-a79daae75cce" class="bulleted-list"><li>If ellipses are used after a full sentence to indicate omission of a full sentence or more (as in a quote), use a period followed by a space before inserting ellipses, e.g., We moved to New Orleans in 2010. ... By 2012, we were back in New York.</li></ul><ul id="acbe48e9-ebd3-400c-a685-8671a0fb3a97" class="bulleted-list"><li>If ellipses are used to indicate omission of words rather than a full sentence or are inserted mid-sentence, use a space on either side of the ellipses, e.g., I adopted the cat yesterday and he&#x27;s the best. He&#x27;s already made himself right at home would become I adopted a cat yesterday … He’s already made himself right at home; Let&#x27;s hang out on Saturday and do something fun because the weather is supposed to be nice would become Let&#x27;s hang out on Saturday ... the weather is supposed to be nice.</li></ul><ul id="5e34080f-d7fc-48ba-94d4-52794685ac3d" class="bulleted-list"><li>If ellipses are used at the beginning of a subheading, do not follow with a space, and generally lowercase the word following the ellipses.</li></ul><ul id="81a9da50-fb09-4890-9009-3ec7fc56f62b" class="bulleted-list"><li>When inserting an ellipsis in a written quote, use brackets to indicate they were added by an editor and not part of the original text.</li></ul><ul id="249f5ccb-cd8f-4bf8-9687-331b655d2694" class="bulleted-list"><li>More on ellipses <a href="http://grammar.quickanddirtytips.com/ellipsis.aspx">here</a>.</li></ul><h3 id="497512e6-7ca5-4c6a-ab7e-4b410e9e305f" class=""><strong>Em Dash</strong></h3><ul id="7df5b44d-2f52-40cb-93f5-40c87a1d2658" class="bulleted-list"><li>Create the em dash with keystroke option + shift + hyphen (on Macs).</li></ul><ul id="0df4841b-4cc2-40d1-8566-6a08f8c0b577" class="bulleted-list"><li>Use spaces on either side of the em dash.</li></ul><ul id="3d8d6dff-2207-4d77-a0c6-dec998f745c1" class="bulleted-list"><li>Try to avoid use of the em dash when parentheses, commas, or a semicolon would work just as well.</li></ul><ul id="9a0b6b85-6faf-46ec-80b9-59f873ab9755" class="bulleted-list"><li>If an em dash is used to indicate interrupted speech, set it flush with the text and closing quotation mark: &quot;I&#x27;m throwing my dog a bar mitz—&quot;</li></ul><h3 id="a67ae655-6852-4db2-bfff-cc8c91d06d8c" class=""><strong>Emojis</strong></h3><ul id="806aab11-813f-4146-99ae-80a8ea408d99" class="bulleted-list"><li>The occasional emoji can help convey emotion and add visual interest. </li></ul><ul id="272fd6c6-d42e-4a72-81c0-1057e15d6c88" class="bulleted-list"><li>Use emojis tastefully and in moderation.</li></ul><ul id="9ecdd384-bcfe-466b-8189-0cff81e42292" class="bulleted-list"><li>Put emojis outside end punctuation, not inside.</li></ul><h3 id="c23e2f28-022f-4787-88ae-18ed74bb5db6" class=""><strong>En Dash</strong></h3><ul id="6b1bd8ce-ddb4-4c55-a38f-a3b61cf56a27" class="bulleted-list"><li>Create the en dash with keystroke option + hyphen (on Macs).</li></ul><ul id="f11c1656-109b-4212-ac39-51aa29131d16" class="bulleted-list"><li>Use the en dash (not hyphen) in <strong>sports scores</strong>, e.g., 5–3; <strong>date ranges</strong>, e.g., 1999–2005, 1980–83; <strong>vote counts</strong>, e.g., 232–197; and <strong>compound noun constructions</strong> such as &quot;the New York–New Jersey border,&quot; &quot;the US–Mexico border,&quot; &quot;then–national security adviser Michael Flynn.&quot;</li></ul><ul id="134524e1-af40-4047-9420-aa725d2f5282" class="bulleted-list"><li>Use the en dash for clarity when using <strong>open compound nouns as modifiers</strong>, e.g., &quot;a cool tennis shoe–rain boot hybrid,&quot; &quot;a New York–born man,&quot; &quot;a non–high school friend&quot;.</li></ul><ul id="8bb212ba-1b07-4eef-88e5-bdc5593ae49f" class="bulleted-list"><li>Do not use spaces on either side of the en dash.</li></ul><h3 id="b6e36d87-94d7-4256-9128-edb2fba55ff5" class=""><strong>Hyphens</strong></h3><ul id="d89da4ff-74a3-4fe2-835d-4a9cfc696165" class="bulleted-list"><li>Do not use a hyphen after an adverb (not limited to but including most words ending in &quot;-ly&quot;), e.g., &quot;It was a poorly written book,&quot; not &quot;poorly-written&quot;.</li></ul><ul id="59293f78-6ac0-4d1e-a94a-67c9874a5367" class="bulleted-list"><li>Note that other adverbs besides ones ending in &quot;-ly&quot; don&#x27;t need hyphens (&quot;the almost empty glass,&quot; &quot;an often misunderstood rule,&quot; &quot;a very strong beer,&quot; etc.) unless their meaning is ambiguous, e.g., &quot;a little-regarded athlete,&quot; &quot;a still-unknown number,&quot; &quot;a well-known presenter.&quot;</li></ul><ul id="85a80140-2904-498d-9b6b-0166e966fcb7" class="bulleted-list"><li>Do use hyphens for clarity in the following situations (per Chicago Manual of Style): When compound modifiers such as &quot;open-mouthed&quot; or &quot;full-length&quot; precede a noun, hyphenation usually lends clarity. With the exception of proper nouns (such as &quot;United States&quot;) and compounds formed by an adverb ending in &quot;ly&quot; plus an adjective, it is never incorrect to hyphenate adjectival compounds before a noun, e.g., &quot;A First-Rate Movie,&quot; &quot;Five-Alarm Chili.&quot;</li></ul><ul id="819dda0e-7ff5-4217-bdc3-06d83804bd33" class="bulleted-list"><li>Hyphens are usually not used when a phrase is made up entirely of nouns, e.g., &quot;video game console,&quot; &quot;crime scene cleanup,&quot; &quot;toilet paper roll,&quot; especially when the modifying compound noun can be found in the dictionary.</li></ul><ul id="1a6c650e-1ab0-4768-aadc-e1bc0e3491ad" class="bulleted-list"><li>When adding a prefix before a compound adjective, use hyphens between all components, e.g., &quot;a non-habit-forming drug&quot; — but in extreme cases it&#x27;s better to reword the sentence to avoid awkward punctuation.</li></ul><ul id="5e7a17c9-6c98-4ab7-b2c8-70e90c8bfe53" class="bulleted-list"><li>In a list where an element of the modifying phrase is not repeated, use a suspended hyphen, like so: &quot;a university-owned and -operated bookstore&quot;; &quot;second-, third-, and fourth-grade teachers.&quot;</li></ul><ul id="f1cd84a2-2fd8-450a-b2f9-c240cf941521" class="bulleted-list"><li>Slashes are OK in specific contexts (like &quot;and/or&quot;), but use hyphens for basic compounds and double titles like &quot;singer-songwriter&quot; (not &quot;singer/songwriter&quot;) or &quot;writer-director.&quot;</li></ul><ul id="2b884dfe-c568-4969-988c-205df33446a6" class="bulleted-list"><li>When a modifying phrase is longer than a couple of words, quotation marks can sometimes be easier to read than a ton of hyphens, e.g., He heaved a &quot;back to the drawing board&quot; sigh.</li></ul><ul id="61985308-8140-46ed-b22e-c4ce080bedf8" class="bulleted-list"><li>When a hyphenated compound noun is part of a modifying phrase, use an en dash after the hyphenated noun, e.g., &quot;an editor-in-chief–approved plan.&quot;</li></ul><h3 id="41d0dcb7-2be5-48ea-a35a-bfe897da4389" class=""><strong>Italics and Quotation Marks</strong></h3><ul id="20c122b9-6b9f-47ad-bd43-ce88bc5aea6a" class="bulleted-list"><li>Use italics for the names of movies, television shows, books, album titles, plays, art exhibitions/collections, web series, podcasts, radio programs, media franchises, and video games (including console, browser, and arcade; apps, however, should be roman and capped); use quotations for names of movie/play scenes, television episodes, articles, chapters, song titles, individual pieces of art, and names of studies. News publication names (both print and digital), magazine and journal titles, news organizations, and local news affiliates should be in roman type.</li></ul><ul id="8c5f291d-22de-4e1c-9e6e-4ddde1299f5e" class="bulleted-list"><li>Italicize titles of newsletters that contain more than one article and will be broken down into article-like sections, but use roman type (no quotation marks) for other (typically shorter, less dense) newsletters.</li></ul><ul id="e9ea2812-937b-492a-b11b-ce55209acce1" class="bulleted-list"><li>Still unsure? Here&#x27;s a handy <a href="http://www.apvschicago.com/2011/04/titles-quote-marks-italics-underlining.html">cheat sheet</a> for when to italicize vs. use quotes.</li></ul><ul id="1bfc6b12-a622-4f3d-8192-53e1fe72b747" class="bulleted-list"><li>Keep all punctuation (including apostrophe + s) that follows italicized, bolded, or colored (via links) words in roman.</li></ul><ul id="42b24bac-8d28-4806-b440-ae619ffc8ffe" class="bulleted-list"><li>When using binomial nomenclature, i.e., scientific names, italicize both genus (capitalized) and species (lowercase) names, e.g., <em>Homo sapiens; E. coli.</em></li></ul><h3 id="0c957a67-c095-438d-8523-c56793b3bda5" class=""><strong>Job Titles</strong></h3><ul id="771515d4-de85-4ea5-806a-c61210897bbc" class="bulleted-list"><li>Use gender-neutral job titles, e.g., &quot;salesperson&quot; or &quot;sales rep&quot; rather than &quot;salesman,&quot; &quot;lawmaker&quot; rather than &quot;congressman/congresswoman,&quot; &quot;chair&quot; rather than &quot;chairman/chairwoman,&quot; &quot;spokesperson&quot; or &quot;representative,&quot; if applicable, rather than &quot;spokesman/spokeswoman&quot;). Avoid gendered terms like &quot;actress,&quot; &quot;editrix,&quot; and &quot;songstress&quot; outside of direct quotes and titles. Instead of using a gendered term like &quot;businessman,&quot; be specific — e.g., “entrepreneur,“ “financier,“ “broker,“ “investor,“ “business partner.”</li></ul><h3 id="8bd7f511-310a-498b-804e-657ce6e19651" class=""><strong>Periods</strong></h3><ul id="f16e6ac6-6e19-4512-9e29-005329665784" class="bulleted-list"><li>Use one space between a period and the next sentence. Never two.</li></ul><h3 id="a8c9d67c-72d2-4cde-a3e2-f1d9e245d5cd" class=""><strong>Possessive</strong></h3><ul id="6d64a036-a83a-4e7d-807c-2a3d6a695133" class="bulleted-list"><li>Use &#x27;s for all singular possessive nouns, e.g., Chris&#x27;s, Katniss&#x27;s. Exceptions:</li></ul><ul id="0f6f5cca-5c4b-414a-8be4-89b13dfc7bfc" class="bulleted-list"><li>Corporation or brand names that are pluralized, e.g., General Motors&#x27;.</li></ul><ul id="d7f425f8-916e-4ce9-84b6-086c5a040df1" class="bulleted-list"><li>Proper nouns ending in &quot;s&quot; that make a &quot;z&quot; sound, e.g., Serena Williams&#x27;.</li></ul><ul id="a39f7456-175b-4a08-903e-37467b03f196" class="bulleted-list"><li>When a proper noun is already plural, the usual rule for possessives applies: The Smiths&#x27;, Rolling Stones&#x27;, the United States&#x27; policies.</li></ul><ul id="c3a968a6-6740-4965-8bb7-d6c7a568da2c" class="bulleted-list"><li>Do <strong>not</strong> use an apostrophe when a word is primarily descriptive rather than possessive, e.g., homeowners association, kids department, teachers college, writers room.</li></ul><ul id="59f05623-d2fd-41f2-a4e1-a2b9913419b0" class="bulleted-list"><li>Contrary to AP: Words ending with an &quot;s&quot; sound before a word that begins with &quot;s&quot; take an apostrophe + &quot;s&quot;: for appearance&#x27;s sake, for conscience&#x27;s sake (but for goodness&#x27; sake).</li></ul><ul id="87362ae1-f54d-4d5c-a1bd-6469a48878e1" class="bulleted-list"><li>Personal pronouns never take apostrophes.</li></ul><h3 id="fd9e37ee-4ddc-4d9a-86e7-902a9715c10e" class=""><strong>Profanity</strong></h3><ul id="6fcccb24-941b-410e-bf3f-99ee7b7ccf96" class="bulleted-list"><li>We strictly do not use any profanity in communications for Nao Medical. </li></ul><h3 id="21c9d685-a88c-4e56-9a6c-9f3e1bf2b659" class=""><strong>Pronouns</strong></h3><ul id="73a47ca8-2f5b-44cd-b14c-d368c7f73ae4" class="bulleted-list"><li><em>They </em>is acceptable (and preferred!) as a singular stand-in when gender is unknown or irrelevant, e.g., &quot;If someone is knocking at your door and you don&#x27;t know who they are...&quot; It should also be used when it is the pronoun someone uses. (See LGBTQ section.)</li></ul><ul id="8b08d72d-25a6-405a-8269-ae0fa04c62c0" class="bulleted-list"><li>Use “‘he’/‘him’ pronouns” and “‘she’/‘her’ pronouns” instead of “male pronouns” or “female pronouns.”</li></ul><h3 id="9b78cd19-cedf-4ffb-b140-50837f0a83fc" class=""><strong>Publication Titles</strong></h3><ul id="9d52ef1b-4f87-4102-a215-543c4e453622" class="bulleted-list"><li>Do not capitalize &quot;the&quot; in print/web publication names, even if it is part of the official title, e.g., the New York Times, not The New York Times; the Guardian, not The Guardian; etc. News publication names (both print and digital) and magazine titles should be in roman type.</li></ul><h3 id="9367c25b-bb91-4895-8bde-af4410786e63" class=""><strong>Semicolons</strong></h3><ul id="c8db51de-724e-4cb7-bd16-982b39f86bdf" class="bulleted-list"><li>Use only between two complete sentences or in lists with internal commas, e.g., We visited Buffalo, New York; Tampa, Florida; and Lima, Ohio.</li></ul><h3 id="1725d945-ff9d-4f3c-8d9b-1c0910d8f782" class="">Slang &amp; Terminology</h3><ul id="067fc9df-6ff5-4c87-bb6d-e13b9e70a717" class="bulleted-list"><li>Avoid slang. Write in plain English.</li></ul><ul id="a26f5f67-5170-4b43-8e41-45e508165141" class="bulleted-list"><li>Technical terms should always be accompanied by a clear definition.</li></ul><h3 id="8885083b-404c-4780-b059-6b6be7312567" class=""><strong>Verb Forms of Abbreviations and Nontraditional Words</strong></h3><ul id="371dfa7f-0153-487c-9678-e397e5c68353" class="bulleted-list"><li>Use <em>ing</em> or an apostrophe + <em>d</em> to create the verb form of an all-capped abbreviation, e.g., DIY&#x27;d, LOLing.</li></ul><ul id="b507f0fa-cb80-4347-9c94-5054341af7f7" class="bulleted-list"><li>For a noun or other word that traditionally wouldn&#x27;t take a verb form, use a hyphen + -ing to create the verb form if the word ends in a vowel, e.g., bro-ing, Vine-ing; use good judgment in terms of readability to determine if the past tense should be formed with an -ed or apostrophe + -d, e.g., bro&#x27;d down, Vined. If the word ends in a consonant, add -ing or -ed with no hyphen, e.g., computering, computered.</li></ul><h3 id="d34c6313-5753-488e-9fe3-47833d3d1f5f" class=""><strong>Websites</strong></h3><ul id="d9e303e9-069b-42a9-8a1b-e33a3826a541" class="bulleted-list"><li>Names of blogs and websites should be in roman type.</li></ul><ul id="165b5aee-2fb5-4b6f-91df-51b41a274601" class="bulleted-list"><li>When writing out URLs, it is OK to use camel caps for readability, e.g., SalvationArmyUSA.org instead of salvationarmyusa.org.</li></ul></div></article></body></html>
