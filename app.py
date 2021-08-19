@@ -266,7 +266,7 @@ def locationDirectory():
 @app.route("/personnelDirectory.html")
 @login_is_required
 def personnelDirectory():
-    return render_template('personalDirectory.html')
+    return render_template('personnelDirectory.html')
 
 
 @app.route("/locationExternalContacts.html")
