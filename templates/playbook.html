@@ -112,7 +112,7 @@
     }
     
     img {
-        max-width: 140%;
+        max-width: 100%;
     }
     
     @media only print {
@@ -320,10 +320,10 @@
     .page-cover-image {
         display: block;
         object-fit: cover;
-        width: calc(100% + 30px);
-        height: 30vh;
-        margin-left: -15px;
-        margin-right: -15px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
     }
     
     .page-header-icon {
