@@ -320,8 +320,12 @@
     .page-cover-image {
         display: block;
         object-fit: cover;
+        position: absolute;
         width: 100%;
         height: 30vh;
+        margin-bottom: 15vh;
+        left: 0;
+        z-index: -1;
     }
     
     .page-header-icon {
@@ -482,8 +486,7 @@
     .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
     .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
     .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-    .highlight-default {
-    }
+    .highlight-default
     .highlight-gray {
         color: rgb(155,154,151);
     }
