@@ -658,7 +658,7 @@ def finalReview():
 @app.route("/defineTermsAndTools.html")
 @login_is_required
 def defTermsAndTools():
-    return render_template('defineTermsandTools.html')
+    return render_template('defineTermsAndTools.html')
 
 @app.route("/refactorMaintainCode.html")
 @login_is_required
